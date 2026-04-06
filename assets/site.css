@@ -1,5 +1,6 @@
 :root {
   color-scheme: light;
+  --scroll-progress: 0;
   --sky: #dbe5ef;
   --paper: #f6f3ee;
   --paper-strong: #fffdf9;
@@ -30,6 +31,44 @@ html {
   scroll-behavior: smooth;
 }
 
+html::before,
+html::after,
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  pointer-events: none;
+}
+
+html::before,
+html::after {
+  top: clamp(32px, 4vh, 48px);
+  bottom: clamp(32px, 4vh, 48px);
+  width: 11px;
+  border-radius: 999px;
+  z-index: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(124, 184, 255, 0.94),
+      rgba(127, 206, 255, 0.7) 46%,
+      rgba(99, 150, 244, 0.9)
+    ) top / 100% calc(14% + (var(--scroll-progress) * 86%)) no-repeat,
+    linear-gradient(180deg, rgba(81, 120, 198, 0.08), rgba(81, 120, 198, 0.02));
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.55),
+    0 0 30px rgba(110, 166, 255, 0.18);
+  opacity: calc(0.35 + (var(--scroll-progress) * 0.6));
+}
+
+html::before {
+  left: clamp(10px, 1.25vw, 22px);
+}
+
+html::after {
+  right: clamp(10px, 1.25vw, 22px);
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -38,6 +77,33 @@ body {
   background:
     radial-gradient(circle at top left, rgba(173, 192, 214, 0.8), transparent 34%),
     linear-gradient(180deg, #dfe7ef 0%, #d9e1ea 100%);
+}
+
+body::before,
+body::after {
+  top: calc(16vh + (var(--scroll-progress) * 58vh));
+  width: 84px;
+  height: 176px;
+  border-radius: 999px;
+  z-index: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(151, 212, 255, 0.52) 0%,
+    rgba(122, 186, 255, 0.26) 36%,
+    rgba(122, 186, 255, 0.06) 62%,
+    transparent 76%
+  );
+  filter: blur(10px);
+  opacity: calc(0.22 + (var(--scroll-progress) * 0.5));
+  transform: translateY(-50%);
+}
+
+body::before {
+  left: clamp(-26px, -1vw, -12px);
+}
+
+body::after {
+  right: clamp(-26px, -1vw, -12px);
 }
 
 img {
@@ -77,6 +143,7 @@ ul {
 
 .site-shell {
   position: relative;
+  z-index: 1;
   width: min(1480px, calc(100% - 40px));
   margin: 24px auto 40px;
   padding: 18px 22px 30px;
@@ -906,6 +973,13 @@ main {
 }
 
 @media (max-width: 860px) {
+  html::before,
+  html::after,
+  body::before,
+  body::after {
+    display: none;
+  }
+
   .site-shell {
     width: min(100%, calc(100% - 20px));
     margin: 10px auto 20px;
