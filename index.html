@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ReelFin | Native Jellyfin for iPhone, iPad, and Apple TV</title>
+    <meta
+      name="description"
+      content="ReelFin is the Apple-first Jellyfin client for iPhone, iPad, and Apple TV, built with SwiftUI and Apple playback frameworks."
+    >
+    <meta name="theme-color" content="#f6f3ee">
+    <link rel="canonical" href="https://flovflo.github.io/reelfin-site/">
+    <link rel="icon" type="image/png" href="assets/media/reelfin-mark.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&amp;family=Space+Grotesk:wght@300..700&amp;display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="assets/site.css">
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="index.html" aria-label="ReelFin home">
+          <span class="brand-mark">
+            <img src="assets/media/reelfin-mark.png" alt="ReelFin logo">
+          </span>
+          <span class="brand-wordmark">
+            <strong>ReelFin</strong>
+            <small>Native Jellyfin for Apple platforms</small>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a href="#overview">Overview</a>
+          <a href="#screens">Screens</a>
+          <a href="#support">Support</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </nav>
+
+        <a
+          class="nav-cta"
+          href="mailto:floriantaffin@gmail.com?subject=ReelFin%20TestFlight%20Beta"
+        >
+          Join TestFlight
+        </a>
+      </header>
+
+      <main>
+        <section class="hero-grid">
+          <article class="hero-copy reveal">
+            <p class="section-kicker">iOS + tvOS Today</p>
+            <h1 class="hero-heading">
+              <span>Your Jellyfin</span>
+              <em>tuned for Apple</em>
+            </h1>
+            <p class="hero-lead">
+              ReelFin is a native Jellyfin client for iPhone, iPad, and Apple TV. It prefers
+              Apple-safe playback paths first, then falls back to remux or Apple-optimized
+              transcode profiles when a source needs extra compatibility work.
+            </p>
+
+            <div class="hero-note-panel">
+              <p>
+                Built for iOS and tvOS right now. Other Apple platforms can come later, but the
+                current product is focused on making iPhone, iPad, and Apple TV feel fast,
+                native, and predictable first.
+              </p>
+
+              <div class="hero-actions">
+                <a
+                  class="primary-button"
+                  href="mailto:floriantaffin@gmail.com?subject=ReelFin%20Beta%20Request"
+                >
+                  Join the TestFlight Beta
+                </a>
+                <a class="secondary-button" href="#screens">View App Screens</a>
+              </div>
+
+              <div class="availability-row" aria-label="Availability">
+                <span class="inline-pill">iPhone + iPad</span>
+                <span class="inline-pill">Apple TV</span>
+                <span class="inline-pill">More Apple platforms later</span>
+              </div>
+            </div>
+          </article>
+
+          <aside class="hero-visual reveal delay-1" aria-label="ReelFin app previews">
+            <div class="device-stage">
+              <div class="device hero-side drift-slow">
+                <div class="device-screen">
+                  <img src="assets/media/settings.jpg" alt="ReelFin settings screen">
+                </div>
+              </div>
+
+              <div class="device hero-main drift">
+                <div class="device-screen">
+                  <img src="assets/media/hero-home.jpg" alt="ReelFin home screen">
+                </div>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <section class="metrics-band reveal delay-1" aria-label="Product pillars">
+          <article class="metric">
+            <span class="metric-value">iOS + tvOS</span>
+            <span class="metric-label">iPhone, iPad, and Apple TV today</span>
+          </article>
+          <article class="metric">
+            <span class="metric-value">Direct Play</span>
+            <span class="metric-label">Fastest when the source is already Apple-safe</span>
+          </article>
+          <article class="metric">
+            <span class="metric-value">Fallbacks</span>
+            <span class="metric-label">Remux first, Apple-optimized transcode if needed</span>
+          </article>
+        </section>
+
+        <section id="overview" class="feature-panel reveal delay-1">
+          <article class="panel-copy">
+            <p class="section-kicker">Playback Pipeline</p>
+            <h2>
+              Direct play first,
+              <em>optimized when needed</em>
+            </h2>
+
+            <p>
+              ReelFin is built around Apple playback frameworks, so the cleanest startup path is
+              always the one Apple can decode directly. The app tries the least destructive route
+              first and only asks the server for heavier compatibility work when it actually has to.
+            </p>
+
+            <div class="bullet-stack">
+              <article class="bullet-item">
+                <strong>Direct play when Apple can decode it</strong>
+                <p>Apple-safe MP4, MOV, M4V, and compatible codec combinations stay on the fastest native path.</p>
+              </article>
+              <article class="bullet-item">
+                <strong>MKV is not automatically a full transcode</strong>
+                <p>Compatible MKV sources can still go through remux or direct stream instead of being re-encoded from scratch.</p>
+              </article>
+              <article class="bullet-item">
+                <strong>Apple-optimized transcode when required</strong>
+                <p>When a file is less Apple-friendly, ReelFin can request safer Jellyfin outputs like clean HEVC or other compatibility profiles.</p>
+              </article>
+              <article class="bullet-item">
+                <strong>No hidden codec stack inside the app</strong>
+                <p>ReelFin itself stays native. When compatibility work is needed, the server route handles it instead of a bundled third-party player.</p>
+              </article>
+            </div>
+          </article>
+
+          <div class="phone-fan" aria-label="Stacked ReelFin app screens">
+            <div class="device phone-tertiary drift-slow">
+              <div class="device-screen">
+                <img src="assets/media/library.jpg" alt="ReelFin library browsing screen">
+              </div>
+            </div>
+
+            <div class="device phone-primary drift">
+              <div class="device-screen">
+                <img src="assets/media/detail.jpg" alt="ReelFin media detail screen">
+              </div>
+            </div>
+
+            <div class="device phone-quaternary drift">
+              <div class="device-screen">
+                <img src="assets/media/settings.jpg" alt="ReelFin settings and preferences">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="screens" class="wide-showcase reveal">
+          <div class="showcase-intro">
+            <p class="section-kicker">iPhone, iPad, Apple TV</p>
+            <h2>
+              From pocket browsing
+              <em>to big-screen focus</em>
+            </h2>
+            <p>
+              The same library carries across iPhone, iPad, and Apple TV with platform-specific
+              layouts instead of one stretched web shell. The result stays recognizably ReelFin,
+              but each screen still feels native to where it runs.
+            </p>
+          </div>
+
+          <div class="showcase-grid">
+            <article class="showcase-card bleed">
+              <p class="section-kicker">tvOS</p>
+              <h3>Focus-first shelves for the living room.</h3>
+              <p>
+                Apple TV gets its own focus behavior, wider rails, and a proper home surface
+                instead of a scaled-up phone layout.
+              </p>
+
+              <div class="showcase-wide-media">
+                <img src="assets/media/tv-home.jpg" alt="ReelFin on Apple TV home screen">
+              </div>
+            </article>
+
+            <article class="showcase-card soft-lavender">
+              <p class="section-kicker">iPad</p>
+              <h3>Bigger artwork, calmer browsing, more room to breathe.</h3>
+              <p>
+                On iPad, large libraries stay readable without losing the same playback logic
+                and visual system used on iPhone and Apple TV.
+              </p>
+              <div class="tablet-frame">
+                <div class="tablet-screen">
+                  <img src="assets/media/ipad-home.jpg" alt="ReelFin on iPad home screen">
+                </div>
+              </div>
+            </article>
+
+            <article class="showcase-card soft-sage">
+              <p class="section-kicker">Server-Aware Controls</p>
+              <h3>Readable playback settings for real Jellyfin setups.</h3>
+              <p>
+                Server URL, quality rules, and playback preferences stay close at hand without
+                turning the app into an admin panel.
+              </p>
+              <div class="summary-device">
+                <div class="device">
+                  <div class="device-screen">
+                    <img src="assets/media/settings.jpg" alt="ReelFin settings screen on iPhone">
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="support" class="support-grid reveal">
+          <article class="support-card highlight">
+            <p class="section-kicker">Shipping Now</p>
+            <h2>iOS + tvOS today. More Apple screens later.</h2>
+            <p>
+              ReelFin currently targets iPhone, iPad, and Apple TV. The priority right now is
+              tightening playback, polish, and TestFlight quality on those platforms before
+              expanding further.
+            </p>
+
+            <div class="hero-actions">
+              <a
+                class="primary-button"
+                href="mailto:floriantaffin@gmail.com?subject=ReelFin%20Support"
+              >
+                Email Support
+              </a>
+              <a
+                class="secondary-button"
+                href="mailto:floriantaffin@gmail.com?subject=ReelFin%20TestFlight%20Beta"
+              >
+                Join TestFlight
+              </a>
+            </div>
+
+            <div class="availability-row">
+              <span class="inline-pill">Support: floriantaffin@gmail.com</span>
+              <span class="inline-pill">TestFlight feedback welcome</span>
+            </div>
+          </article>
+
+          <article class="support-card">
+            <p class="section-kicker">Privacy</p>
+            <h3>Clear about storage, tokens, and diagnostics.</h3>
+            <ul class="support-list">
+              <li>Authentication tokens stay in Apple Keychain-backed secure storage.</li>
+              <li>Preferences and lightweight metadata stay on-device.</li>
+              <li>Crash diagnostics are limited and optional to the publisher.</li>
+            </ul>
+            <div class="hero-actions">
+              <a class="secondary-button" href="privacy.html">Read Privacy Policy</a>
+            </div>
+          </article>
+
+          <article class="support-card soft-mist">
+            <p class="section-kicker">Playback, Plainly</p>
+            <h3>Apple-safe files start fastest. Less compatible media takes more work.</h3>
+            <ul class="support-list">
+              <li>Direct play is the quickest path when the source already matches Apple playback support.</li>
+              <li>MKV can still use remux or direct stream, but it is not the same as a clean Apple-native file.</li>
+              <li>When compatibility drops, ReelFin asks Jellyfin for safer Apple-oriented outputs, which can take longer to start.</li>
+            </ul>
+            <div class="hero-actions">
+              <a class="secondary-button" href="support.html">Support Page</a>
+              <a class="secondary-button" href="terms.html">Terms</a>
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <span>ReelFin is an independent client for self-hosted Jellyfin libraries on Apple platforms.</span>
+        <nav aria-label="Footer">
+          <a href="support.html">Support</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="https://github.com/Flovflo/ReelFin">GitHub</a>
+        </nav>
+      </footer>
+    </div>
+  </body>
+</html>
