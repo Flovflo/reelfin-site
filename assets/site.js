@@ -90,7 +90,29 @@ if (root) {
     }
   };
 
+  const bindRevealAnimations = () => {
+    const revealables = document.querySelectorAll(".reveal");
+
+    if (!revealables.length) {
+      return;
+    }
+
+    if (prefersReducedMotion.matches) {
+      for (const element of revealables) {
+        element.classList.add("is-visible");
+      }
+      return;
+    }
+
+    window.requestAnimationFrame(() => {
+      for (const element of revealables) {
+        element.classList.add("is-visible");
+      }
+    });
+  };
+
   bindSmoothInPageLinks();
+  bindRevealAnimations();
   snapToHashTarget();
   window.addEventListener("load", snapToHashTarget, { once: true });
   window.addEventListener("pageshow", snapToHashTarget);

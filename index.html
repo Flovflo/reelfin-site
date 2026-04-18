@@ -9,21 +9,43 @@
       content="ReelFin is the Apple-first Jellyfin client for iPhone and Apple TV, built with SwiftUI and Apple playback frameworks."
     >
     <meta name="theme-color" content="#f6f3ee">
+    <meta property="og:title" content="ReelFin | Native Jellyfin for iPhone and Apple TV">
+    <meta
+      property="og:description"
+      content="A native Jellyfin client for iPhone and Apple TV, built around SwiftUI and Apple playback frameworks."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://flovflo.github.io/reelfin-site/">
+    <meta
+      property="og:image"
+      content="https://flovflo.github.io/reelfin-site/assets/media/NEW/tv-home.png"
+    >
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ReelFin | Native Jellyfin for iPhone and Apple TV">
+    <meta
+      name="twitter:description"
+      content="A native Jellyfin client for iPhone and Apple TV, built around SwiftUI and Apple playback frameworks."
+    >
+    <meta
+      name="twitter:image"
+      content="https://flovflo.github.io/reelfin-site/assets/media/NEW/tv-home.png"
+    >
     <link rel="canonical" href="https://flovflo.github.io/reelfin-site/">
     <link rel="icon" type="image/png" href="assets/media/NEW/reelfin-mark.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&amp;family=Space+Grotesk:wght@300..700&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&amp;family=Outfit:wght@300..900&amp;display=swap"
       rel="stylesheet"
     >
     <link rel="stylesheet" href="assets/site.css">
     <script defer src="assets/site.js"></script>
   </head>
   <body>
-    <div class="site-shell">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div id="top" class="site-shell">
       <header class="site-header">
-        <a class="brand" href="index.html" aria-label="ReelFin home">
+        <a class="brand" href="#top" aria-label="ReelFin home">
           <span class="brand-mark">
             <img src="assets/media/NEW/reelfin-mark.png" alt="ReelFin logo">
           </span>
@@ -49,26 +71,43 @@
         </a>
       </header>
 
-      <main>
+      <main id="main-content" class="site-main">
         <section class="hero-grid">
           <article class="hero-copy reveal">
-            <p class="section-kicker">iPhone + Apple TV Today</p>
+            <p class="section-kicker">Native Jellyfin for iPhone and Apple TV</p>
             <h1 class="hero-heading">
-              <span>Your Jellyfin</span>
-              <em>tuned for Apple</em>
+              <span>Your Jellyfin library,</span>
+              <em>made for iPhone</em>
+              <span>and Apple TV.</span>
             </h1>
             <p class="hero-lead">
-              ReelFin is a native Jellyfin client for iPhone and Apple TV. It prefers
-              Apple-safe playback paths first, then falls back to remux or Apple-optimized
-              transcode profiles when a source needs extra compatibility work.
+              ReelFin is a SwiftUI client built around Apple playback frameworks. It takes
+              the cleanest playback route available: direct play when a file is already
+              Apple-safe, remux when container work is enough, and Apple-oriented transcode
+              profiles only when compatibility actually requires them.
             </p>
 
             <div class="hero-note-panel">
               <p>
-                Built for iPhone and Apple TV right now. Other Apple platforms can come later, but the
-                current product is focused on making iPhone and Apple TV feel fast,
-                native, and predictable first.
+                The current release is intentionally narrow. Instead of stretching across every
+                Apple platform at once, ReelFin is focusing on fast launch, readable browsing,
+                and predictable playback on the screens people use first.
               </p>
+
+              <div class="hero-stat-grid" aria-label="ReelFin priorities">
+                <article class="hero-stat">
+                  <span class="hero-stat-label">Playback</span>
+                  <strong>Direct play first</strong>
+                </article>
+                <article class="hero-stat">
+                  <span class="hero-stat-label">Fallback</span>
+                  <strong>Remux before heavier work</strong>
+                </article>
+                <article class="hero-stat">
+                  <span class="hero-stat-label">Focus</span>
+                  <strong>iPhone and Apple TV now</strong>
+                </article>
+              </div>
 
               <div class="hero-actions">
                 <a
@@ -81,24 +120,39 @@
               </div>
 
               <div class="availability-row" aria-label="Availability">
-                <span class="inline-pill">iPhone</span>
-                <span class="inline-pill">Apple TV</span>
-                <span class="inline-pill">More Apple platforms later</span>
+                <span class="inline-pill">SwiftUI</span>
+                <span class="inline-pill">Apple playback frameworks</span>
+                <span class="inline-pill">TestFlight open</span>
               </div>
             </div>
           </article>
 
           <aside class="hero-visual reveal delay-1" aria-label="ReelFin app previews">
-            <div class="device-stage">
-              <div class="device hero-side drift-slow">
-                <div class="device-screen">
-                  <img src="assets/media/NEW/iphone-detail.png" alt="ReelFin iPhone detail screen">
+            <div class="hero-stage">
+              <div class="hero-stage-backdrop">
+                <img src="assets/media/NEW/tv-home.png" alt="ReelFin Apple TV home screen">
+              </div>
+
+              <article class="hero-stage-note">
+                <p class="section-kicker">Playback path</p>
+                <strong>Apple-safe media starts fastest.</strong>
+                <p>
+                  ReelFin keeps the route simple: native support first, remux when enough,
+                  and server-side compatibility work only when a title really needs it.
+                </p>
+              </article>
+
+              <div class="device-stage">
+                <div class="device hero-side drift-slow">
+                  <div class="device-screen">
+                    <img src="assets/media/NEW/iphone-detail.png" alt="ReelFin iPhone detail screen">
                 </div>
               </div>
 
               <div class="device hero-main drift">
                 <div class="device-screen">
-                  <img src="assets/media/NEW/iphone-home.png" alt="ReelFin iPhone home screen">
+                    <img src="assets/media/NEW/iphone-home.png" alt="ReelFin iPhone home screen">
+                  </div>
                 </div>
               </div>
             </div>
@@ -107,16 +161,16 @@
 
         <section class="metrics-band reveal delay-1" aria-label="Product pillars">
           <article class="metric">
-            <span class="metric-value">Now</span>
+            <span class="metric-value">Shipping</span>
             <span class="metric-label">iPhone and Apple TV first</span>
           </article>
           <article class="metric">
-            <span class="metric-value">Direct Play</span>
-            <span class="metric-label">Fastest when the source is already Apple-safe</span>
+            <span class="metric-value">Native</span>
+            <span class="metric-label">SwiftUI UI and Apple playback frameworks</span>
           </article>
           <article class="metric">
             <span class="metric-value">Fallbacks</span>
-            <span class="metric-label">Remux first, Apple-optimized transcode if needed</span>
+            <span class="metric-label">Remux first, transcode only when compatibility requires it</span>
           </article>
         </section>
 
@@ -303,7 +357,7 @@
           <a href="support.html">Support</a>
           <a href="privacy.html">Privacy</a>
           <a href="terms.html">Terms</a>
-          <a href="https://github.com/Flovflo/ReelFin">GitHub</a>
+          <a href="https://github.com/Flovflo/ReelFin" rel="noreferrer">GitHub</a>
         </nav>
       </footer>
     </div>
