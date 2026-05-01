@@ -1,123 +1,70 @@
-const root = document.documentElement;
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const header = document.querySelector(".site-header");
+const revealItems = document.querySelectorAll(".reveal");
+const navLinks = [...document.querySelectorAll(".site-nav a[href^='#']")];
+const sections = navLinks
+  .map((link) => document.querySelector(link.getAttribute("href")))
+  .filter(Boolean);
 
-if (root) {
-  let ticking = false;
+const updateHeader = () => {
+  header?.classList.toggle("is-scrolled", window.scrollY > 8);
+};
 
-  const updateScrollChrome = () => {
-    ticking = false;
+const setActiveLink = (id) => {
+  navLinks.forEach((link) => {
+    link.classList.toggle("is-active", link.getAttribute("href") === `#${id}`);
+  });
+};
 
-    const maxScroll = Math.max(root.scrollHeight - window.innerHeight, 1);
-    const progress = Math.min(Math.max(window.scrollY / maxScroll, 0), 1);
+updateHeader();
+window.addEventListener("scroll", updateHeader, { passive: true });
 
-    root.style.setProperty("--scroll-progress", progress.toFixed(4));
-  };
+if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  revealItems.forEach((item) => item.classList.add("is-visible"));
+} else {
+  document.body.classList.add("motion-ready");
 
-  const requestUpdate = () => {
-    if (ticking) {
-      return;
-    }
-
-    ticking = true;
-    window.requestAnimationFrame(updateScrollChrome);
-  };
-
-  const getTargetFromHash = (hash) => {
-    if (!hash || hash.length < 2) {
-      return null;
-    }
-
-    const targetId = decodeURIComponent(hash.slice(1));
-    return document.getElementById(targetId);
-  };
-
-  const snapToHashTarget = () => {
-    const target = getTargetFromHash(window.location.hash);
-
-    if (!target) {
-      requestUpdate();
-      return;
-    }
-
-    target.scrollIntoView({
-      behavior: "auto",
-      block: "start",
-    });
-    requestUpdate();
-  };
-
-  const isSamePageHashLink = (link) => {
-    if (!(link instanceof HTMLAnchorElement)) {
-      return false;
-    }
-
-    const url = new URL(link.href, window.location.href);
-
-    return (
-      Boolean(url.hash) &&
-      url.origin === window.location.origin &&
-      url.pathname === window.location.pathname
-    );
-  };
-
-  const bindSmoothInPageLinks = () => {
-    const links = document.querySelectorAll("a[href]");
-
-    for (const link of links) {
-      if (!isSamePageHashLink(link)) {
-        continue;
-      }
-
-      link.addEventListener("click", (event) => {
-        const target = getTargetFromHash(new URL(link.href, window.location.href).hash);
-
-        if (!target) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
           return;
         }
 
-        event.preventDefault();
-
-        if (window.location.hash !== link.hash) {
-          history.pushState(null, "", link.hash);
-        }
-
-        target.scrollIntoView({
-          behavior: prefersReducedMotion.matches ? "auto" : "smooth",
-          block: "start",
-        });
-        requestUpdate();
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
       });
+    },
+    {
+      threshold: 0.18,
+      rootMargin: "0px 0px -10% 0px",
     }
-  };
+  );
 
-  const bindRevealAnimations = () => {
-    const revealables = document.querySelectorAll(".reveal");
-
-    if (!revealables.length) {
+  revealItems.forEach((item) => {
+    const rect = item.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.92) {
+      item.classList.add("is-visible");
       return;
     }
 
-    if (prefersReducedMotion.matches) {
-      for (const element of revealables) {
-        element.classList.add("is-visible");
-      }
-      return;
-    }
-
-    window.requestAnimationFrame(() => {
-      for (const element of revealables) {
-        element.classList.add("is-visible");
-      }
-    });
-  };
-
-  bindSmoothInPageLinks();
-  bindRevealAnimations();
-  snapToHashTarget();
-  window.addEventListener("load", snapToHashTarget, { once: true });
-  window.addEventListener("pageshow", snapToHashTarget);
-  updateScrollChrome();
-  window.addEventListener("scroll", requestUpdate, { passive: true });
-  window.addEventListener("resize", requestUpdate);
-  window.addEventListener("load", requestUpdate);
+    revealObserver.observe(item);
+  });
 }
+
+const sectionObserver = new IntersectionObserver(
+  (entries) => {
+    const visible = entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+    if (visible?.target.id) {
+      setActiveLink(visible.target.id);
+    }
+  },
+  {
+    threshold: [0.22, 0.45, 0.68],
+    rootMargin: "-18% 0px -55% 0px",
+  }
+);
+
+sections.forEach((section) => sectionObserver.observe(section));

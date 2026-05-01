@@ -3,343 +3,362 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ReelFin | Jellyfin, made for iPhone and Apple TV</title>
     <meta
       name="description"
-      content="ReelFin brings your Jellyfin library to iPhone and Apple TV with a calmer, more native Apple experience."
+      content="ReelFin is a native Jellyfin client for iPhone, iPad, and Apple TV with fast browsing, Apple playback, and a calm self-hosted media experience."
     >
-    <meta name="theme-color" content="#f6f3ee">
-    <meta property="og:title" content="ReelFin | Jellyfin, made for iPhone and Apple TV">
+    <meta property="og:title" content="ReelFin | Native Jellyfin for Apple platforms">
     <meta
       property="og:description"
-      content="ReelFin brings your Jellyfin library to iPhone and Apple TV with a calmer, more native Apple experience."
+      content="Bring your Jellyfin library to iPhone and Apple TV with an interface that feels native, fast, and focused on watching."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://flovflo.github.io/reelfin-site/">
-    <meta
-      property="og:image"
-      content="https://flovflo.github.io/reelfin-site/assets/media/NEW/tv-home.png"
-    >
+    <meta property="og:image" content="https://flovflo.github.io/reelfin-site/assets/media/NEW/tv-home.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ReelFin | Jellyfin, made for iPhone and Apple TV">
-    <meta
-      name="twitter:description"
-      content="ReelFin brings your Jellyfin library to iPhone and Apple TV with a calmer, more native Apple experience."
-    >
-    <meta
-      name="twitter:image"
-      content="https://flovflo.github.io/reelfin-site/assets/media/NEW/tv-home.png"
-    >
+    <meta name="theme-color" content="#ffffff">
     <link rel="canonical" href="https://flovflo.github.io/reelfin-site/">
     <link rel="icon" type="image/png" href="assets/media/NEW/reelfin-mark.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&amp;family=Outfit:wght@300..900&amp;display=swap"
-      rel="stylesheet"
-    >
     <link rel="stylesheet" href="assets/site.css">
     <script defer src="assets/site.js"></script>
+    <title>ReelFin | Jellyfin, made for iPhone and Apple TV</title>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
-    <div id="top" class="site-shell">
-      <header class="site-header">
+
+    <header class="site-header">
+      <div class="site-header__inner">
         <a class="brand" href="#top" aria-label="ReelFin home">
-          <span class="brand-mark">
-            <img src="assets/media/NEW/reelfin-mark.png" alt="ReelFin logo">
+          <span class="brand__mark" aria-hidden="true">
+            <img src="assets/media/NEW/reelfin-mark.png" alt="">
           </span>
-          <span class="brand-wordmark">
-            <strong>ReelFin</strong>
-            <small>Native Jellyfin for Apple platforms</small>
-          </span>
+          <span>ReelFin</span>
         </a>
 
-        <nav class="site-nav" aria-label="Primary">
+        <nav class="site-nav" aria-label="Primary navigation">
           <a href="#overview">Overview</a>
           <a href="#screens">Screens</a>
+          <a href="#tvos">Apple TV</a>
+          <a href="#privacy">Privacy</a>
           <a href="#support">Support</a>
-          <a href="privacy.html">Privacy</a>
-          <a href="terms.html">Terms</a>
         </nav>
 
         <a
-          class="nav-cta"
+          class="button button--primary site-header__cta"
           href="mailto:florian.taffin.pro@gmail.com?subject=ReelFin%20TestFlight%20Beta"
         >
           Join TestFlight
         </a>
-      </header>
+      </div>
+    </header>
 
-      <main id="main-content" class="site-main">
-        <section class="hero-grid">
-          <article class="hero-copy reveal">
-            <p class="section-kicker">Jellyfin, made for Apple devices</p>
-            <h1 class="hero-heading">
-              <span>Your Jellyfin library,</span>
-              <em>made for iPhone</em>
-              <span>and Apple TV.</span>
-            </h1>
-            <p class="hero-lead">
-              ReelFin brings your Jellyfin library to the screens you actually use with an
-              interface that feels calm, native, and easy to trust. Browse faster, pick
-              something quicker, and press play without feeling like you opened a web app in disguise.
-            </p>
-
-            <div class="hero-note-panel">
-              <p>
-                Connect your server, open your library, and get back to watching. ReelFin keeps
-                the essentials up front: bold artwork, clear actions, proper Apple TV navigation,
-                and a layout that feels built for Apple devices from the start.
-              </p>
-
-              <div class="hero-actions">
-                <a
-                  class="primary-button"
-                  href="mailto:florian.taffin.pro@gmail.com?subject=ReelFin%20Beta%20Request"
-                >
-                  Join the TestFlight Beta
-                </a>
-                <a class="secondary-button" href="#screens">View App Screens</a>
-              </div>
-
-              <div class="availability-row" aria-label="Availability">
-                <span class="inline-pill">iPhone</span>
-                <span class="inline-pill">Apple TV</span>
-                <span class="inline-pill">TestFlight beta</span>
-              </div>
-            </div>
-          </article>
-
-          <aside class="hero-visual reveal delay-1" aria-label="ReelFin app previews">
-            <div class="hero-stage">
-              <div class="hero-stage-backdrop">
-                <img src="assets/media/NEW/tv-home.png" alt="ReelFin Apple TV home screen">
-              </div>
-
-              <article class="hero-stage-note">
-                <p class="section-kicker">Living room ready</p>
-                <strong>A Jellyfin client that actually feels good on Apple TV.</strong>
-                <p>
-                  Big artwork, clearer focus, and a calmer way to choose what to watch next.
-                </p>
-              </article>
-
-              <div class="device-stage">
-                <div class="device hero-side drift-slow">
-                  <div class="device-screen">
-                    <img src="assets/media/NEW/iphone-detail.png" alt="ReelFin iPhone detail screen">
-                </div>
-              </div>
-
-              <div class="device hero-main drift">
-                <div class="device-screen">
-                    <img src="assets/media/NEW/iphone-home.png" alt="ReelFin iPhone home screen">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </aside>
-        </section>
-
-        <section class="metrics-band reveal delay-1" aria-label="Product pillars">
-          <article class="metric">
-            <span class="metric-value">Feels native</span>
-            <span class="metric-label">Built to look and behave like a real Apple app.</span>
-          </article>
-          <article class="metric">
-            <span class="metric-value">Your server</span>
-            <span class="metric-label">Self-hosted stays self-hosted, with your Jellyfin setup at the center.</span>
-          </article>
-          <article class="metric">
-            <span class="metric-value">Less friction</span>
-            <span class="metric-label">Spend less time navigating screens and more time watching.</span>
-          </article>
-        </section>
-
-        <section id="overview" class="feature-panel reveal delay-1">
-          <article class="panel-copy">
-            <p class="section-kicker">Why it feels better</p>
-            <h2>
-              Made for the time between
-              <em>opening the app and pressing play</em>
-            </h2>
-
-            <p>
-              That part matters more than people admit. ReelFin is built to make browsing,
-              resuming, and choosing feel quick and obvious, whether you are holding a phone
-              or using a remote from the couch.
-            </p>
-
-            <div class="bullet-stack">
-              <article class="bullet-item">
-                <strong>A home screen that gets you back to what you were already watching</strong>
-                <p>Recent items, browsing, and the next thing to press are easier to spot at a glance.</p>
-              </article>
-              <article class="bullet-item">
-                <strong>Detail pages that make artwork, episodes, and actions easy to scan</strong>
-                <p>You do not have to fight a cramped layout to decide whether to resume, browse, or start fresh.</p>
-              </article>
-              <article class="bullet-item">
-                <strong>Apple TV navigation that feels designed for the remote</strong>
-                <p>The big-screen version is treated like its own product, not a phone UI stretched across the room.</p>
-              </article>
-              <article class="bullet-item">
-                <strong>A calmer interface for your own library</strong>
-                <p>Your server stays the center of the experience, without ad-tech energy or service clutter getting in the way.</p>
-              </article>
-            </div>
-          </article>
-
-          <div class="phone-fan" aria-label="Stacked ReelFin app screens">
-            <div class="device phone-tertiary drift-slow">
-              <div class="device-screen">
-                <img src="assets/media/NEW/iphone-home.png" alt="ReelFin iPhone home browsing screen">
-              </div>
-            </div>
-
-            <div class="device phone-primary drift">
-              <div class="device-screen">
-                <img src="assets/media/NEW/iphone-detail.png" alt="ReelFin media detail screen">
-              </div>
-            </div>
-
-            <div class="device phone-quaternary drift">
-              <div class="device-screen">
-                <img src="assets/media/NEW/iphone-home.png" alt="ReelFin iPhone home screen">
-              </div>
-            </div>
+    <main id="main-content">
+      <section class="hero section-white" id="top">
+        <div class="hero__copy reveal">
+          <h1>Your Jellyfin library, made for iPhone and Apple TV.</h1>
+          <p>
+            ReelFin turns a self-hosted Jellyfin server into a fast, calm Apple
+            experience. Browse your library, resume faster, and press play from
+            an interface built for the devices you actually use.
+          </p>
+          <div class="hero__actions" aria-label="Primary actions">
+            <a
+              class="button button--primary"
+              href="mailto:florian.taffin.pro@gmail.com?subject=ReelFin%20TestFlight%20Beta"
+            >
+              Join the TestFlight Beta
+            </a>
+            <a class="button button--ghost" href="#screens">View App Screens</a>
           </div>
-        </section>
+        </div>
 
-        <section id="screens" class="wide-showcase reveal">
-          <div class="showcase-intro">
-            <p class="section-kicker">One library, two modes</p>
-            <h2>
-              Pocket browsing on iPhone.
-              <em>Lean-back watching on Apple TV.</em>
-            </h2>
+        <div class="hero__stage reveal" aria-label="ReelFin product screenshots">
+          <figure class="tv-frame hero__tv">
+            <img
+              src="assets/media/NEW/tv-home.png"
+              alt="ReelFin Apple TV home screen with a large featured title and media rows."
+              fetchpriority="high"
+            >
+          </figure>
+
+          <figure class="phone-frame hero__phone hero__phone--home">
+            <img
+              src="assets/media/NEW/iphone-home.png"
+              alt="ReelFin iPhone home screen with continue watching and recent media rows."
+              fetchpriority="high"
+            >
+          </figure>
+
+          <figure class="phone-frame hero__phone hero__phone--detail">
+            <img
+              src="assets/media/NEW/iphone-detail.png"
+              alt="ReelFin iPhone detail screen with artwork, metadata, and a clear play action."
+              loading="lazy"
+            >
+          </figure>
+        </div>
+
+        <div class="proof-strip reveal" aria-label="ReelFin platform highlights">
+          <span>Native SwiftUI</span>
+          <span>Apple playback frameworks</span>
+          <span>Self-hosted Jellyfin</span>
+          <span>iPhone, iPad, Apple TV</span>
+        </div>
+      </section>
+
+      <section class="section section-gray" id="overview">
+        <div class="section-heading reveal">
+          <h2 class="gradient-text">A native app shape for your own media.</h2>
+          <p>
+            ReelFin keeps the Apple-native feeling from launch to playback:
+            clean navigation, large artwork, focused actions, and no streaming
+            service clutter between you and your library.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card reveal">
+            <span class="feature-card__index">01</span>
+            <h3>Feels at home on Apple devices</h3>
             <p>
-              ReelFin keeps the same identity across both platforms, but it adapts to the device
-              instead of stretching one generic layout everywhere.
+              SwiftUI screens, system motion, clear typography, and layouts that
+              respect the way iPhone and Apple TV are used.
             </p>
-          </div>
+          </article>
 
-          <div class="showcase-grid">
-            <article class="showcase-card bleed">
-              <p class="section-kicker">Apple TV</p>
-              <h3>Built for the remote, not just blown up for the TV.</h3>
-              <p>
-                Wider rows, clearer focus, and a home screen that feels comfortable from the couch.
-              </p>
-
-              <div class="showcase-wide-media">
-                <img src="assets/media/NEW/tv-home.png" alt="ReelFin on Apple TV home screen">
-              </div>
-            </article>
-
-            <article class="showcase-card soft-lavender">
-              <p class="section-kicker">iPhone</p>
-              <h3>Fast to open, easy to scan, hard to get lost in.</h3>
-              <p>
-                Library browsing, detail views, and playback controls stay close together so the app
-                feels immediate in your hand.
-              </p>
-              <div class="summary-device">
-                <div class="device">
-                  <div class="device-screen">
-                    <img src="assets/media/NEW/iphone-home.png" alt="ReelFin on iPhone home screen">
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="showcase-card soft-sage">
-              <p class="section-kicker">Now playing</p>
-              <h3>Artwork first. The right information. No clutter.</h3>
-              <p>
-                When you land on a title, the important stuff is obvious: what it is, where you left it,
-                and what to do next.
-              </p>
-              <div class="summary-device">
-                <div class="device">
-                  <div class="device-screen">
-                    <img src="assets/media/NEW/iphone-detail.png" alt="ReelFin detail screen on iPhone">
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section id="support" class="support-grid reveal">
-          <article class="support-card highlight">
-            <p class="section-kicker">Try ReelFin</p>
-            <h2>Join the beta if you want Jellyfin to feel better on Apple devices.</h2>
+          <article class="feature-card reveal">
+            <span class="feature-card__index">02</span>
+            <h3>Fast paths to watching</h3>
             <p>
-              ReelFin is still early, which makes this the right moment to shape it. If you care
-              about a cleaner iPhone or Apple TV experience, TestFlight is the best place to start.
+              Continue watching, library browsing, search, and details stay
+              close together so choosing something never feels like work.
             </p>
+          </article>
 
-            <div class="hero-actions">
-              <a
-                class="primary-button"
-                href="mailto:florian.taffin.pro@gmail.com?subject=ReelFin%20TestFlight%20Beta"
+          <article class="feature-card reveal">
+            <span class="feature-card__index">03</span>
+            <h3>Direct Play first</h3>
+            <p>
+              Compatible files can play through Apple frameworks without forcing
+              unnecessary server conversion.
+            </p>
+          </article>
+
+          <article class="feature-card reveal">
+            <span class="feature-card__index">04</span>
+            <h3>Your server stays central</h3>
+            <p>
+              ReelFin connects to the Jellyfin server you choose. Your library,
+              server, and preferences remain the center of the experience.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-white screens-section" id="screens">
+        <div class="section-heading section-heading--center reveal">
+          <h2>One library. Two viewing modes.</h2>
+          <p>
+            ReelFin keeps the same visual identity across platforms, then adapts
+            the interaction model to the screen in front of you.
+          </p>
+        </div>
+
+        <div class="screen-composition">
+          <article class="screen-panel screen-panel--iphone reveal">
+            <div>
+              <h3>iPhone browsing</h3>
+              <p>
+                Open the app, scan big artwork, resume the right item, and get
+                back to watching without extra layers.
+              </p>
+            </div>
+            <figure class="phone-frame">
+              <img
+                src="assets/media/NEW/iphone-home.png"
+                alt="ReelFin home screen on iPhone."
+                loading="lazy"
               >
-                Join TestFlight
-              </a>
-              <a
-                class="secondary-button"
-                href="mailto:florian.taffin.pro@gmail.com?subject=ReelFin%20Support"
+            </figure>
+          </article>
+
+          <article class="screen-panel screen-panel--detail reveal">
+            <figure class="phone-frame">
+              <img
+                src="assets/media/NEW/iphone-detail.png"
+                alt="ReelFin media detail screen on iPhone."
+                loading="lazy"
               >
-                Email Support
-              </a>
-            </div>
-
-            <div class="availability-row">
-              <span class="inline-pill">TestFlight beta</span>
-              <span class="inline-pill">Direct feedback to the developer</span>
-            </div>
-          </article>
-
-          <article class="support-card">
-            <p class="section-kicker">Private by default</p>
-            <h3>Your library stays yours.</h3>
-            <ul class="support-list">
-              <li>Sign in to your own Jellyfin server.</li>
-              <li>Preferences and lightweight session details stay on-device.</li>
-              <li>Crash diagnostics are limited and optional to the publisher.</li>
-            </ul>
-            <div class="hero-actions">
-              <a class="secondary-button" href="privacy.html">Read Privacy Policy</a>
+            </figure>
+            <div>
+              <h3>Clear details</h3>
+              <p>
+                Artwork, metadata, watch state, and the play action stay easy to
+                scan when you land on a title.
+              </p>
             </div>
           </article>
 
-          <article class="support-card soft-mist">
-            <p class="section-kicker">Built in the open</p>
-            <h3>Follow the app, send feedback, or keep an eye on what changes next.</h3>
-            <ul class="support-list">
-              <li>Questions and feedback go straight to the developer.</li>
-              <li>Support docs stay easy to find when you need them.</li>
-              <li>The project is public on GitHub if you want to follow along.</li>
-            </ul>
-            <div class="hero-actions">
-              <a class="secondary-button" href="support.html">Support Page</a>
-              <a class="secondary-button" href="https://github.com/Flovflo/ReelFin" rel="noreferrer">GitHub</a>
+          <article class="screen-panel screen-panel--wide reveal">
+            <div>
+              <h3>Living room ready</h3>
+              <p>
+                Apple TV gets wider rows, strong focus targets, and a home
+                screen that works from the couch.
+              </p>
             </div>
+            <figure class="tv-frame">
+              <img
+                src="assets/media/NEW/tv-home.png"
+                alt="ReelFin Apple TV screen showing media artwork rows."
+                loading="lazy"
+              >
+            </figure>
           </article>
-        </section>
-      </main>
+        </div>
+      </section>
 
-      <footer class="site-footer">
-        <span>ReelFin is an independent client for self-hosted Jellyfin libraries on Apple platforms.</span>
-        <nav aria-label="Footer">
-          <a href="support.html">Support</a>
-          <a href="privacy.html">Privacy</a>
-          <a href="terms.html">Terms</a>
-          <a href="https://github.com/Flovflo/ReelFin" rel="noreferrer">GitHub</a>
-        </nav>
-      </footer>
-    </div>
+      <section class="section section-gray tvos-section" id="tvos">
+        <div class="section-heading reveal">
+          <h2 class="gradient-text">Apple TV is treated like its own product.</h2>
+          <p>
+            The big-screen version is not a stretched phone interface. ReelFin
+            gives the remote room to breathe, keeps focus obvious, and makes the
+            next play action visible from across the room.
+          </p>
+        </div>
+
+        <div class="tvos-showcase reveal">
+          <figure class="tv-frame tvos-showcase__image">
+            <img
+              src="assets/media/NEW/tv-home.png"
+              alt="ReelFin Apple TV focused home screen."
+              loading="lazy"
+            >
+          </figure>
+
+          <div class="tvos-points">
+            <article>
+              <span>Remote-first focus</span>
+              <p>Large targets, visible state, and a navigation model built for lean-back control.</p>
+            </article>
+            <article>
+              <span>Artwork at TV scale</span>
+              <p>Hero images, rows, and details use the room instead of compressing the library.</p>
+            </article>
+            <article>
+              <span>Playback without ceremony</span>
+              <p>Resume and watch actions stay prominent so the screen never feels like a settings panel.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-white play-section">
+        <div class="section-heading section-heading--center reveal">
+          <h2>Direct Play when your media is already ready.</h2>
+          <p>
+            ReelFin prefers the cleanest path available: use the original media
+            when Apple devices can handle it, and let Jellyfin help only when a
+            different route is needed.
+          </p>
+        </div>
+
+        <div class="route-compare reveal" aria-label="Playback route comparison">
+          <article>
+            <h3>Original file path</h3>
+            <ol>
+              <li>Ask Jellyfin for playable sources.</li>
+              <li>Pick the direct Apple route when codecs and container match.</li>
+              <li>Start playback with less server work and no avoidable conversion.</li>
+            </ol>
+          </article>
+
+          <article>
+            <h3>Server-assisted path</h3>
+            <ol>
+              <li>Use Jellyfin remux or transcode when the source needs help.</li>
+              <li>Keep recovery paths available for incompatible files.</li>
+              <li>Preserve reliability without hiding route decisions.</li>
+            </ol>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-gray privacy-section" id="privacy">
+        <div class="privacy-layout">
+          <div class="section-heading reveal">
+            <h2 class="gradient-text">Private by default, because your media is yours.</h2>
+            <p>
+              ReelFin is a client for the Jellyfin server you configure. It does
+              not turn your personal library into a tracking surface.
+            </p>
+          </div>
+
+          <div class="privacy-list reveal">
+            <article>
+              <h3>Connect to your server</h3>
+              <p>Your Jellyfin URL, session, and library metadata come from the server you choose.</p>
+            </article>
+            <article>
+              <h3>Keep credentials on device</h3>
+              <p>Authentication tokens are stored in the Apple Keychain, with preferences kept locally.</p>
+            </article>
+            <article>
+              <h3>No ad-tech model</h3>
+              <p>ReelFin does not sell personal data or use your library for cross-app tracking.</p>
+            </article>
+            <a class="button button--ghost" href="privacy.html">Read Privacy Policy</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-white support-section" id="support">
+        <div class="support-card reveal">
+          <h2>Join the beta if you want Jellyfin to feel better on Apple devices.</h2>
+          <p>
+            ReelFin is early enough for feedback to matter. Try the TestFlight
+            build, report rough edges, or follow the project as it moves toward
+            a public App Store release.
+          </p>
+          <div class="support-card__actions">
+            <a
+              class="button button--primary"
+              href="mailto:florian.taffin.pro@gmail.com?subject=ReelFin%20TestFlight%20Beta"
+            >
+              Join TestFlight
+            </a>
+            <a
+              class="button button--ghost"
+              href="mailto:florian.taffin.pro@gmail.com?subject=ReelFin%20Support"
+            >
+              Email Support
+            </a>
+            <a class="button button--ghost" href="https://github.com/Flovflo/ReelFin" rel="noreferrer">
+              GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <a class="brand brand--footer" href="#top" aria-label="ReelFin home">
+          <span class="brand__mark" aria-hidden="true">
+            <img src="assets/media/NEW/reelfin-mark.png" alt="">
+          </span>
+          <span>ReelFin</span>
+        </a>
+        <p>Independent native client for self-hosted Jellyfin libraries on Apple platforms.</p>
+      </div>
+
+      <nav class="site-footer__links" aria-label="Footer navigation">
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="https://github.com/Flovflo/ReelFin" rel="noreferrer">GitHub</a>
+      </nav>
+    </footer>
   </body>
 </html>
