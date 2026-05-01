@@ -114,52 +114,75 @@
         </div>
       </section>
 
-      <section class="section section-gray" id="overview">
-        <div class="section-heading reveal">
-          <h2 class="gradient-text">A native app shape for your own media.</h2>
+      <section class="section section-gray performance-section" id="overview">
+        <div class="section-heading section-heading--center reveal">
+          <h2 class="gradient-text">Fast by design. Optimized for Apple playback.</h2>
           <p>
-            ReelFin keeps the Apple-native feeling from launch to playback:
-            clean navigation, large artwork, focused actions, and no streaming
-            service clutter between you and your library.
+            ReelFin is tuned for the shortest path from opening the app to
+            pressing Play: cached screens first, Direct Play first, and native
+            Apple frameworks whenever your media is ready for them.
           </p>
         </div>
 
-        <div class="feature-grid">
-          <article class="feature-card reveal">
-            <span class="feature-card__index">01</span>
-            <h3>Feels at home on Apple devices</h3>
+        <div class="performance-board reveal" aria-label="ReelFin speed and Apple optimization path">
+          <div class="performance-board__lead">
+            <span class="performance-board__label">Native speed path</span>
+            <h3>Less waiting between your Jellyfin server and the Play button.</h3>
             <p>
-              SwiftUI screens, system motion, clear typography, and layouts that
-              respect the way iPhone and Apple TV are used.
+              ReelFin keeps heavy work off the critical path. Home can paint
+              cached rows before sync completes, compatible files skip avoidable
+              conversion, and playback work stays scoped to the active session.
             </p>
-          </article>
 
-          <article class="feature-card reveal">
-            <span class="feature-card__index">02</span>
-            <h3>Fast paths to watching</h3>
-            <p>
-              Continue watching, library browsing, search, and details stay
-              close together so choosing something never feels like work.
-            </p>
-          </article>
+            <div class="performance-metrics" aria-label="Optimization highlights">
+              <div class="performance-meter performance-meter--cache">
+                <span>Cached Home paint</span>
+                <strong>first frame</strong>
+                <i aria-hidden="true"></i>
+              </div>
+              <div class="performance-meter performance-meter--direct">
+                <span>Direct Play route</span>
+                <strong>first choice</strong>
+                <i aria-hidden="true"></i>
+              </div>
+              <div class="performance-meter performance-meter--native">
+                <span>Apple frameworks</span>
+                <strong>native path</strong>
+                <i aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
 
-          <article class="feature-card reveal">
-            <span class="feature-card__index">03</span>
-            <h3>Direct Play first</h3>
-            <p>
-              Compatible files can play through Apple frameworks without forcing
-              unnecessary server conversion.
-            </p>
-          </article>
-
-          <article class="feature-card reveal">
-            <span class="feature-card__index">04</span>
-            <h3>Your server stays central</h3>
-            <p>
-              ReelFin connects to the Jellyfin server you choose. Your library,
-              server, and preferences remain the center of the experience.
-            </p>
-          </article>
+          <div class="performance-flow" aria-label="Optimized playback flow">
+            <article class="performance-step">
+              <span>01</span>
+              <div>
+                <h4>Launch paints from cache</h4>
+                <p>Open ReelFin and see useful Home rows while server refresh continues.</p>
+              </div>
+            </article>
+            <article class="performance-step">
+              <span>02</span>
+              <div>
+                <h4>Browsing stays close to Play</h4>
+                <p>Search, library, details, and resume actions stay one fast path apart.</p>
+              </div>
+            </article>
+            <article class="performance-step">
+              <span>03</span>
+              <div>
+                <h4>Direct Play is preferred</h4>
+                <p>Compatible files use Apple playback without unnecessary server conversion.</p>
+              </div>
+            </article>
+            <article class="performance-step">
+              <span>04</span>
+              <div>
+                <h4>Playback work is scoped</h4>
+                <p>Warmup, observers, and route decisions stay tied to the active item.</p>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
