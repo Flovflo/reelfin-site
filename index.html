@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="ReelFin is a native Jellyfin client for iPhone, iPad, and Apple TV with fast browsing, Apple playback, and a calm self-hosted media experience."
+      content="ReelFin is a native Jellyfin client for iPhone, iPad, and Apple TV with fast browsing, Apple playback, and ReelTranscode media optimization."
     >
     <meta property="og:title" content="ReelFin | Native Jellyfin for Apple platforms">
     <meta
       property="og:description"
-      content="Bring your Jellyfin library to iPhone and Apple TV with an interface that feels native, fast, and focused on watching."
+      content="Bring your Jellyfin library to iPhone and Apple TV with an interface that feels native, fast, and optimized for Apple playback."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://flovflo.github.io/reelfin-site/">
@@ -109,6 +109,7 @@
         <div class="proof-strip reveal" aria-label="ReelFin platform highlights">
           <span>Native SwiftUI</span>
           <span>Apple playback frameworks</span>
+          <span>ReelTranscode media prep</span>
           <span>Self-hosted Jellyfin</span>
           <span>iPhone, iPad, Apple TV</span>
         </div>
@@ -120,7 +121,9 @@
           <p>
             ReelFin is tuned for the shortest path from opening the app to
             pressing Play: cached screens first, Direct Play first, and native
-            Apple frameworks whenever your media is ready for them.
+            Apple frameworks whenever your media is ready for them. When a
+            file is not ready, ReelTranscode can prepare it before it ever slows
+            down a watch session.
           </p>
         </div>
 
@@ -131,7 +134,8 @@
             <p>
               ReelFin keeps heavy work off the critical path. Home can paint
               cached rows before sync completes, compatible files skip avoidable
-              conversion, and playback work stays scoped to the active session.
+              conversion, and ReelTranscode can move hard media prep out of the
+              live playback moment.
             </p>
 
             <div class="performance-metrics" aria-label="Optimization highlights">
@@ -148,6 +152,11 @@
               <div class="performance-meter performance-meter--native">
                 <span>Apple frameworks</span>
                 <strong>native path</strong>
+                <i aria-hidden="true"></i>
+              </div>
+              <div class="performance-meter performance-meter--transcode">
+                <span>ReelTranscode prep</span>
+                <strong>offline optimize</strong>
                 <i aria-hidden="true"></i>
               </div>
             </div>
@@ -178,8 +187,65 @@
             <article class="performance-step">
               <span>04</span>
               <div>
-                <h4>Playback work is scoped</h4>
-                <p>Warmup, observers, and route decisions stay tied to the active item.</p>
+                <h4>Hard files get prepared first</h4>
+                <p>ReelTranscode can optimize difficult sources ahead of time instead of relying only on live conversion.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-white transcode-section" id="transcode">
+        <div class="transcode-layout">
+          <div class="transcode-copy reveal">
+            <span>ReelTranscode</span>
+            <h2>Optimize the library once. Watch faster everywhere.</h2>
+            <p>
+              ReelTranscode is the macOS companion pipeline for media that is
+              not naturally Apple-friendly. It prefers copy or remux before
+              transcoding, targets Apple-native MP4 output, and keeps Dolby
+              Vision or HDR honest instead of silently flattening the file.
+            </p>
+            <a
+              class="button button--primary"
+              href="https://github.com/Flovflo/ReelTranscode"
+              rel="noreferrer"
+            >
+              View ReelTranscode
+            </a>
+          </div>
+
+          <div class="transcode-stack reveal" aria-label="ReelTranscode optimization path">
+            <article class="transcode-card">
+              <span>01</span>
+              <div>
+                <h3>Copy and remux first</h3>
+                <p>
+                  Keep compatible video and audio streams intact when a lighter
+                  container change is enough for Apple playback.
+                </p>
+              </div>
+            </article>
+
+            <article class="transcode-card">
+              <span>02</span>
+              <div>
+                <h3>Apple-native output</h3>
+                <p>
+                  Prepare MP4 files with Apple-friendly HEVC tagging, faststart,
+                  audio fallbacks, and subtitles that fit the platform.
+                </p>
+              </div>
+            </article>
+
+            <article class="transcode-card">
+              <span>03</span>
+              <div>
+                <h3>Strict quality checks</h3>
+                <p>
+                  Dolby Vision and HDR paths are validated after processing, so
+                  an optimized file does not hide a degraded result.
+                </p>
               </div>
             </article>
           </div>
@@ -313,11 +379,12 @@
 
       <section class="section section-white play-section">
         <div class="section-heading section-heading--center reveal">
-          <h2>Direct Play when your media is already ready.</h2>
+          <h2>Direct Play first. ReelTranscode when the file needs prep.</h2>
           <p>
-            ReelFin prefers the cleanest path available: use the original media
-            when Apple devices can handle it, and let Jellyfin help only when a
-            different route is needed.
+            ReelFin prefers the cleanest live path available: play the original
+            file when Apple devices can handle it, use Jellyfin when recovery is
+            needed, and let ReelTranscode turn stubborn files into better
+            prepared media ahead of time.
           </p>
         </div>
 
@@ -337,6 +404,15 @@
               <li>Use Jellyfin remux or transcode when the source needs help.</li>
               <li>Keep recovery paths available for incompatible files.</li>
               <li>Preserve reliability without hiding route decisions.</li>
+            </ol>
+          </article>
+
+          <article>
+            <h3>ReelTranscode prep</h3>
+            <ol>
+              <li>Process difficult media before the watch session starts.</li>
+              <li>Target MP4 output that Apple playback frameworks can handle cleanly.</li>
+              <li>Reduce live server conversion pressure for the files you care about most.</li>
             </ol>
           </article>
         </div>
