@@ -283,7 +283,7 @@ h1 {
   position: relative;
   width: 100%;
   max-width: 1180px;
-  min-height: clamp(390px, 54vw, 640px);
+  min-height: clamp(360px, 48vw, 560px);
   margin: 0 auto;
 }
 
@@ -361,17 +361,17 @@ h1 {
 
 .hero__phone {
   position: absolute;
-  width: clamp(178px, 22vw, 294px);
+  width: clamp(150px, 16vw, 220px);
 }
 
 .hero__phone--home {
   left: clamp(0px, 3vw, 70px);
-  bottom: 0;
+  bottom: clamp(20px, 3vw, 48px);
 }
 
 .hero__phone--detail {
   right: clamp(0px, 3vw, 70px);
-  bottom: clamp(18px, 5vw, 84px);
+  bottom: clamp(36px, 4vw, 64px);
 }
 
 .proof-strip {
@@ -822,7 +822,7 @@ h1 {
   }
 
   .hero__stage {
-    min-height: 650px;
+    min-height: 500px;
   }
 
   .hero__tv {
@@ -832,17 +832,17 @@ h1 {
   }
 
   .hero__phone {
-    width: min(46vw, 230px);
+    width: min(42vw, 180px);
   }
 
   .hero__phone--home {
     left: 0;
-    bottom: 0;
+    bottom: 62px;
   }
 
   .hero__phone--detail {
     right: 0;
-    bottom: 76px;
+    bottom: 112px;
   }
 
   .feature-grid,
@@ -895,11 +895,11 @@ h1 {
   }
 
   .hero__stage {
-    min-height: 586px;
+    min-height: 460px;
   }
 
   .hero__phone {
-    width: min(48vw, 190px);
+    width: min(42vw, 166px);
   }
 
   .proof-strip {
