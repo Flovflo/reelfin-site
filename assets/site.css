@@ -603,71 +603,28 @@ h1 {
   line-height: 1.5;
 }
 
-.performance-metrics {
+.performance-facts {
   margin-top: clamp(24px, 4vw, 38px);
   display: grid;
-  gap: 14px;
+  gap: 12px;
 }
 
-.performance-meter {
-  --meter-value: 86%;
-  --meter-color: var(--color-signal-blue);
+.performance-facts article {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 8px 18px;
-  align-items: end;
-  padding-top: 16px;
+  gap: 6px;
+  padding-top: 14px;
   border-top: 1px solid var(--color-silver);
 }
 
-.performance-meter--cache {
-  --meter-value: 92%;
-  --meter-color: var(--color-signal-blue);
-}
-
-.performance-meter--direct {
-  --meter-value: 88%;
-  --meter-color: var(--color-vivid-green);
-}
-
-.performance-meter--native {
-  --meter-value: 96%;
-  --meter-color: var(--color-honey-glow);
-}
-
-.performance-meter--transcode {
-  --meter-value: 90%;
-  --meter-color: var(--color-electric-magenta);
-}
-
-.performance-meter span {
+.performance-facts strong {
   color: var(--color-ink);
+  font-size: 17px;
   font-weight: 700;
 }
 
-.performance-meter strong {
+.performance-facts span {
   color: var(--color-smoke);
-  font-size: 14px;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.performance-meter i {
-  grid-column: 1 / -1;
-  height: 6px;
-  overflow: hidden;
-  border-radius: var(--radius-full);
-  background: var(--color-mist);
-}
-
-.performance-meter i::after {
-  content: "";
-  display: block;
-  width: var(--meter-value);
-  height: 100%;
-  border-radius: inherit;
-  background: var(--meter-color);
-  transform-origin: left center;
+  line-height: 1.45;
 }
 
 .performance-flow {
@@ -1181,10 +1138,6 @@ h1 {
     animation-delay: 270ms;
   }
 
-  .performance-board.is-visible .performance-meter i::after {
-    animation: meter-fill 980ms var(--motion-ease-out) 260ms both;
-  }
-
   .transcode-stack.is-visible .transcode-card {
     animation: transcode-card-in 680ms var(--motion-ease-out) both;
   }
@@ -1263,16 +1216,6 @@ h1 {
   to {
     opacity: 1;
     transform: translateX(0);
-  }
-}
-
-@keyframes meter-fill {
-  from {
-    transform: scaleX(0);
-  }
-
-  to {
-    transform: scaleX(1);
   }
 }
 
@@ -1570,7 +1513,6 @@ h1 {
   .motion-ready .reveal,
   .performance-flow::after,
   .performance-step,
-  .performance-meter i::after,
   .transcode-card {
     animation: none;
     transition: none;
