@@ -780,12 +780,12 @@ h1 {
 }
 
 .tvos-showcase__image {
+  width: 100%;
   aspect-ratio: 16 / 9;
 }
 
 .tvos-showcase__image--detail {
-  width: min(82%, 780px);
-  justify-self: end;
+  justify-self: stretch;
 }
 
 .tvos-points {
