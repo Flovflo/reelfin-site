@@ -291,7 +291,6 @@ h1 {
 .phone-frame {
   margin: 0;
   overflow: hidden;
-  background: var(--color-pure-white);
   box-shadow: var(--shadow-xl);
 }
 
@@ -307,15 +306,48 @@ h1 {
 }
 
 .phone-frame {
-  border: 10px solid var(--color-ink);
-  border-radius: 42px;
+  position: relative;
+  overflow: visible;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  filter: drop-shadow(0 0 30px rgba(16, 16, 16, 0.1));
+}
+
+.phone-frame--blue {
+  aspect-ratio: 450 / 920;
+}
+
+.phone-frame--orange {
+  aspect-ratio: 490 / 1000;
 }
 
 .phone-frame img {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 2.4% 3.35% 2.5%;
+  z-index: 1;
+  width: auto;
+  height: auto;
+  border-radius: 9.4% / 4.8%;
   object-fit: cover;
   object-position: top center;
+}
+
+.phone-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: center / contain no-repeat;
+  pointer-events: none;
+}
+
+.phone-frame--blue::after {
+  background-image: url("media/NEW/iphone-frame-deep-blue.png");
+}
+
+.phone-frame--orange::after {
+  background-image: url("media/NEW/iphone-frame-cosmic-orange.png");
 }
 
 .hero__tv {
@@ -330,7 +362,6 @@ h1 {
 .hero__phone {
   position: absolute;
   width: clamp(178px, 22vw, 294px);
-  aspect-ratio: 390 / 844;
 }
 
 .hero__phone--home {
@@ -802,8 +833,6 @@ h1 {
 
   .hero__phone {
     width: min(46vw, 230px);
-    border-width: 7px;
-    border-radius: 34px;
   }
 
   .hero__phone--home {
