@@ -367,7 +367,7 @@ img {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: clamp(14px, 2.4vw, 28px);
-  padding-top: clamp(10px, 2vw, 24px);
+  padding-top: clamp(28px, 3.6vw, 48px);
   padding-bottom: clamp(42px, 6vw, 72px);
   overflow: clip;
 }
@@ -424,9 +424,9 @@ h1 {
 .hero__stage {
   position: relative;
   width: 100%;
-  --hero-tv-width: min(920px, 80vw);
-  max-width: 1080px;
-  min-height: clamp(420px, 41vw, 520px);
+  --hero-tv-width: min(900px, 78vw);
+  max-width: 1120px;
+  min-height: clamp(460px, 43vw, 560px);
   margin: 0 auto;
 }
 
@@ -467,7 +467,7 @@ h1 {
 
 .hero__tv {
   position: absolute;
-  bottom: clamp(10px, 1.2vw, 18px);
+  bottom: clamp(16px, 1.6vw, 24px);
   left: 50%;
   width: var(--hero-tv-width);
   aspect-ratio: 16 / 9;
@@ -477,12 +477,12 @@ h1 {
 .hero__phone {
   position: absolute;
   z-index: 3;
-  width: clamp(204px, 17vw, 260px);
+  width: clamp(220px, 18vw, 276px);
 }
 
 .hero__phone--home {
-  right: calc(50% - (var(--hero-tv-width) / 2) + clamp(4px, 2vw, 28px));
-  bottom: clamp(8px, 1.3vw, 18px);
+  right: calc(50% - (var(--hero-tv-width) / 2) + clamp(48px, 5vw, 76px));
+  bottom: clamp(12px, 1.6vw, 22px);
 }
 
 .proof-strip {
@@ -1262,8 +1262,8 @@ h1 {
   }
 
   .hero__stage {
-    --hero-tv-width: min(760px, 88vw);
-    min-height: clamp(380px, 54vw, 500px);
+    --hero-tv-width: min(740px, 86vw);
+    min-height: clamp(410px, 58vw, 530px);
   }
 
   .hero__tv {
@@ -1271,12 +1271,12 @@ h1 {
   }
 
   .hero__phone {
-    width: clamp(168px, 22vw, 214px);
+    width: clamp(184px, 24vw, 230px);
   }
 
   .hero__phone--home {
-    right: calc(50% - (var(--hero-tv-width) / 2) + clamp(0px, 1.5vw, 18px));
-    bottom: clamp(8px, 1.5vw, 16px);
+    right: calc(50% - (var(--hero-tv-width) / 2) + clamp(28px, 5vw, 56px));
+    bottom: clamp(10px, 1.8vw, 18px);
   }
 
   .performance-board {
@@ -1352,7 +1352,7 @@ h1 {
   }
 
   .hero {
-    padding-top: 20px;
+    padding-top: 26px;
   }
 
   .hero__copy,
@@ -1393,7 +1393,7 @@ h1 {
 
   .hero__stage {
     --hero-tv-width: 100%;
-    min-height: 360px;
+    min-height: 350px;
   }
 
   .hero__tv {
@@ -1403,12 +1403,12 @@ h1 {
   }
 
   .hero__phone {
-    width: min(36vw, 158px);
+    width: min(40vw, 170px);
   }
 
   .hero__phone--home {
-    right: -2px;
-    bottom: 10px;
+    right: 12px;
+    bottom: 14px;
     translate: none;
   }
 
@@ -1491,16 +1491,16 @@ h1 {
   }
 
   .hero__stage {
-    min-height: 330px;
+    min-height: 325px;
   }
 
   .hero__phone {
-    width: min(38vw, 146px);
+    width: min(42vw, 154px);
   }
 
   .hero__phone--home {
-    right: -6px;
-    bottom: 10px;
+    right: 6px;
+    bottom: 12px;
   }
 
   .proof-strip {
