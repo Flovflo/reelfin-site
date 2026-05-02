@@ -1388,10 +1388,12 @@ h1 {
   }
 
   .hero__stage {
-    width: min(100%, 390px);
-    max-width: 390px;
+    width: calc(100vw - 32px);
+    max-width: 430px;
+    max-height: 360px;
     grid-template-columns: 1fr;
-    gap: 24px;
+    place-items: center;
+    overflow: hidden;
     transform: none;
   }
 
@@ -1406,14 +1408,19 @@ h1 {
 
   .hero__phone--home {
     order: 1;
+    width: min(112vw, 440px);
+    max-width: none;
+    margin-bottom: -132px;
   }
 
   .hero__phone--library {
     order: 2;
+    display: none;
   }
 
   .hero__phone--detail {
     order: 3;
+    display: none;
   }
 
   .route-compare {
