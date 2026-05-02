@@ -1404,6 +1404,18 @@ h1 {
     animation: none !important;
   }
 
+  .hero__phone--home {
+    order: 1;
+  }
+
+  .hero__phone--library {
+    order: 2;
+  }
+
+  .hero__phone--detail {
+    order: 3;
+  }
+
   .route-compare {
     grid-template-columns: 1fr;
   }
