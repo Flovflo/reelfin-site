@@ -366,9 +366,9 @@ img {
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: clamp(18px, 3vw, 34px);
-  padding-top: clamp(18px, 3vw, 34px);
-  padding-bottom: clamp(40px, 6vw, 70px);
+  gap: clamp(14px, 2.4vw, 28px);
+  padding-top: clamp(10px, 2vw, 24px);
+  padding-bottom: clamp(42px, 6vw, 72px);
   overflow: clip;
 }
 
@@ -397,17 +397,17 @@ h2 {
 
 h1 {
   width: 100%;
-  max-width: 720px;
+  max-width: 680px;
   margin: 0 auto;
-  font-size: clamp(42px, 4.6vw, 58px);
-  line-height: 1;
+  font-size: clamp(40px, 4.2vw, 54px);
+  line-height: 1.02;
 }
 
 .hero__copy p {
-  max-width: 700px;
-  margin: 16px auto 0;
+  max-width: 650px;
+  margin: 14px auto 0;
   color: var(--color-smoke);
-  font-size: clamp(18px, 1.65vw, 21px);
+  font-size: clamp(17px, 1.45vw, 20px);
   line-height: 1.36;
   text-wrap: balance;
 }
@@ -418,15 +418,15 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-  margin-top: 22px;
+  margin-top: 18px;
 }
 
 .hero__stage {
   position: relative;
   width: 100%;
-  --hero-tv-width: min(950px, 82vw);
-  max-width: 1120px;
-  min-height: clamp(520px, 52vw, 660px);
+  --hero-tv-width: min(920px, 80vw);
+  max-width: 1080px;
+  min-height: clamp(420px, 41vw, 520px);
   margin: 0 auto;
 }
 
@@ -467,7 +467,7 @@ h1 {
 
 .hero__tv {
   position: absolute;
-  top: clamp(52px, 5vw, 74px);
+  bottom: clamp(10px, 1.2vw, 18px);
   left: 50%;
   width: var(--hero-tv-width);
   aspect-ratio: 16 / 9;
@@ -477,12 +477,12 @@ h1 {
 .hero__phone {
   position: absolute;
   z-index: 3;
-  width: clamp(230px, 20vw, 300px);
+  width: clamp(204px, 17vw, 260px);
 }
 
 .hero__phone--home {
-  right: calc(50% - (var(--hero-tv-width) / 2) - clamp(10px, 2vw, 32px));
-  top: 0;
+  right: calc(50% - (var(--hero-tv-width) / 2) + clamp(4px, 2vw, 28px));
+  bottom: clamp(8px, 1.3vw, 18px);
 }
 
 .proof-strip {
@@ -1262,8 +1262,8 @@ h1 {
   }
 
   .hero__stage {
-    --hero-tv-width: min(780px, 88vw);
-    min-height: clamp(440px, 68vw, 620px);
+    --hero-tv-width: min(760px, 88vw);
+    min-height: clamp(380px, 54vw, 500px);
   }
 
   .hero__tv {
@@ -1271,12 +1271,12 @@ h1 {
   }
 
   .hero__phone {
-    width: clamp(190px, 26vw, 250px);
+    width: clamp(168px, 22vw, 214px);
   }
 
   .hero__phone--home {
-    right: calc(50% - (var(--hero-tv-width) / 2) - clamp(8px, 2vw, 20px));
-    top: 0;
+    right: calc(50% - (var(--hero-tv-width) / 2) + clamp(0px, 1.5vw, 18px));
+    bottom: clamp(8px, 1.5vw, 16px);
   }
 
   .performance-board {
@@ -1352,7 +1352,7 @@ h1 {
   }
 
   .hero {
-    padding-top: 28px;
+    padding-top: 20px;
   }
 
   .hero__copy,
@@ -1366,8 +1366,8 @@ h1 {
 
   h1 {
     width: 100%;
-    max-width: 320px;
-    font-size: 42px;
+    max-width: 330px;
+    font-size: 40px;
     line-height: 1.04;
   }
 
@@ -1393,7 +1393,7 @@ h1 {
 
   .hero__stage {
     --hero-tv-width: 100%;
-    min-height: 400px;
+    min-height: 360px;
   }
 
   .hero__tv {
@@ -1403,12 +1403,12 @@ h1 {
   }
 
   .hero__phone {
-    width: min(48vw, 210px);
+    width: min(36vw, 158px);
   }
 
   .hero__phone--home {
-    right: -4px;
-    top: 0;
+    right: -2px;
+    bottom: 10px;
     translate: none;
   }
 
@@ -1491,16 +1491,16 @@ h1 {
   }
 
   .hero__stage {
-    min-height: 370px;
+    min-height: 330px;
   }
 
   .hero__phone {
-    width: min(50vw, 192px);
+    width: min(38vw, 146px);
   }
 
   .hero__phone--home {
-    right: -8px;
-    top: 0;
+    right: -6px;
+    bottom: 10px;
   }
 
   .proof-strip {
