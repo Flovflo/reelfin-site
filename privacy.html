@@ -85,7 +85,7 @@
           </p>
 
           <div class="chip-row">
-            <span class="inline-pill">Last updated: August 12, 2026</span>
+            <span class="inline-pill">Last updated: October 4, 2026</span>
             <span class="inline-pill">Support: florian.taffin.pro@gmail.com</span>
           </div>
         </section>
@@ -127,12 +127,7 @@
 
             <div class="prose-section">
               <h2>Retention</h2>
-              <p>
-                On-device settings, cached artwork, and cached library metadata remain on the
-                device until you sign out, clear the app, the cache is evicted, or you remove the
-                app. The authentication token is removed from Keychain when you sign out and is
-                also removed when the app is deleted.
-              </p>
+              <p>Signing out clears the stored sign-in session and deletes its token from Apple Keychain. Cached artwork and library metadata may remain until the cache is evicted or the app is removed. Apple Keychain items can survive app removal; sign out before removing ReelFin if you want it to delete its stored token. Your Jellyfin server controls its own account, token validity, playback history, and retention; you can revoke access on that server.</p>
             </div>
 
             <div class="prose-section">
