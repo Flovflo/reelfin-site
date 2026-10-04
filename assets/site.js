@@ -35,7 +35,8 @@ if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       });
     },
     {
-      threshold: 0.18,
+      // Any intersection: a section taller than ~5 viewports can never reach a ratio threshold.
+      threshold: 0,
       rootMargin: "0px 0px -10% 0px",
     }
   );
