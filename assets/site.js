@@ -52,20 +52,40 @@ if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   });
 }
 
-const sectionObserver = new IntersectionObserver(
-  (entries) => {
-    const visible = entries
-      .filter((entry) => entry.isIntersecting)
-      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+// Scroll-spy from scroll position: the IntersectionObserver version only saw
+// sections whose intersection changed, so the underline went stale (and stayed
+// lit above the first section).
+const updateActiveLink = () => {
+  const headerOffset = header ? header.getBoundingClientRect().bottom : 0;
+  const probe = headerOffset + window.innerHeight * 0.3;
+  const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
 
-    if (visible?.target.id) {
-      setActiveLink(visible.target.id);
-    }
-  },
-  {
-    threshold: [0.22, 0.45, 0.68],
-    rootMargin: "-18% 0px -55% 0px",
+  let activeId = null;
+  if (atBottom && sections.length) {
+    activeId = sections[sections.length - 1].id;
+  } else {
+    sections.forEach((section) => {
+      if (section.getBoundingClientRect().top <= probe) {
+        activeId = section.id;
+      }
+    });
   }
-);
 
-sections.forEach((section) => sectionObserver.observe(section));
+  setActiveLink(activeId);
+};
+
+let activeLinkFrame = 0;
+const scheduleActiveLinkUpdate = () => {
+  if (activeLinkFrame) {
+    return;
+  }
+
+  activeLinkFrame = requestAnimationFrame(() => {
+    activeLinkFrame = 0;
+    updateActiveLink();
+  });
+};
+
+updateActiveLink();
+window.addEventListener("scroll", scheduleActiveLinkUpdate, { passive: true });
+window.addEventListener("resize", scheduleActiveLinkUpdate);
