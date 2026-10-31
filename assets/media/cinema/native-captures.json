@@ -1,7 +1,6 @@
 {
   "status": "partial",
   "missing": [
-    "ipad/detail",
     "duo-inner/home",
     "duo-inner/detail",
     "duo-outer/home",
@@ -49,6 +48,15 @@
       "file": "ipad-home.webp",
       "source": "presentation-captures/ipad/home.png",
       "sourceSha256": "41b3c461008b938d17ff3d276d4023bb48b5133551a4758a560d07b7fcb8a824",
+      "width": 1800,
+      "height": 1350,
+      "presentationOnly": true,
+      "uiRetouched": false
+    },
+    {
+      "file": "ipad-detail.webp",
+      "source": "presentation-captures/ipad/detail.png",
+      "sourceSha256": "3caf25330440d9340101dd9613fe38db3c7f7d2cf6acddd966a5c7cc30fc3f6e",
       "width": 1800,
       "height": 1350,
       "presentationOnly": true,
