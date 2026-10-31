@@ -1,501 +1,89 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta
-      name="description"
-      content="ReelFin is a native Jellyfin client for iPhone, iPad, and Apple TV with fast browsing, Apple playback, and ReelTranscode media optimization."
-    >
-    <meta property="og:title" content="ReelFin | Native Jellyfin for Apple platforms">
-    <meta
-      property="og:description"
-      content="Bring your Jellyfin library to iPhone, iPad, and Apple TV with an interface that feels native, fast, and optimized for Apple playback."
-    >
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://flovflo.github.io/reelfin-site/">
-    <meta property="og:image" content="https://flovflo.github.io/reelfin-site/assets/media/NEW/tvos-home.png">
-    <meta name="apple-itunes-app" content="app-id=6762079357">
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "MobileApplication",
-        "name": "ReelFin",
-        "description": "Native Jellyfin client for iPhone, iPad, and Apple TV. Connects to your own Jellyfin server.",
-        "operatingSystem": "iOS, iPadOS, tvOS",
-        "applicationCategory": "EntertainmentApplication",
-        "url": "https://flovflo.github.io/reelfin-site/",
-        "downloadUrl": "https://apps.apple.com/app/reelfin/id6762079357",
-        "image": "https://flovflo.github.io/reelfin-site/assets/media/NEW/tvos-home.png",
-        "author": { "@type": "Person", "name": "Florian Taffin" },
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
-      }
-    </script>
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="canonical" href="https://flovflo.github.io/reelfin-site/">
-    <link rel="icon" type="image/png" href="assets/media/NEW/reelfin-mark.png">
-    <link rel="stylesheet" href="assets/site.css?v=home-primary">
-    <script defer src="assets/site.js?v=nav-2026-10-11"></script>
-    <title>ReelFin | Jellyfin, made for iPhone, iPad, and Apple TV</title>
-  </head>
-  <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
-
-    <header class="site-header">
-      <div class="site-header__inner">
-        <a class="brand" href="#top" aria-label="ReelFin home">
-          <span class="brand__mark" aria-hidden="true">
-            <img src="assets/media/NEW/reelfin-mark.png" alt="">
-          </span>
-          <span>ReelFin</span>
-        </a>
-
-        <nav class="site-nav" aria-label="Primary navigation">
-          <a href="#overview">Overview</a>
-          <a href="#screens">Screens</a>
-          <a href="#tvos">Apple TV</a>
-          <a href="#privacy">Privacy</a>
-          <a href="#support">Support</a>
-        </nav>
-
-        <a
-          class="button button--primary site-header__cta"
-          href="https://apps.apple.com/app/reelfin/id6762079357"
-          rel="noreferrer"
-        >
-          Download on the App Store
-        </a>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ReelFin — Your cinema. Your way.</title>
+  <meta name="description" content="Your Jellyfin library on iPhone, iPad and Apple TV. Resume your favourites, explore your collection and take compatible downloads with you. Native. Independent. Yours.">
+  <meta name="theme-color" content="#101113">
+  <meta name="apple-itunes-app" content="app-id=6762079357">
+  <link rel="canonical" href="https://flovflo.github.io/reelfin-site/">
+  <link rel="alternate" hreflang="en" href="https://flovflo.github.io/reelfin-site/">
+  <link rel="alternate" hreflang="fr" href="https://flovflo.github.io/reelfin-site/fr/">
+  <link rel="alternate" hreflang="x-default" href="https://flovflo.github.io/reelfin-site/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ReelFin — Your cinema. Your way.">
+  <meta property="og:description" content="Your Jellyfin library on iPhone, iPad and Apple TV. Resume your favourites, explore your collection and take compatible downloads with you. Native. Independent. Yours.">
+  <meta property="og:url" content="https://flovflo.github.io/reelfin-site/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://flovflo.github.io/reelfin-site/assets/media/cinema/social-en.jpg">
+  <meta property="og:image:alt" content="ReelFin — Your cinema. Your way.">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/media/NEW/reelfin-mark.png">
+  <link rel="stylesheet" href="assets/site.css?v=cinema-1">
+  <script defer src="assets/site.js?v=cinema-1"></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "ReelFin", "operatingSystem": "iOS 26+, iPadOS 26+, tvOS 26+", "applicationCategory": "EntertainmentApplication", "description": "Your Jellyfin library on iPhone, iPad and Apple TV. Resume your favourites, explore your collection and take compatible downloads with you. Native. Independent. Yours.", "url": "https://flovflo.github.io/reelfin-site/", "downloadUrl": "https://apps.apple.com/app/reelfin/id6762079357", "author": {"@type": "Person", "name": "Florian Taffin"}}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header site-header--marketing">
+    <div class="site-header__inner">
+      <a class="brand" href="#top" aria-label="ReelFin"><span class="brand__mark" aria-hidden="true"><img src="assets/media/NEW/reelfin-mark.png" alt="" width="400" height="240"></span><span>ReelFin</span></a>
+      <nav class="site-nav" aria-label="Primary navigation"><a href="#overview">The app</a><a href="#duo">iPhone Duo</a><a href="#tvos">Apple TV</a><a href="#faq">FAQ</a></nav>
+      <nav class="language-switch" aria-label="Language"><a href="index.html" lang="en" hreflang="en" aria-current="page">EN</a><span aria-hidden="true">/</span><a href="fr/index.html" lang="fr" hreflang="fr" >FR</a></nav>
+      <a class="button button--primary site-header__cta" href="https://apps.apple.com/app/reelfin/id6762079357">App Store <span class="arrow" aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button>
+    </div>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Primary navigation" hidden><a href="#overview">The app</a><a href="#duo">iPhone Duo</a><a href="#tvos">Apple TV</a><a href="#faq">FAQ</a><a href="https://apps.apple.com/app/reelfin/id6762079357">Download on the App Store ↗</a></nav>
+  </header>
+  <main id="main-content">
+    <section class="hero container" id="top" aria-labelledby="hero-title">
+      <h1 id="hero-title">Your cinema.<span>Your way.</span></h1>
+      <p class="hero__lede">A native Jellyfin experience, made for iPhone Duo.<br>Your library on iPhone, iPad and Apple TV.</p>
+      <a class="button button--primary" href="https://apps.apple.com/app/reelfin/id6762079357"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.2 12.5c0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.4-1.6-2.9-1.6-1.2-.2-2.4.8-3 .8-.7 0-1.7-.8-2.8-.7-1.4 0-2.8.9-3.5 2.1-1.5 2.6-.4 6.6 1.1 8.8.7 1.1 1.6 2.2 2.7 2.2 1.1-.1 1.5-.7 2.8-.7 1.3 0 1.7.7 2.8.7s1.9-1.1 2.6-2.1c.9-1.2 1.2-2.4 1.2-2.5-.1 0-2.8-1.1-2.8-3.8ZM15.2 6.2c.6-.8 1-1.8.9-2.9-.9.1-2 .6-2.7 1.4-.6.7-1.2 1.8-1 2.9 1 .1 2-.5 2.8-1.4Z"/></svg><span>Download on the App Store</span><span class="arrow" aria-hidden="true">↗</span></a>
+      <p class="hero__platforms">iPhone · iPhone Duo · iPad · Apple TV</p><a class="hero__duo-link" href="#duo">Explore the iPhone Duo experience <span aria-hidden="true">↓</span></a>
+      <div class="hero__stage">
+        <figure class="tv-screen"><img src="assets/media/cinema/tv4k-home.webp" alt="ReelFin Apple TV home screen, using the fictional Aurora demonstration library." width="2200" height="1238" fetchpriority="high"></figure>
+        <figure class="hero__phone phone-screen"><img src="assets/media/cinema/iphone-home.webp" alt="ReelFin on iPhone, with Continue Watching and films from a fictional demonstration library." width="840" height="1825" fetchpriority="high"></figure>
       </div>
-    </header>
-
-    <main id="main-content">
-      <section class="hero section-white" id="top">
-        <div class="hero__copy reveal">
-          <h1>Your Jellyfin library, made for iPhone, iPad, and Apple TV.</h1>
-          <p>
-            ReelFin turns a self-hosted Jellyfin server into a fast, calm Apple
-            experience. Browse your library, resume faster, and press play from
-            an interface built for the devices you actually use.
-          </p>
-          <div class="hero__actions" aria-label="Primary actions">
-            <a
-              class="button button--primary"
-              href="https://apps.apple.com/app/reelfin/id6762079357"
-              rel="noreferrer"
-            >
-              Download on the App Store
-            </a>
-            <a class="button button--ghost" href="#screens">View App Screens</a>
-          </div>
-        </div>
-
-        <div class="hero__stage reveal" aria-label="ReelFin product screenshots using an original fictional demo library">
-          <figure class="phone-shot hero__phone hero__phone--library">
-            <img
-              src="assets/media/NEW/iphone-library-bezel.png"
-              alt="ReelFin iPhone library screen with search and movie collections."
-              fetchpriority="high"
-            >
-          </figure>
-
-          <figure class="phone-shot hero__phone hero__phone--home">
-            <img
-              src="assets/media/NEW/iphone-home-bezel.png"
-              alt="ReelFin iPhone home screen with continue watching and recent media rows."
-              fetchpriority="high"
-            >
-          </figure>
-
-          <figure class="phone-shot hero__phone hero__phone--detail">
-            <img
-              src="assets/media/NEW/iphone-detail-bezel.png"
-              alt="ReelFin iPhone movie details with playback controls and related titles."
-              fetchpriority="high"
-            >
-          </figure>
-        </div>
-
-        <div class="proof-strip reveal" aria-label="ReelFin platform highlights">
-          <span>Native SwiftUI</span>
-          <span>Apple playback frameworks</span>
-          <span>ReelTranscode media prep</span>
-          <span>Self-hosted Jellyfin</span>
-          <span>iPhone, iPad, Apple TV</span>
-        </div>
-      </section>
-
-      <section class="section section-gray performance-section" id="overview">
-        <div class="section-heading section-heading--center reveal">
-          <h2 class="gradient-text">Open ReelFin and start watching faster.</h2>
-          <p>
-            ReelFin focuses on the delays you actually feel: loading Home,
-            finding the next episode, choosing the best playback route, and
-            avoiding live conversion when a file can be prepared in advance.
-          </p>
-        </div>
-
-        <div class="performance-board reveal" aria-label="How ReelFin starts playback faster">
-          <div class="performance-board__lead">
-            <span class="performance-board__label">What ReelFin optimizes</span>
-            <h3>Cache first. Direct Play when possible. Convert before playback.</h3>
-            <p>
-              ReelFin shows saved rows while Jellyfin refreshes, starts
-              compatible files without server conversion, and leaves difficult
-              files to Jellyfin or ReelTranscode instead of pretending every
-              video should use the same route.
-            </p>
-
-            <div class="performance-facts" aria-label="Concrete optimization points">
-              <article>
-                <strong>Home</strong>
-                <span>Show cached library rows first, then refresh Jellyfin in the background.</span>
-              </article>
-              <article>
-                <strong>Playback</strong>
-                <span>Use Direct Play when the file is already compatible with Apple playback.</span>
-              </article>
-              <article>
-                <strong>Preparation</strong>
-                <span>Use ReelTranscode for media that should be converted before anyone presses Play.</span>
-              </article>
-            </div>
-          </div>
-
-          <div class="performance-flow" aria-label="Playback startup flow">
-            <article class="performance-step">
-              <span>01</span>
-              <div>
-                <h4>Home appears quickly</h4>
-                <p>Open the app and see cached Continue Watching and library rows while Jellyfin refreshes.</p>
-              </div>
-            </article>
-            <article class="performance-step">
-              <span>02</span>
-              <div>
-                <h4>Fewer screens before Play</h4>
-                <p>Resume, search, library, and details all keep the next watch action close.</p>
-              </div>
-            </article>
-            <article class="performance-step">
-              <span>03</span>
-              <div>
-                <h4>Compatible files Direct Play</h4>
-                <p>If the container, video, audio, and subtitles work on Apple devices, ReelFin avoids conversion.</p>
-              </div>
-            </article>
-            <article class="performance-step">
-              <span>04</span>
-              <div>
-                <h4>Difficult files still have a path</h4>
-                <p>Jellyfin can remux or transcode live, and ReelTranscode can make an Apple-ready file ahead of time.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-white transcode-section" id="transcode">
-        <div class="transcode-layout">
-          <div class="transcode-copy reveal">
-            <span>ReelTranscode</span>
-            <h2>Optimize the library once. Watch faster everywhere.</h2>
-            <p>
-              ReelTranscode is the macOS companion pipeline for media that is
-              not naturally Apple-friendly. It prefers copy or remux before
-              transcoding, targets Apple-native MP4 output, and keeps Dolby
-              Vision or HDR honest instead of silently flattening the file.
-            </p>
-            <a
-              class="button button--primary"
-              href="https://github.com/Flovflo/ReelTranscode"
-              rel="noreferrer"
-            >
-              View ReelTranscode
-            </a>
-          </div>
-
-          <div class="transcode-stack reveal" aria-label="ReelTranscode optimization path">
-            <article class="transcode-card">
-              <span>01</span>
-              <div>
-                <h3>Copy and remux first</h3>
-                <p>
-                  Keep compatible video and audio streams intact when a lighter
-                  container change is enough for Apple playback.
-                </p>
-              </div>
-            </article>
-
-            <article class="transcode-card">
-              <span>02</span>
-              <div>
-                <h3>Apple-native output</h3>
-                <p>
-                  Prepare MP4 files with Apple-friendly HEVC tagging, faststart,
-                  audio fallbacks, and subtitles that fit the platform.
-                </p>
-              </div>
-            </article>
-
-            <article class="transcode-card">
-              <span>03</span>
-              <div>
-                <h3>Strict quality checks</h3>
-                <p>
-                  Dolby Vision and HDR paths are validated after processing, so
-                  an optimized file does not hide a degraded result.
-                </p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-white screens-section" id="screens">
-        <div class="section-heading section-heading--center reveal">
-          <h2>One library. Two viewing modes.</h2>
-          <p>
-            ReelFin keeps the same visual identity across platforms, then adapts
-            the interaction model to the screen in front of you. Screens show an original fictional demo library; ReelFin does not include movies or shows.
-          </p>
-        </div>
-
-        <div class="screen-composition">
-          <article class="screen-panel screen-panel--iphone reveal">
-            <div>
-              <h3>iPhone browsing</h3>
-              <p>
-                Open the app, scan big artwork, resume the right item, and get
-                back to watching without extra layers.
-              </p>
-            </div>
-            <figure class="phone-shot">
-              <img
-                src="assets/media/NEW/iphone-home-bezel.png"
-                alt="ReelFin home screen on iPhone."
-                loading="lazy"
-              >
-            </figure>
-          </article>
-
-          <article class="screen-panel screen-panel--library reveal">
-            <div>
-              <h3>Library search</h3>
-              <p>
-                Switch between movies and shows, search quickly, and scan poster
-                grids without leaving the native app flow.
-              </p>
-            </div>
-            <figure class="phone-shot">
-              <img
-                src="assets/media/NEW/iphone-library-bezel.png"
-                alt="ReelFin library screen on iPhone."
-                loading="lazy"
-              >
-            </figure>
-          </article>
-
-          <article class="screen-panel screen-panel--detail reveal">
-            <div>
-              <h3>Clear details</h3>
-              <p>
-                Artwork, metadata, watch state, and the play action stay easy to
-                scan when you land on a title.
-              </p>
-            </div>
-            <figure class="phone-shot">
-              <img
-                src="assets/media/NEW/iphone-detail-bezel.png"
-                alt="ReelFin media detail screen on iPhone."
-                loading="lazy"
-              >
-            </figure>
-          </article>
-
-          <article class="screen-panel screen-panel--wide reveal">
-            <div>
-              <h3>Living room ready</h3>
-              <p>
-                Apple TV gets wider rows, strong focus targets, and a home
-                screen that works from the couch.
-              </p>
-            </div>
-            <figure class="tv-frame">
-              <img
-                src="assets/media/NEW/tvos-home.png"
-                alt="ReelFin tvOS home screen showing a focused hero and media rows."
-                loading="lazy"
-              >
-            </figure>
-          </article>
-        </div>
-      </section>
-
-      <section class="section section-gray tvos-section" id="tvos">
-        <div class="section-heading reveal">
-          <h2 class="gradient-text">Apple TV is treated like its own product.</h2>
-          <p>
-            The big-screen version is not a stretched phone interface. ReelFin
-            gives the remote room to breathe, keeps focus obvious, and makes the
-            next play action visible from across the room.
-          </p>
-        </div>
-
-        <div class="tvos-showcase reveal">
-          <div class="tvos-showcase__screens" aria-label="ReelFin tvOS screenshots">
-            <figure class="tv-frame tvos-showcase__image tvos-showcase__image--home">
-              <img
-                src="assets/media/NEW/tvos-home.png"
-                alt="ReelFin tvOS home screen with Watch Now, Search, Library, and Continue Watching rows."
-                loading="lazy"
-              >
-            </figure>
-            <figure class="tv-frame tvos-showcase__image tvos-showcase__image--detail">
-              <img
-                src="assets/media/NEW/tvos-detail.png"
-                alt="ReelFin tvOS detail screen with Direct Play, resume controls, seasons, and episode rows."
-                loading="lazy"
-              >
-            </figure>
-          </div>
-
-          <div class="tvos-points">
-            <article>
-              <span>Remote-first focus</span>
-              <p>Large targets, visible state, and a navigation model built for lean-back control.</p>
-            </article>
-            <article>
-              <span>Artwork at TV scale</span>
-              <p>Hero images, rows, and details use the room instead of compressing the library.</p>
-            </article>
-            <article>
-              <span>Playback without ceremony</span>
-              <p>Resume and watch actions stay prominent so the screen never feels like a settings panel.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-white play-section">
-        <div class="section-heading section-heading--center reveal">
-          <h2>Direct Play first. ReelTranscode when the file needs prep.</h2>
-          <p>
-            ReelFin prefers the cleanest live path available: play the original
-            file when Apple devices can handle it, use Jellyfin when recovery is
-            needed, and let ReelTranscode turn stubborn files into better
-            prepared media ahead of time.
-          </p>
-        </div>
-
-        <div class="route-compare reveal" aria-label="Playback route comparison">
-          <article>
-            <h3>Original file path</h3>
-            <ol>
-              <li>Ask Jellyfin for playable sources.</li>
-              <li>Pick the direct Apple route when codecs and container match.</li>
-              <li>Start playback with less server work and no avoidable conversion.</li>
-            </ol>
-          </article>
-
-          <article>
-            <h3>Server-assisted path</h3>
-            <ol>
-              <li>Use Jellyfin remux or transcode when the source needs help.</li>
-              <li>Keep recovery paths available for incompatible files.</li>
-              <li>Preserve reliability without hiding route decisions.</li>
-            </ol>
-          </article>
-
-          <article>
-            <h3>ReelTranscode prep</h3>
-            <ol>
-              <li>Process difficult media before the watch session starts.</li>
-              <li>Target MP4 output that Apple playback frameworks can handle cleanly.</li>
-              <li>Reduce live server conversion pressure for the files you care about most.</li>
-            </ol>
-          </article>
-        </div>
-      </section>
-
-      <section class="section section-gray privacy-section" id="privacy">
-        <div class="privacy-layout">
-          <div class="section-heading reveal">
-            <h2 class="gradient-text">Private by default, because your media is yours.</h2>
-            <p>
-              ReelFin is a client for the Jellyfin server you configure. It does
-              not turn your personal library into a tracking surface.
-            </p>
-          </div>
-
-          <div class="privacy-list reveal">
-            <article>
-              <h3>Connect to your server</h3>
-              <p>Your Jellyfin URL, session, and library metadata come from the server you choose.</p>
-            </article>
-            <article>
-              <h3>Keep credentials on device</h3>
-              <p>Authentication tokens are stored in the Apple Keychain, with preferences kept locally.</p>
-            </article>
-            <article>
-              <h3>No ad-tech model</h3>
-              <p>ReelFin does not sell personal data or use your library for cross-app tracking.</p>
-            </article>
-            <a class="button button--ghost" href="privacy.html">Read Privacy Policy</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-white support-section" id="support">
-        <div class="support-card reveal">
-          <h2>Get ReelFin and make Jellyfin feel at home on Apple devices.</h2>
-          <p>
-            ReelFin is free on the App Store for iPhone, iPad, and Apple TV.
-            Feedback still shapes every release: report rough edges, or join
-            the TestFlight beta to try new builds first.
-          </p>
-          <div class="support-card__actions">
-            <a
-              class="button button--primary"
-              href="https://apps.apple.com/app/reelfin/id6762079357"
-              rel="noreferrer"
-            >
-              Download on the App Store
-            </a>
-            <a class="button button--ghost" href="https://testflight.apple.com/join/TkVVXmU2" rel="noreferrer">
-              Join the TestFlight Beta
-            </a>
-            <a
-              class="button button--ghost"
-              href="mailto:florian.taffin.pro@gmail.com?subject=ReelFin%20Support"
-            >
-              Email Support
-            </a>
-            <a class="button button--ghost" href="https://github.com/Flovflo/reelfin-site" rel="noreferrer">
-              GitHub
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div>
-        <a class="brand brand--footer" href="#top" aria-label="ReelFin home">
-          <span class="brand__mark" aria-hidden="true">
-            <img src="assets/media/NEW/reelfin-mark.png" alt="">
-          </span>
-          <span>ReelFin</span>
-        </a>
-        <p>Independent native client for self-hosted Jellyfin libraries on Apple platforms.</p>
+      <p class="image-credit">Demonstration library · Fictional artwork · Movies and shows not included</p>
+    </section>
+    <section class="section container duo" id="duo" aria-labelledby="duo-title">
+      <div class="section-heading"><h2 id="duo-title">Made for<br><span class="muted">iPhone Duo.</span></h2><p>More screen. More cinema.<br>A considered layout, open or closed.</p></div>
+      <div class="duo-stage"><figure class="duo-inner"><img src="assets/media/cinema/duo-inner-home.webp" alt="Native ReelFin demonstration Home on the fully open iPhone Duo inner screen." width="1800" height="1266" loading="lazy"></figure><figure class="duo-outer"><img src="assets/media/cinema/duo-outer-detail.webp" alt="Native ReelFin demonstration movie detail on the compact iPhone Duo outer screen." width="840" height="1222" loading="lazy"></figure></div>
+      <p class="image-credit">Open inner screen and compact outer screen · Demonstration library · Content not included</p>
+      <div class="tv-benefits"><article><h3>More room to explore.</h3><p>The open inner screen gives artwork and library rows the space they deserve.</p></article><article><h3>Navigation within reach.</h3><p>Main sections and back controls stay accessible, with layouts that respect the screen’s usable space.</p></article><article><h3>A layout that adapts.</h3><p>From the compact outer screen to the larger inner display, your library stays in focus.</p></article></div>
+    </section>
+    <section class="section container" id="overview" aria-labelledby="benefits-title">
+      <div class="section-heading"><h2 id="benefits-title">Less browsing.<br><span class="muted">More watching.</span></h2><p>From one more episode to a new favourite. Everything you came to watch, one tap away.</p></div>
+      <div class="feature-grid" id="screens">
+        <article class="feature feature--resume"><h3>Pick up the story.</h3><p>Your Continue Watching, synced with Jellyfin. Get back to the film or episode you left behind.</p><figure class="phone-screen"><img src="assets/media/cinema/iphone-detail.webp" alt="The ReelFin iPhone detail page for the fictional film Aurora." width="840" height="1825" loading="lazy"></figure></article>
+        <article class="feature feature--library"><h3>A library worth exploring.</h3><p>Movies, shows, collections. Rediscover your favourites and find your next watch.</p><div class="poster-preview" aria-hidden="true"><img src="assets/media/cinema/poster-vallee-des-astres.webp" alt="" width="240" height="360" loading="lazy"><img src="assets/media/cinema/poster-milo-foret-horloges.webp" alt="" width="240" height="360" loading="lazy"><img src="assets/media/cinema/poster-veilleurs-du-corail.webp" alt="" width="240" height="360" loading="lazy"><img src="assets/media/cinema/poster-dimanches-de-saphir.webp" alt="" width="240" height="360" loading="lazy"><img src="assets/media/cinema/poster-jardins-de-cobalt.webp" alt="" width="240" height="360" loading="lazy"><img src="assets/media/cinema/poster-nuit-des-digues.webp" alt="" width="240" height="360" loading="lazy"></div></article>
+        <article class="feature feature--downloads"><div><h3>Take the next episode.</h3><p>Download compatible films and shows on iPhone and iPad. Your library travels with you.</p></div><div class="download-visual"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M24 6v25m-9-9 9 9 9-9M10 32v9h28v-9" stroke-linecap="round" stroke-linejoin="round"/></svg><div><strong>Ready for the journey</strong><span>Compatible media · iPhone & iPad</span><div class="download-line" aria-hidden="true"></div></div></div></article>
       </div>
-
-      <nav class="site-footer__links" aria-label="Footer navigation">
-        <a href="support.html">Support</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="https://github.com/Flovflo/reelfin-site" rel="noreferrer">GitHub</a>
-      </nav>
-    </footer>
-  </body>
+      <div class="poster-section" ><div class="poster-rail" role="region" aria-label="Fictional demonstration posters" tabindex="0"><figure><img src="assets/media/cinema/poster-vallee-des-astres.webp" alt="La Vallée des Astres" width="240" height="360" loading="lazy"><figcaption>La Vallée des Astres</figcaption></figure><figure><img src="assets/media/cinema/poster-milo-foret-horloges.webp" alt="Milo et la Forêt d’Horloges" width="240" height="360" loading="lazy"><figcaption>Milo et la Forêt d’Horloges</figcaption></figure><figure><img src="assets/media/cinema/poster-veilleurs-du-corail.webp" alt="Les Veilleurs du Corail" width="240" height="360" loading="lazy"><figcaption>Les Veilleurs du Corail</figcaption></figure><figure><img src="assets/media/cinema/poster-dimanches-de-saphir.webp" alt="Les Dimanches de Saphir" width="240" height="360" loading="lazy"><figcaption>Les Dimanches de Saphir</figcaption></figure><figure><img src="assets/media/cinema/poster-jardins-de-cobalt.webp" alt="Les Jardins de Cobalt" width="240" height="360" loading="lazy"><figcaption>Les Jardins de Cobalt</figcaption></figure><figure><img src="assets/media/cinema/poster-nuit-des-digues.webp" alt="La Nuit des Digues" width="240" height="360" loading="lazy"><figcaption>La Nuit des Digues</figcaption></figure><figure><img src="assets/media/cinema/poster-compas-des-sables.webp" alt="Le Compas des Sables" width="240" height="360" loading="lazy"><figcaption>Le Compas des Sables</figcaption></figure><figure><img src="assets/media/cinema/poster-naya-gardienne-nuages.webp" alt="Naya, Gardienne des Nuages" width="240" height="360" loading="lazy"><figcaption>Naya, Gardienne des Nuages</figcaption></figure><figure><img src="assets/media/cinema/poster-hauteur-de-racines.webp" alt="À Hauteur de Racines" width="240" height="360" loading="lazy"><figcaption>À Hauteur de Racines</figcaption></figure><figure><img src="assets/media/cinema/poster-saison-des-lanternes.webp" alt="La Saison des Lanternes" width="240" height="360" loading="lazy"><figcaption>La Saison des Lanternes</figcaption></figure><figure><img src="assets/media/cinema/poster-memoire-dune-lune.webp" alt="Mémoire d’une Lune" width="240" height="360" loading="lazy"><figcaption>Mémoire d’une Lune</figcaption></figure><figure><img src="assets/media/cinema/poster-heures-sous-verre.webp" alt="Les Heures sous Verre" width="240" height="360" loading="lazy"><figcaption>Les Heures sous Verre</figcaption></figure><figure><img src="assets/media/cinema/poster-ile-aux-vents-rouges.webp" alt="L’Île aux Vents Rouges" width="240" height="360" loading="lazy"><figcaption>L’Île aux Vents Rouges</figcaption></figure><figure><img src="assets/media/cinema/poster-voyage-de-pepite.webp" alt="Le Voyage de Pépite" width="240" height="360" loading="lazy"><figcaption>Le Voyage de Pépite</figcaption></figure><figure><img src="assets/media/cinema/poster-ouvriers-de-la-nuit.webp" alt="Les Ouvriers de la Nuit" width="240" height="360" loading="lazy"><figcaption>Les Ouvriers de la Nuit</figcaption></figure><figure><img src="assets/media/cinema/poster-reste-des-etes.webp" alt="Ce qui reste des Étés" width="240" height="360" loading="lazy"><figcaption>Ce qui reste des Étés</figcaption></figure><figure><img src="assets/media/cinema/poster-dernier-signal-dio.webp" alt="Le Dernier Signal d’Io" width="240" height="360" loading="lazy"><figcaption>Le Dernier Signal d’Io</figcaption></figure><figure><img src="assets/media/cinema/poster-archive-des-pluies.webp" alt="L’Archive des Pluies" width="240" height="360" loading="lazy"><figcaption>L’Archive des Pluies</figcaption></figure><figure><img src="assets/media/cinema/poster-cartographes-de-laube.webp" alt="Les Cartographes de l’Aube" width="240" height="360" loading="lazy"><figcaption>Les Cartographes de l’Aube</figcaption></figure><figure><img src="assets/media/cinema/poster-baleine-cerf-volant.webp" alt="La Baleine et le Cerf-volant" width="240" height="360" loading="lazy"><figcaption>La Baleine et le Cerf-volant</figcaption></figure><figure><img src="assets/media/cinema/poster-ciel-des-migrations.webp" alt="Sous le Ciel des Migrations" width="240" height="360" loading="lazy"><figcaption>Sous le Ciel des Migrations</figcaption></figure><figure><img src="assets/media/cinema/poster-maisons-flottantes.webp" alt="Nos Maisons Flottantes" width="240" height="360" loading="lazy"><figcaption>Nos Maisons Flottantes</figcaption></figure><figure><img src="assets/media/cinema/poster-orbitale-des-oublies.webp" alt="L’Orbitale des Oubliés" width="240" height="360" loading="lazy"><figcaption>L’Orbitale des Oubliés</figcaption></figure><figure><img src="assets/media/cinema/poster-silence-du-phare.webp" alt="Le Silence du Phare" width="240" height="360" loading="lazy"><figcaption>Le Silence du Phare</figcaption></figure></div><p>Demonstration library · Fictional artwork · Movies and shows not included</p></div>
+    </section>
+    <section class="section container tvos" id="tvos" aria-labelledby="tv-title">
+      <div class="section-heading"><h2 id="tv-title">Made for the<br>big screen.</h2><p>A home for your library.<br>Built for the remote.</p></div>
+      <figure class="tv-screen"><img src="assets/media/cinema/tv4k-detail.webp" alt="ReelFin Apple TV movie detail page, using the fictional Aurora demonstration library." width="2200" height="1238" loading="lazy"></figure>
+      <div class="tv-benefits"><article><h3>Remote-first navigation</h3><p>Clear focus, generous artwork and a native experience designed for the couch.</p></article><article><h3>Your audio. Your subtitles.</h3><p>Choose from the tracks available for your title, right where you watch.</p></article><article><h3>Direct Play when compatible</h3><p>Play your original media when the file and device support it. Jellyfin can help when needed.</p></article></div>
+    </section>
+    <section class="compatibility container" aria-label="Supported platforms">
+      <h2>At home.<br>On the move.</h2>
+      <div class="platform"><svg viewBox="0 0 42 42" fill="none" stroke="currentColor" aria-hidden="true"><rect x="5" y="5" width="20" height="31" rx="3"/><path d="M12 31h6"/><rect x="27" y="13" width="12" height="25" rx="2"/></svg><h3>iPhone &amp; iPad</h3><p>iOS / iPadOS 26+</p></div>
+      <div class="platform"><svg viewBox="0 0 42 42" fill="none" stroke="currentColor" aria-hidden="true"><rect x="3" y="6" width="36" height="24" rx="3"/><path d="M15 36h12m-6-6v6"/></svg><h3>Apple TV</h3><p>tvOS 26+</p></div>
+      <div class="platform platform--future"><svg viewBox="0 0 42 42" fill="none" stroke="currentColor" aria-hidden="true"><rect x="7" y="6" width="28" height="23" rx="2"/><path d="m7 29-4 7h36l-4-7M17 33h8"/></svg><h3>Mac</h3><p>In development</p></div>
+    </section>
+    <section class="section container faq" id="faq" aria-labelledby="faq-title"><h2 id="faq-title">A few things<br>to know.</h2><div><details><summary>Do I need a Jellyfin server?</summary><p>Yes. ReelFin is a client for your own Jellyfin server, or a server you are authorised to use. Enter the server address and sign in to your Jellyfin account.</p></details>
+<details><summary>Does ReelFin include movies or shows?</summary><p>No. You bring your library. The screenshots and poster artwork on this page use a fictional demonstration collection; no movies or shows are supplied with the app.</p></details>
+<details><summary>Will every file Direct Play?</summary><p>Direct Play depends on the file, codecs, subtitles and device. ReelFin uses native Apple playback, and Jellyfin may remux or transcode a file when it needs help.</p></details>
+<details><summary>Can I watch offline?</summary><p>On iPhone and iPad, you can download compatible titles when your Jellyfin account allows downloads. File compatibility and available storage still apply. Downloads are not available on Apple TV.</p></details>
+<details><summary>How does ReelFin handle privacy?</summary><p>Your session token is stored in Apple Keychain. ReelFin does not sell your personal data or use cross-app tracking. Optional crash diagnostics may be enabled in a production build. <a href="privacy.html">Read the privacy policy</a>.</p></details>
+<details><summary>Is ReelFin available on Mac?</summary><p>A dedicated Mac experience is in development. It is not available for public download yet. ReelFin is currently available for iPhone, iPad and Apple TV.</p></details></div></section>
+    <section class="final-cta container" id="support" aria-labelledby="download-title"><h2 id="download-title">Press play on<br>your library.</h2><a class="button button--primary" href="https://apps.apple.com/app/reelfin/id6762079357"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.2 12.5c0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.4-1.6-2.9-1.6-1.2-.2-2.4.8-3 .8-.7 0-1.7-.8-2.8-.7-1.4 0-2.8.9-3.5 2.1-1.5 2.6-.4 6.6 1.1 8.8.7 1.1 1.6 2.2 2.7 2.2 1.1-.1 1.5-.7 2.8-.7 1.3 0 1.7.7 2.8.7s1.9-1.1 2.6-2.1c.9-1.2 1.2-2.4 1.2-2.5-.1 0-2.8-1.1-2.8-3.8ZM15.2 6.2c.6-.8 1-1.8.9-2.9-.9.1-2 .6-2.7 1.4-.6.7-1.2 1.8-1 2.9 1 .1 2-.5 2.8-1.4Z"/></svg><span>Download on the App Store</span><span class="arrow" aria-hidden="true">↗</span></a><p>On the App Store. Connect your own Jellyfin server.</p><div class="final-cta__support"><a href="support.html">Support ↗</a><a href="https://testflight.apple.com/join/TkVVXmU2">Join the beta ↗</a></div></section>
+  </main>
+  <footer class="site-footer" id="privacy"><div><a class="brand brand--footer" href="#top"><span class="brand__mark" aria-hidden="true"><img src="assets/media/NEW/reelfin-mark.png" alt="" width="400" height="240"></span><span>ReelFin</span></a><p>An independent client for your own Jellyfin library. Not affiliated with Jellyfin.</p></div><nav class="site-footer__links" aria-label="Footer"><a href="support.html">Support</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav></footer>
+</body>
 </html>

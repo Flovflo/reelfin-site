@@ -31,6 +31,11 @@ jobs:
           rsync -a --delete \
             --exclude '.git/' \
             --exclude '.github/' \
+            --exclude '.gitignore' \
+            --exclude '.artifacts/' \
+            --exclude '.DS_Store' \
+            --exclude 'scripts/' \
+            --exclude '_site/' \
             --exclude 'README.md' \
             ./ _site/
 
