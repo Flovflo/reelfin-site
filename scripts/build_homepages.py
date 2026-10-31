@@ -52,10 +52,10 @@ COPY = {
  'closing':'Press play on<br>your library.', 'closingbody':'On the App Store. Connect your own Jellyfin server.',
  'support':'Support', 'beta':'Join the beta', 'privacy':'Privacy', 'terms':'Terms',
  'footer':'An independent client for your own Jellyfin library. Not affiliated with Jellyfin.',
- 'tvalt':'ReelFin Apple TV home screen, using the fictional Aurora demonstration library.',
+ 'tvalt':'ReelFin Apple TV home screen, using a fictional demonstration library.',
  'phonealt':'ReelFin on iPhone, with Continue Watching and films from a fictional demonstration library.',
- 'tvdetailalt':'ReelFin Apple TV movie detail page, using the fictional Aurora demonstration library.',
- 'detailalt':'The ReelFin iPhone detail page for the fictional film Aurora.',
+ 'tvdetailalt':'ReelFin Apple TV movie detail page, using a fictional demonstration library.',
+ 'detailalt':'The ReelFin iPhone detail page for a fictional demonstration film.',
  'posters':'Fictional demonstration posters', 'platformlabel':'Supported platforms'
 },
 'fr': {
@@ -95,10 +95,10 @@ COPY = {
  'closing':'Votre médiathèque.<br>Appuyez sur lecture.', 'closingbody':'Sur l’App Store. Connectez votre propre serveur Jellyfin.',
  'support':'Assistance', 'beta':'Rejoindre la bêta', 'privacy':'Confidentialité', 'terms':'Conditions',
  'footer':'Un client indépendant pour votre médiathèque Jellyfin. Sans affiliation avec Jellyfin.',
- 'tvalt':'Accueil ReelFin sur Apple TV, avec la bibliothèque de démonstration fictive Aurora.',
+ 'tvalt':'Accueil ReelFin sur Apple TV, avec une bibliothèque fictive de démonstration.',
  'phonealt':'ReelFin sur iPhone, avec la reprise de lecture et une bibliothèque de démonstration fictive.',
- 'tvdetailalt':'Fiche du film fictif Aurora dans ReelFin sur Apple TV.',
- 'detailalt':'Fiche ReelFin sur iPhone du film fictif Aurora.',
+ 'tvdetailalt':'Fiche d’un film fictif de démonstration dans ReelFin sur Apple TV.',
+ 'detailalt':'Fiche ReelFin sur iPhone d’un film fictif de démonstration.',
  'posters':'Affiches fictives de démonstration', 'platformlabel':'Plateformes compatibles'
 }}
 

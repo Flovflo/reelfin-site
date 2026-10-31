@@ -1,146 +1,642 @@
 [
   {
-    "file": "poster-vallee-des-astres.webp",
-    "title": "La Vallée des Astres",
-    "genre": "Adventure",
-    "fictional": true
+    "file": "poster-01-exit-fenwick.webp",
+    "title": "Exit Fenwick",
+    "year": 2026,
+    "genre": "Action",
+    "genres": [
+      "Action",
+      "Thriller"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/01-exit-fenwick.png",
+    "sourceSha256": "0fe055618d69d7bd30276954c509ebcdd826f9b7fc3fb98894e4a705297c9f51",
+    "width": 512,
+    "height": 768
   },
   {
-    "file": "poster-milo-foret-horloges.webp",
-    "title": "Milo et la Forêt d’Horloges",
-    "genre": "Animation",
-    "fictional": true
-  },
-  {
-    "file": "poster-veilleurs-du-corail.webp",
-    "title": "Les Veilleurs du Corail",
-    "genre": "Documentary",
-    "fictional": true
-  },
-  {
-    "file": "poster-dimanches-de-saphir.webp",
-    "title": "Les Dimanches de Saphir",
-    "genre": "Drama",
-    "fictional": true
-  },
-  {
-    "file": "poster-jardins-de-cobalt.webp",
-    "title": "Les Jardins de Cobalt",
-    "genre": "Science Fiction",
-    "fictional": true
-  },
-  {
-    "file": "poster-nuit-des-digues.webp",
-    "title": "La Nuit des Digues",
+    "file": "poster-02-sept-minutes-nord.webp",
+    "title": "Sept Minutes Nord",
+    "year": 2025,
     "genre": "Thriller",
-    "fictional": true
+    "genres": [
+      "Thriller",
+      "Action"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/02-sept-minutes-nord.png",
+    "sourceSha256": "18584e7ad56cd97a16591cbf9b63733c8dc59782c168fa1b1e4715e0ba649974",
+    "width": 512,
+    "height": 768
   },
   {
-    "file": "poster-compas-des-sables.webp",
-    "title": "Le Compas des Sables",
-    "genre": "Adventure",
-    "fictional": true
+    "file": "poster-03-mercy-overpass.webp",
+    "title": "Mercy Overpass",
+    "year": 2026,
+    "genre": "Action",
+    "genres": [
+      "Action",
+      "Crime"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/03-mercy-overpass.png",
+    "sourceSha256": "2cf257e924cfec7a74035f94e92affdc802233b312c39c056646cdb0145e2690",
+    "width": 512,
+    "height": 768
   },
   {
-    "file": "poster-naya-gardienne-nuages.webp",
-    "title": "Naya, Gardienne des Nuages",
-    "genre": "Animation",
-    "fictional": true
-  },
-  {
-    "file": "poster-hauteur-de-racines.webp",
-    "title": "À Hauteur de Racines",
-    "genre": "Documentary",
-    "fictional": true
-  },
-  {
-    "file": "poster-saison-des-lanternes.webp",
-    "title": "La Saison des Lanternes",
-    "genre": "Drama",
-    "fictional": true
-  },
-  {
-    "file": "poster-memoire-dune-lune.webp",
-    "title": "Mémoire d’une Lune",
-    "genre": "Science Fiction",
-    "fictional": true
-  },
-  {
-    "file": "poster-heures-sous-verre.webp",
-    "title": "Les Heures sous Verre",
+    "file": "poster-04-peage-58.webp",
+    "title": "Péage 58",
+    "year": 2024,
     "genre": "Thriller",
-    "fictional": true
+    "genres": [
+      "Thriller",
+      "Action"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/04-peage-58.png",
+    "sourceSha256": "b017849779e42038616fb6bdea29702a63fca283cee7db7c0ab260fe8ecd49df",
+    "width": 512,
+    "height": 768
   },
   {
-    "file": "poster-ile-aux-vents-rouges.webp",
-    "title": "L’Île aux Vents Rouges",
-    "genre": "Adventure",
-    "fictional": true
+    "file": "poster-05-mardi-cote-cour.webp",
+    "title": "Mardi côté cour",
+    "year": 2026,
+    "genre": "Comédie",
+    "genres": [
+      "Comédie",
+      "Romance"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/05-mardi-cote-cour.png",
+    "sourceSha256": "ba6a7cf2a243a9f36baaec988ac5b3434226aeccd8abfccdfbcfd29681408d36",
+    "width": 1024,
+    "height": 1536
   },
   {
-    "file": "poster-voyage-de-pepite.webp",
-    "title": "Le Voyage de Pépite",
+    "file": "poster-06-plus-one-tuesday.webp",
+    "title": "Plus One Tuesday",
+    "year": 2025,
+    "genre": "Comédie",
+    "genres": [
+      "Comédie",
+      "Romance"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/06-plus-one-tuesday.png",
+    "sourceSha256": "05a3d41383edfa17ead0ef7e84293c388b67ecb0b1012e9a78d6b0c7e00f372c",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "file": "poster-07-tribu-en-face.webp",
+    "title": "La Tribu d’en face",
+    "year": 2026,
+    "genre": "Comédie",
+    "genres": [
+      "Comédie",
+      "Famille"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/07-tribu-en-face.png",
+    "sourceSha256": "08964d3f078f184a1cdff89c495148f2b0edbf693ca43f3fa0b853bc9bca2543",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "file": "poster-08-laundry-for-three.webp",
+    "title": "Laundry for Three",
+    "year": 2024,
+    "genre": "Comédie dramatique",
+    "genres": [
+      "Comédie dramatique"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/08-laundry-for-three.png",
+    "sourceSha256": "05d1c2cea229982f80a6b66011e79e2d290aac60043b437e9b08d316facec949",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "file": "poster-09-orbit-county.webp",
+    "title": "Orbit County",
+    "year": 2026,
+    "genre": "Science-fiction",
+    "genres": [
+      "Science-fiction",
+      "Suspense"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/09-orbit-county.png",
+    "sourceSha256": "283b6a4531d3d4d40a5ebe390db081d15d9eda2822704ac0351021cdfab87bdd",
+    "width": 512,
+    "height": 768
+  },
+  {
+    "file": "poster-10-signal-avril.webp",
+    "title": "Le Signal d’Avril",
+    "year": 2025,
+    "genre": "Science-fiction",
+    "genres": [
+      "Science-fiction",
+      "Mystère"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/10-signal-avril.png",
+    "sourceSha256": "7fdc6ea3a6f6a42dd61f0f0c34b97af61c89cef72305de5edf0d9a399ec6d253",
+    "width": 512,
+    "height": 768
+  },
+  {
+    "file": "poster-11-second-atmosphere.webp",
+    "title": "Second Atmosphere",
+    "year": 2026,
+    "genre": "Science-fiction",
+    "genres": [
+      "Science-fiction",
+      "Drame"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/11-second-atmosphere.png",
+    "sourceSha256": "9a9c6c1dd5cdea01107814e88d91faaa203a3fb7274c5ac95ef4e3d47f13d05d",
+    "width": 512,
+    "height": 768
+  },
+  {
+    "file": "poster-12-station-vela.webp",
+    "title": "Station Vela",
+    "year": 2024,
+    "genre": "Science-fiction",
+    "genres": [
+      "Science-fiction",
+      "Thriller"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/12-station-vela.png",
+    "sourceSha256": "65599b233db2502a58f3e27760b9c86d513fe8a4829caab3f58312ec39f804fa",
+    "width": 512,
+    "height": 768
+  },
+  {
+    "file": "poster-13-chambre-ecume.webp",
+    "title": "La Chambre d’Écume",
+    "year": 2026,
+    "genre": "Horreur",
+    "genres": [
+      "Horreur",
+      "Mystère"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/13-chambre-ecume.png",
+    "sourceSha256": "679c9a77c6ea7f0621f152e52fdaff6051bc62213c728fd86d3e0b47625b163b",
+    "width": 512,
+    "height": 768
+  },
+  {
+    "file": "poster-14-linen-door.webp",
+    "title": "The Linen Door",
+    "year": 2025,
+    "genre": "Horreur",
+    "genres": [
+      "Horreur",
+      "Suspense"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/14-linen-door.png",
+    "sourceSha256": "6304dde03363dc6a8e9963df45cd20d04a0755807fcdb3918d65deb7fe1ef084",
+    "width": 512,
+    "height": 768
+  },
+  {
+    "file": "poster-15-volets-clos.webp",
+    "title": "Volets Clos",
+    "year": 2026,
+    "genre": "Mystère",
+    "genres": [
+      "Mystère",
+      "Horreur"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/15-volets-clos.png",
+    "sourceSha256": "2197245776044e83630a6ddf5727cd5909e86272aae42848820a3ce704520e5b",
+    "width": 512,
+    "height": 768
+  },
+  {
+    "file": "poster-16-low-water-house.webp",
+    "title": "Low Water House",
+    "year": 2024,
+    "genre": "Horreur",
+    "genres": [
+      "Horreur",
+      "Mystère"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/16-low-water-house.png",
+    "sourceSha256": "1e33933b5d124784145aab217822fb5f34ae00223d09048c7da88d7e5ba156cf",
+    "width": 512,
+    "height": 768
+  },
+  {
+    "file": "poster-17-etes-noemie.webp",
+    "title": "Les Étés de Noémie",
+    "year": 2025,
+    "genre": "Drame",
+    "genres": [
+      "Drame",
+      "Romance"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/17-etes-noemie.png",
+    "sourceSha256": "d94c51f06c12401cf3cd1e36b5fe20669a263310c8c3c749b228d7ff01640e01",
+    "width": 512,
+    "height": 768
+  },
+  {
+    "file": "poster-18-between-two-ferries.webp",
+    "title": "Between Two Ferries",
+    "year": 2026,
+    "genre": "Drame",
+    "genres": [
+      "Drame",
+      "Romance"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/18-between-two-ferries.png",
+    "sourceSha256": "7f83bfd59d880751b279ac5de64e872cc9a9ca359d9afad2b4c8541a9460ca13",
+    "width": 512,
+    "height": 768
+  },
+  {
+    "file": "poster-19-rive-autres.webp",
+    "title": "La Rive des Autres",
+    "year": 2024,
+    "genre": "Drame",
+    "genres": [
+      "Drame",
+      "Famille"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/19-rive-autres.png",
+    "sourceSha256": "f4323dc4948abee1530d4080c29589977dd700af4b630542cc02bf503d8e74c6",
+    "width": 512,
+    "height": 768
+  },
+  {
+    "file": "poster-20-sunday-ormby.webp",
+    "title": "Sunday in Ormby",
+    "year": 2026,
+    "genre": "Drame",
+    "genres": [
+      "Drame"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/20-sunday-ormby.png",
+    "sourceSha256": "461bcef1e399e4172e9db49a0d22ff4d330f5742bddf9f54c34817594c3a41d0",
+    "width": 512,
+    "height": 768
+  },
+  {
+    "file": "poster-21-pico-pluie.webp",
+    "title": "Pico et la Pluie",
+    "year": 2026,
     "genre": "Animation",
-    "fictional": true
+    "genres": [
+      "Animation",
+      "Famille"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/21-pico-pluie.png",
+    "sourceSha256": "e2fd8db22777de1ca9d0c77d5fa458d40921fa52f034a29fef00ab1190b7e2bf",
+    "width": 512,
+    "height": 768
   },
   {
-    "file": "poster-ouvriers-de-la-nuit.webp",
-    "title": "Les Ouvriers de la Nuit",
-    "genre": "Documentary",
-    "fictional": true
-  },
-  {
-    "file": "poster-reste-des-etes.webp",
-    "title": "Ce qui reste des Étés",
-    "genre": "Drama",
-    "fictional": true
-  },
-  {
-    "file": "poster-dernier-signal-dio.webp",
-    "title": "Le Dernier Signal d’Io",
-    "genre": "Science Fiction",
-    "fictional": true
-  },
-  {
-    "file": "poster-archive-des-pluies.webp",
-    "title": "L’Archive des Pluies",
-    "genre": "Mystery",
-    "fictional": true
-  },
-  {
-    "file": "poster-cartographes-de-laube.webp",
-    "title": "Les Cartographes de l’Aube",
-    "genre": "Adventure",
-    "fictional": true
-  },
-  {
-    "file": "poster-baleine-cerf-volant.webp",
-    "title": "La Baleine et le Cerf-volant",
+    "file": "poster-22-button-express.webp",
+    "title": "The Button Express",
+    "year": 2025,
     "genre": "Animation",
-    "fictional": true
+    "genres": [
+      "Animation",
+      "Aventure"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/22-button-express.png",
+    "sourceSha256": "e5b612dda42811dd1c18491b969cbd1359a68f34187c74c10fbbe3600d3d2d2e",
+    "width": 512,
+    "height": 768
   },
   {
-    "file": "poster-ciel-des-migrations.webp",
-    "title": "Sous le Ciel des Migrations",
-    "genre": "Documentary",
-    "fictional": true
+    "file": "poster-23-mina-paper-sea.webp",
+    "title": "Mina’s Paper Sea",
+    "year": 2026,
+    "genre": "Animation",
+    "genres": [
+      "Animation",
+      "Famille"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/23-mina-paper-sea.png",
+    "sourceSha256": "3e53ce0c244621c9e2d24be016275b26bf9741dfd1f539cc8cfb3678cc0068c9",
+    "width": 512,
+    "height": 768
   },
   {
-    "file": "poster-maisons-flottantes.webp",
-    "title": "Nos Maisons Flottantes",
-    "genre": "Drama",
-    "fictional": true
+    "file": "poster-24-bottes-plume.webp",
+    "title": "Les Bottes de Plume",
+    "year": 2024,
+    "genre": "Animation",
+    "genres": [
+      "Animation",
+      "Comédie"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/24-bottes-plume.png",
+    "sourceSha256": "033598bdaeb72dcf49aeae63415799ee3649770d7d2f05983cca226e87f3f3f6",
+    "width": 512,
+    "height": 768
   },
   {
-    "file": "poster-orbitale-des-oublies.webp",
-    "title": "L’Orbitale des Oubliés",
-    "genre": "Science Fiction",
-    "fictional": true
+    "file": "poster-25-quai-cobalt.webp",
+    "title": "Quai Cobalt",
+    "year": 2026,
+    "genre": "Crime",
+    "genres": [
+      "Crime",
+      "Policier"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/25-quai-cobalt.png",
+    "sourceSha256": "390c4e9b68e297c883efab81ef9d804850d306cdc8273308b6327bbfe2429b81",
+    "width": 512,
+    "height": 768
   },
   {
-    "file": "poster-silence-du-phare.webp",
-    "title": "Le Silence du Phare",
-    "genre": "Mystery",
-    "fictional": true
+    "file": "poster-26-orison-file.webp",
+    "title": "The Orison File",
+    "year": 2025,
+    "genre": "Espionnage",
+    "genres": [
+      "Espionnage",
+      "Thriller"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/26-orison-file.png",
+    "sourceSha256": "d914f7472b4a569e67576975a49d43e18a5525f154f8e8d5dec5e78304c869d4",
+    "width": 512,
+    "height": 768
+  },
+  {
+    "file": "poster-27-hiver-1948.webp",
+    "title": "Hiver 1948",
+    "year": 2026,
+    "genre": "Historique",
+    "genres": [
+      "Historique",
+      "Drame"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/27-hiver-1948.png",
+    "sourceSha256": "b3fe166efc90833d47b1d27cb5d60f003fbd2a1ca920f4d10feaab5aa1b00ba3",
+    "width": 512,
+    "height": 768
+  },
+  {
+    "file": "poster-28-voisins-six.webp",
+    "title": "Les Voisins du Six",
+    "year": 2024,
+    "genre": "Comédie dramatique",
+    "genres": [
+      "Comédie dramatique",
+      "Ensemble"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/28-voisins-six.png",
+    "sourceSha256": "5274cc5484bfa1941deb02b8203baadc4e9abeb06b684a8c0214b005724f293a",
+    "width": 512,
+    "height": 768
+  },
+  {
+    "file": "poster-29-contre-mistral.webp",
+    "title": "Contre le Mistral",
+    "year": 2026,
+    "genre": "Documentaire",
+    "genres": [
+      "Documentaire",
+      "Sport"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/29-contre-mistral.png",
+    "sourceSha256": "6ba5e4047eb8fbbf55af4abd4f5339f9d7a56f2fb43ebb32e0c250c898c5f125",
+    "width": 512,
+    "height": 768
+  },
+  {
+    "file": "poster-30-one-more-bell.webp",
+    "title": "One More Bell",
+    "year": 2025,
+    "genre": "Documentaire",
+    "genres": [
+      "Documentaire",
+      "Sport"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/30-one-more-bell.png",
+    "sourceSha256": "0600ea574e8ea3964c8d3d49a46118b4d08d16b5286df8e48dfc1d281e481ba6",
+    "width": 512,
+    "height": 768
+  },
+  {
+    "file": "poster-31-voix-tunnel.webp",
+    "title": "Les Voix du Tunnel",
+    "year": 2026,
+    "genre": "Documentaire",
+    "genres": [
+      "Documentaire",
+      "Musique"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/31-voix-tunnel.png",
+    "sourceSha256": "ed7da1cc36e61cfda02b2f2ef2d6577468bacc6482f6f21ce2428196d4e1c160",
+    "width": 512,
+    "height": 768
+  },
+  {
+    "file": "poster-32-clay-season.webp",
+    "title": "The Clay Season",
+    "year": 2024,
+    "genre": "Documentaire",
+    "genres": [
+      "Documentaire",
+      "Art"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/32-clay-season.png",
+    "sourceSha256": "cc0ff345f8a80bba1d68a82b1025614634be02ee9dbc17fac4495a9044842df6",
+    "width": 512,
+    "height": 768
+  },
+  {
+    "file": "poster-33-rooftop-relay.webp",
+    "title": "Rooftop Relay",
+    "year": 2026,
+    "genre": "Animation",
+    "genres": [
+      "Animation",
+      "Action"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/33-rooftop-relay.png",
+    "sourceSha256": "2cac3aa413d50253723f21c330671749ec6d4b4f9fc806344e9c949d9eaefed9",
+    "width": 512,
+    "height": 768
+  },
+  {
+    "file": "poster-34-voltigeurs-asphalte.webp",
+    "title": "Les Voltigeurs d’Asphalte",
+    "year": 2026,
+    "genre": "Animation",
+    "genres": [
+      "Animation",
+      "Aventure"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/34-voltigeurs-asphalte.png",
+    "sourceSha256": "e3884c861c695f75e28962a532c39cdda9ef1957aa9560870e752d96bca5b6bd",
+    "width": 512,
+    "height": 768
+  },
+  {
+    "file": "poster-35-beat-district.webp",
+    "title": "Beat District",
+    "year": 2025,
+    "genre": "Animation",
+    "genres": [
+      "Animation",
+      "Musique"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/35-beat-district.png",
+    "sourceSha256": "b18c3bd920236be5f3dea35d9a7aa50d61c37c71af997b18b1de0220760d23d7",
+    "width": 512,
+    "height": 768
+  },
+  {
+    "file": "poster-36-metro-comet.webp",
+    "title": "Metro Comet",
+    "year": 2026,
+    "genre": "Animation",
+    "genres": [
+      "Animation",
+      "Science-fiction"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/36-metro-comet.png",
+    "sourceSha256": "d7bf9aa820851581b06cda78e97afff07563420c7be6d55ac6e3a1c8000a4f28",
+    "width": 512,
+    "height": 768
+  },
+  {
+    "file": "poster-37-atlas-meridian.webp",
+    "title": "Atlas Meridian",
+    "year": 2026,
+    "genre": "Action",
+    "genres": [
+      "Action",
+      "Science-fiction",
+      "Aventure"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/37-atlas-meridian.png",
+    "sourceSha256": "587aff8f87ef7ac2f63bbde37a936d7316688a0fbb8264c46da3107bcbb63554",
+    "width": 512,
+    "height": 768
+  },
+  {
+    "file": "poster-38-ninth-crossing.webp",
+    "title": "The Ninth Crossing",
+    "year": 2025,
+    "genre": "Action",
+    "genres": [
+      "Action",
+      "Aventure"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/38-ninth-crossing.png",
+    "sourceSha256": "96406200fee52173c87bbeaf759b890a6974d6ca72e189157149c19426b6c7f6",
+    "width": 512,
+    "height": 768
+  },
+  {
+    "file": "poster-39-frontiere-boreale.webp",
+    "title": "Frontière Boréale",
+    "year": 2026,
+    "genre": "Action",
+    "genres": [
+      "Action",
+      "Aventure"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/39-frontiere-boreale.png",
+    "sourceSha256": "8b6b4b801d2ea1fa781c906c52c321f63d87dbdbaa8eaef015883a4c0cd6d2a5",
+    "width": 512,
+    "height": 768
+  },
+  {
+    "file": "poster-40-copper-horizon.webp",
+    "title": "Copper Horizon",
+    "year": 2026,
+    "genre": "Action",
+    "genres": [
+      "Action",
+      "Science-fiction",
+      "Aventure"
+    ],
+    "fictional": true,
+    "status": "direction_approved_assets_pending_review",
+    "source": "cinema-library-v2/posters/40-copper-horizon.png",
+    "sourceSha256": "6148a0e28fdd2215d6220b244310af8fe6aff846d8e64ca0d87801d9c2a7df5a",
+    "width": 512,
+    "height": 768
   }
 ]

@@ -32,6 +32,13 @@ The poster manifest is `assets/media/cinema/posters.json`; its order controls th
 feature preview and horizontal library rail. The Mac platform is explicitly
 labelled in development, with no public Mac download link.
 
+The current collection contains 40 original fictional posters. Source hashes and
+the coverage of the seven refreshed iPhone, iPad and Apple TV captures are recorded
+in `assets/media/cinema/native-captures.json`. Existing Duo captures remain in use
+until new native Open/Closed captures are available; they still show Aurora.
+The refreshed iPad asset is retained for preparation and is not inserted in the
+public page. The FR/EN social previews use the new cinema composition.
+
 ## Checks
 
 ```bash

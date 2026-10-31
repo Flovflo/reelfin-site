@@ -1,0 +1,85 @@
+{
+  "status": "partial",
+  "missing": [
+    "ipad/detail",
+    "duo-inner/home",
+    "duo-inner/detail",
+    "duo-outer/home",
+    "duo-outer/detail"
+  ],
+  "unavailablePlatforms": [
+    {
+      "platform": "mac",
+      "reason": "Native window capture pending owner desktop unlock; no app launch or fabricated view."
+    },
+    {
+      "platform": "duo",
+      "reason": "Verified pose and native capture pending DeviceHub access; display count alone is not proof."
+    }
+  ],
+  "captures": [
+    {
+      "file": "iphone-home.webp",
+      "source": "presentation-captures/iphone/home.png",
+      "sourceSha256": "7d002e634228a82b366dbdc8e2dd8f0621d4db2f82b1cdc2397eb0c60813dc4d",
+      "width": 840,
+      "height": 1825,
+      "presentationOnly": true,
+      "uiRetouched": false
+    },
+    {
+      "file": "iphone-detail.webp",
+      "source": "presentation-captures/iphone/detail.png",
+      "sourceSha256": "522a56209e39d3a8fbb82d7bbb17368596f92351025159e9b9042dae4ea6ab7a",
+      "width": 840,
+      "height": 1825,
+      "presentationOnly": true,
+      "uiRetouched": false
+    },
+    {
+      "file": "iphone-series.webp",
+      "source": "presentation-captures/iphone/series.png",
+      "sourceSha256": "73805533b66e6cf8e1c6718093002618314790a416553727dded316d62f2197f",
+      "width": 840,
+      "height": 1825,
+      "presentationOnly": true,
+      "uiRetouched": false
+    },
+    {
+      "file": "ipad-home.webp",
+      "source": "presentation-captures/ipad/home.png",
+      "sourceSha256": "41b3c461008b938d17ff3d276d4023bb48b5133551a4758a560d07b7fcb8a824",
+      "width": 1800,
+      "height": 1350,
+      "presentationOnly": true,
+      "uiRetouched": false
+    },
+    {
+      "file": "tv4k-home.webp",
+      "source": "presentation-captures/tv4k/home.png",
+      "sourceSha256": "3f6c80359907c6176374bbadcbc26cce11089d738f305cb902118a934c82ad89",
+      "width": 2200,
+      "height": 1238,
+      "presentationOnly": true,
+      "uiRetouched": false
+    },
+    {
+      "file": "tv4k-detail.webp",
+      "source": "presentation-captures/tv4k/detail.png",
+      "sourceSha256": "bfe53790405d20dfb21662d489ca7d879e560e781a3afca507f9f3b8fc6aefdc",
+      "width": 2200,
+      "height": 1238,
+      "presentationOnly": true,
+      "uiRetouched": false
+    },
+    {
+      "file": "tv4k-series.webp",
+      "source": "presentation-captures/tv4k/series.png",
+      "sourceSha256": "4743cc50d8aa76ae41168c30b6dfcb6449b680845a388510c6fa5ae9f78d9d22",
+      "width": 2200,
+      "height": 1238,
+      "presentationOnly": true,
+      "uiRetouched": false
+    }
+  ]
+}
