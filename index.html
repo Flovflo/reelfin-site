@@ -22,8 +22,8 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="assets/media/NEW/reelfin-mark.png">
-  <link rel="stylesheet" href="assets/site.css?v=cinema-3">
-  <script defer src="assets/site.js?v=cinema-3"></script>
+  <link rel="stylesheet" href="assets/site.css?v=cinema-4">
+  <script defer src="assets/site.js?v=cinema-4"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "ReelFin", "operatingSystem": "iOS 26+, iPadOS 26+, tvOS 26+", "applicationCategory": "EntertainmentApplication", "description": "Your Jellyfin library on iPhone, iPad and Apple TV. Resume your favourites, explore your collection and take compatible downloads with you. Native. Independent. Yours.", "url": "https://flovflo.github.io/reelfin-site/", "downloadUrl": "https://apps.apple.com/app/reelfin/id6762079357", "author": {"@type": "Person", "name": "Florian Taffin"}}</script>
 </head>
 <body>
@@ -40,9 +40,12 @@
   </header>
   <main id="main-content">
     <section class="hero container" id="top" aria-labelledby="hero-title">
-      <h1 id="hero-title"><span class="hero__title-line">Your cinema.</span><span class="hero__title-line hero__title-line--muted">Your way.</span></h1>
+      <div class="hero__identity">
+        <div class="hero-emblem" aria-hidden="true"><img src="assets/media/NEW/reelfin-mark.png" alt="" width="400" height="240"><canvas></canvas></div>
+        <h1 id="hero-title"><span class="hero__title-line">Your cinema.</span><span class="hero__title-line hero__title-line--muted">Your way.</span></h1>
+      </div>
       <p class="hero__lede">A native Jellyfin experience, made for iPhone Duo.<br>Your library on iPhone, iPad and Apple TV.</p>
-      <a class="button button--primary" href="https://apps.apple.com/app/reelfin/id6762079357"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.2 12.5c0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.4-1.6-2.9-1.6-1.2-.2-2.4.8-3 .8-.7 0-1.7-.8-2.8-.7-1.4 0-2.8.9-3.5 2.1-1.5 2.6-.4 6.6 1.1 8.8.7 1.1 1.6 2.2 2.7 2.2 1.1-.1 1.5-.7 2.8-.7 1.3 0 1.7.7 2.8.7s1.9-1.1 2.6-2.1c.9-1.2 1.2-2.4 1.2-2.5-.1 0-2.8-1.1-2.8-3.8ZM15.2 6.2c.6-.8 1-1.8.9-2.9-.9.1-2 .6-2.7 1.4-.6.7-1.2 1.8-1 2.9 1 .1 2-.5 2.8-1.4Z"/></svg><span>Download on the App Store</span><span class="arrow" aria-hidden="true">↗</span></a>
+      <a class="button button--primary" href="https://apps.apple.com/app/reelfin/id6762079357"><span>Download on the App Store</span><span class="arrow" aria-hidden="true">↗</span></a>
       <p class="hero__platforms">iPhone · iPhone Duo · iPad · Apple TV</p><a class="hero__duo-link" href="#duo">Explore the iPhone Duo experience <span aria-hidden="true">↓</span></a>
       <div class="hero__stage">
         <figure class="app-capture"><img src="assets/media/cinema/tv4k-home.webp" alt="ReelFin Apple TV home screen, using a fictional demonstration library." width="2200" height="1238" fetchpriority="high"></figure>
@@ -51,14 +54,13 @@
       <p class="image-credit">Demonstration library · Fictional artwork · Movies and shows not included</p>
     </section>
     <section class="section container duo" id="duo" aria-labelledby="duo-title">
-      <div class="section-heading"><h2 id="duo-title">Made for<br><span class="muted">iPhone Duo.</span></h2><p>Your Jellyfin library,<br>within reach on the outer screen.</p></div>
+      <div class="section-heading"><h2 id="duo-title">Made for<br><span class="muted">iPhone Duo.</span></h2><p>Your library on the big inner screen.<br>Your next episode on the outer screen.</p></div>
       <div class="duo-stage">
-        <figure><div class="app-capture"><img src="assets/media/cinema/duo-outer-home.webp" alt="Native ReelFin demonstration Home on the iPhone Duo outer screen, with the device closed." width="840" height="1222" loading="lazy"></div><figcaption>Home</figcaption></figure>
-        <figure><div class="app-capture"><img src="assets/media/cinema/duo-outer-detail.webp" alt="Native ReelFin demonstration movie detail on the compact iPhone Duo outer screen." width="840" height="1222" loading="lazy"></div><figcaption>Film details</figcaption></figure>
-        <figure><div class="app-capture"><img src="assets/media/cinema/duo-outer-series.webp" alt="Native ReelFin demonstration series detail and Resume action on the iPhone Duo outer screen, with the device closed." width="840" height="1222" loading="lazy"></div><figcaption>Resume a series</figcaption></figure>
+        <figure class="duo-stage__open"><div class="app-capture"><img src="assets/media/cinema/duo-inner-home.webp" alt="Native ReelFin demonstration Home on the large inner screen of iPhone Duo, with the device open." width="1800" height="1266" loading="lazy"></div><figcaption>Open · Your library</figcaption></figure>
+        <figure class="duo-stage__closed"><div class="app-capture"><img src="assets/media/cinema/duo-outer-series.webp" alt="Native ReelFin demonstration series detail and Resume action on the iPhone Duo outer screen, with the device closed." width="840" height="1222" loading="lazy"></div><figcaption>Closed · Resume your series</figcaption></figure>
       </div>
-      <p class="image-credit">ReelFin on the iPhone Duo outer screen · Demonstration library · Content not included</p>
-      <div class="tv-benefits"><article><h3>Your library, close at hand.</h3><p>Find your Home, library rows and Continue Watching on the compact outer screen.</p></article><article><h3>Navigation within reach.</h3><p>Main sections and back controls stay accessible, with layouts that respect the screen’s usable space.</p></article><article><h3>Back to your episode.</h3><p>Open a series and find the episode you were watching, with your progress ready to resume.</p></article></div>
+      <p class="image-credit">iPhone Duo open and closed · Demonstration library · Content not included</p>
+      <div class="tv-benefits"><article><h3>Room for your library.</h3><p>Open iPhone Duo to browse your Home and library rows on the larger inner screen.</p></article><article><h3>Navigation within reach.</h3><p>Main sections and back controls stay accessible, with layouts that respect the screen’s usable space.</p></article><article><h3>Back to your episode.</h3><p>Open a series and find the episode you were watching, with your progress ready to resume.</p></article></div>
     </section>
     <section class="section container" id="overview" aria-labelledby="benefits-title">
       <div class="section-heading"><h2 id="benefits-title">Less browsing.<br><span class="muted">More watching.</span></h2><p>From one more episode to a new favourite. Everything you came to watch, one tap away.</p></div>
@@ -85,7 +87,7 @@
 <details><summary>Can I watch offline?</summary><p>On iPhone and iPad, you can download compatible titles when your Jellyfin account allows downloads. File compatibility and available storage still apply. Downloads are not available on Apple TV.</p></details>
 <details><summary>How does ReelFin handle privacy?</summary><p>Your session token is stored in Apple Keychain. ReelFin does not sell your personal data or use cross-app tracking. Optional crash diagnostics may be enabled in a production build. <a href="privacy.html">Read the privacy policy</a>.</p></details>
 <details><summary>Is ReelFin available on Mac?</summary><p>A dedicated Mac experience is in development. It is not available for public download yet. ReelFin is currently available for iPhone, iPad and Apple TV.</p></details></div></section>
-    <section class="final-cta container" id="support" aria-labelledby="download-title"><h2 id="download-title">Press play on<br>your library.</h2><a class="button button--primary" href="https://apps.apple.com/app/reelfin/id6762079357"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.2 12.5c0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.4-1.6-2.9-1.6-1.2-.2-2.4.8-3 .8-.7 0-1.7-.8-2.8-.7-1.4 0-2.8.9-3.5 2.1-1.5 2.6-.4 6.6 1.1 8.8.7 1.1 1.6 2.2 2.7 2.2 1.1-.1 1.5-.7 2.8-.7 1.3 0 1.7.7 2.8.7s1.9-1.1 2.6-2.1c.9-1.2 1.2-2.4 1.2-2.5-.1 0-2.8-1.1-2.8-3.8ZM15.2 6.2c.6-.8 1-1.8.9-2.9-.9.1-2 .6-2.7 1.4-.6.7-1.2 1.8-1 2.9 1 .1 2-.5 2.8-1.4Z"/></svg><span>Download on the App Store</span><span class="arrow" aria-hidden="true">↗</span></a><p>On the App Store. Connect your own Jellyfin server.</p><div class="final-cta__support"><a href="support.html">Support ↗</a><a href="https://testflight.apple.com/join/TkVVXmU2">Join the beta ↗</a></div></section>
+    <section class="final-cta container" id="support" aria-labelledby="download-title"><h2 id="download-title">Press play on<br>your library.</h2><a class="button button--primary" href="https://apps.apple.com/app/reelfin/id6762079357"><span>Download on the App Store</span><span class="arrow" aria-hidden="true">↗</span></a><p>On the App Store. Connect your own Jellyfin server.</p><div class="final-cta__support"><a href="support.html">Support ↗</a><a href="https://testflight.apple.com/join/TkVVXmU2">Join the beta ↗</a></div></section>
   </main>
   <footer class="site-footer" id="privacy"><div><a class="brand brand--footer" href="#top"><span class="brand__mark" aria-hidden="true"><img src="assets/media/NEW/reelfin-mark.png" alt="" width="400" height="240"></span><span>ReelFin</span></a><p>An independent client for your own Jellyfin library. Not affiliated with Jellyfin.</p></div><nav class="site-footer__links" aria-label="Footer"><a href="support.html">Support</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav></footer>
 </body>

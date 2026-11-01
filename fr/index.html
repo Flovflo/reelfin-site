@@ -22,8 +22,8 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="../assets/media/NEW/reelfin-mark.png">
-  <link rel="stylesheet" href="../assets/site.css?v=cinema-3">
-  <script defer src="../assets/site.js?v=cinema-3"></script>
+  <link rel="stylesheet" href="../assets/site.css?v=cinema-4">
+  <script defer src="../assets/site.js?v=cinema-4"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "ReelFin", "operatingSystem": "iOS 26+, iPadOS 26+, tvOS 26+", "applicationCategory": "EntertainmentApplication", "description": "Votre médiathèque Jellyfin sur iPhone, iPad et Apple TV. Reprenez vos favoris, explorez vos collections et emportez vos téléchargements compatibles. Natif. Indépendant. À vous.", "url": "https://flovflo.github.io/reelfin-site/", "downloadUrl": "https://apps.apple.com/app/reelfin/id6762079357", "author": {"@type": "Person", "name": "Florian Taffin"}}</script>
 </head>
 <body>
@@ -40,9 +40,12 @@
   </header>
   <main id="main-content">
     <section class="hero container" id="top" aria-labelledby="hero-title">
-      <h1 id="hero-title"><span class="hero__title-line">Votre cinéma.</span><span class="hero__title-line hero__title-line--muted">À vous.</span></h1>
+      <div class="hero__identity">
+        <div class="hero-emblem" aria-hidden="true"><img src="../assets/media/NEW/reelfin-mark.png" alt="" width="400" height="240"><canvas></canvas></div>
+        <h1 id="hero-title"><span class="hero__title-line">Votre cinéma.</span><span class="hero__title-line hero__title-line--muted">À vous.</span></h1>
+      </div>
       <p class="hero__lede">L’expérience Jellyfin native, optimisée pour iPhone Duo.<br>Votre médiathèque sur iPhone, iPad et Apple TV.</p>
-      <a class="button button--primary" href="https://apps.apple.com/app/reelfin/id6762079357"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.2 12.5c0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.4-1.6-2.9-1.6-1.2-.2-2.4.8-3 .8-.7 0-1.7-.8-2.8-.7-1.4 0-2.8.9-3.5 2.1-1.5 2.6-.4 6.6 1.1 8.8.7 1.1 1.6 2.2 2.7 2.2 1.1-.1 1.5-.7 2.8-.7 1.3 0 1.7.7 2.8.7s1.9-1.1 2.6-2.1c.9-1.2 1.2-2.4 1.2-2.5-.1 0-2.8-1.1-2.8-3.8ZM15.2 6.2c.6-.8 1-1.8.9-2.9-.9.1-2 .6-2.7 1.4-.6.7-1.2 1.8-1 2.9 1 .1 2-.5 2.8-1.4Z"/></svg><span>Télécharger sur l’App Store</span><span class="arrow" aria-hidden="true">↗</span></a>
+      <a class="button button--primary" href="https://apps.apple.com/app/reelfin/id6762079357"><span>Télécharger sur l’App Store</span><span class="arrow" aria-hidden="true">↗</span></a>
       <p class="hero__platforms">iPhone · iPhone Duo · iPad · Apple TV</p><a class="hero__duo-link" href="#duo">Découvrir l’expérience iPhone Duo <span aria-hidden="true">↓</span></a>
       <div class="hero__stage">
         <figure class="app-capture"><img src="../assets/media/cinema/tv4k-home.webp" alt="Accueil ReelFin sur Apple TV, avec une bibliothèque fictive de démonstration." width="2200" height="1238" fetchpriority="high"></figure>
@@ -51,14 +54,13 @@
       <p class="image-credit">Bibliothèque de démonstration · Affiches fictives · Films et séries non inclus</p>
     </section>
     <section class="section container duo" id="duo" aria-labelledby="duo-title">
-      <div class="section-heading"><h2 id="duo-title">Optimisé pour<br><span class="muted">iPhone Duo.</span></h2><p>Votre médiathèque Jellyfin,<br>à portée de main sur l’écran extérieur.</p></div>
+      <div class="section-heading"><h2 id="duo-title">Optimisé pour<br><span class="muted">iPhone Duo.</span></h2><p>Votre médiathèque sur le grand écran intérieur.<br>La suite de votre série sur l’écran extérieur.</p></div>
       <div class="duo-stage">
-        <figure><div class="app-capture"><img src="../assets/media/cinema/duo-outer-home.webp" alt="Accueil natif ReelFin en démonstration sur l’écran extérieur de l’iPhone Duo fermé." width="840" height="1222" loading="lazy"></div><figcaption>Accueil</figcaption></figure>
-        <figure><div class="app-capture"><img src="../assets/media/cinema/duo-outer-detail.webp" alt="Fiche native ReelFin en démonstration sur l’écran extérieur compact de l’iPhone Duo." width="840" height="1222" loading="lazy"></div><figcaption>Fiche d’un film</figcaption></figure>
-        <figure><div class="app-capture"><img src="../assets/media/cinema/duo-outer-series.webp" alt="Fiche de série native ReelFin en démonstration avec l’action Reprendre sur l’écran extérieur de l’iPhone Duo fermé." width="840" height="1222" loading="lazy"></div><figcaption>Reprendre une série</figcaption></figure>
+        <figure class="duo-stage__open"><div class="app-capture"><img src="../assets/media/cinema/duo-inner-home.webp" alt="Accueil natif ReelFin en démonstration sur le grand écran intérieur de l’iPhone Duo ouvert." width="1800" height="1266" loading="lazy"></div><figcaption>Ouvert · Votre médiathèque</figcaption></figure>
+        <figure class="duo-stage__closed"><div class="app-capture"><img src="../assets/media/cinema/duo-outer-series.webp" alt="Fiche de série native ReelFin en démonstration avec l’action Reprendre sur l’écran extérieur de l’iPhone Duo fermé." width="840" height="1222" loading="lazy"></div><figcaption>Fermé · Reprendre votre série</figcaption></figure>
       </div>
-      <p class="image-credit">ReelFin sur l’écran extérieur de l’iPhone Duo · Bibliothèque de démonstration · Contenus non inclus</p>
-      <div class="tv-benefits"><article><h3>Votre bibliothèque vous suit.</h3><p>Retrouvez votre accueil, vos rangées et votre reprise de lecture sur l’écran extérieur compact.</p></article><article><h3>Les commandes à portée de main.</h3><p>Navigation et retour restent accessibles, dans une interface qui respecte l’espace utile de l’écran.</p></article><article><h3>Retrouvez votre épisode.</h3><p>Ouvrez une série et retrouvez l’épisode en cours, avec votre progression pour reprendre la suite.</p></article></div>
+      <p class="image-credit">iPhone Duo ouvert et fermé · Bibliothèque de démonstration · Contenus non inclus</p>
+      <div class="tv-benefits"><article><h3>De la place pour votre médiathèque.</h3><p>Ouvrez l’iPhone Duo et retrouvez votre accueil et vos rangées sur le grand écran intérieur.</p></article><article><h3>Les commandes à portée de main.</h3><p>Navigation et retour restent accessibles, dans une interface qui respecte l’espace utile de l’écran.</p></article><article><h3>Retrouvez votre épisode.</h3><p>Ouvrez une série et retrouvez l’épisode en cours, avec votre progression pour reprendre la suite.</p></article></div>
     </section>
     <section class="section container" id="overview" aria-labelledby="benefits-title">
       <div class="section-heading"><h2 id="benefits-title">Moins chercher.<br><span class="muted">Plus regarder.</span></h2><p>Un épisode de plus ou un nouveau coup de cœur. Tout ce que vous aimez regarder, à portée de main.</p></div>
@@ -85,7 +87,7 @@
 <details><summary>Peut-on regarder hors ligne ?</summary><p>Sur iPhone et iPad, vous pouvez télécharger des titres compatibles si votre compte Jellyfin autorise les téléchargements. La compatibilité et l’espace disponible restent nécessaires. Les téléchargements ne sont pas disponibles sur Apple TV.</p></details>
 <details><summary>Comment mes données sont-elles traitées ?</summary><p>Votre jeton de session est conservé dans le trousseau Apple. ReelFin ne vend pas vos données et ne fait pas de suivi entre les apps. Des diagnostics de plantage facultatifs peuvent être activés dans une version de production. <a href="../privacy.html">Lire la politique de confidentialité (en anglais)</a>.</p></details>
 <details><summary>ReelFin est-il disponible sur Mac ?</summary><p>Une expérience dédiée au Mac est en préparation. Elle n’est pas encore disponible au téléchargement public. ReelFin est actuellement disponible sur iPhone, iPad et Apple TV.</p></details></div></section>
-    <section class="final-cta container" id="support" aria-labelledby="download-title"><h2 id="download-title">Votre médiathèque.<br>Appuyez sur lecture.</h2><a class="button button--primary" href="https://apps.apple.com/app/reelfin/id6762079357"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.2 12.5c0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.4-1.6-2.9-1.6-1.2-.2-2.4.8-3 .8-.7 0-1.7-.8-2.8-.7-1.4 0-2.8.9-3.5 2.1-1.5 2.6-.4 6.6 1.1 8.8.7 1.1 1.6 2.2 2.7 2.2 1.1-.1 1.5-.7 2.8-.7 1.3 0 1.7.7 2.8.7s1.9-1.1 2.6-2.1c.9-1.2 1.2-2.4 1.2-2.5-.1 0-2.8-1.1-2.8-3.8ZM15.2 6.2c.6-.8 1-1.8.9-2.9-.9.1-2 .6-2.7 1.4-.6.7-1.2 1.8-1 2.9 1 .1 2-.5 2.8-1.4Z"/></svg><span>Télécharger sur l’App Store</span><span class="arrow" aria-hidden="true">↗</span></a><p>Sur l’App Store. Connectez votre propre serveur Jellyfin.</p><div class="final-cta__support"><a href="../support.html">Assistance ↗</a><a href="https://testflight.apple.com/join/TkVVXmU2">Rejoindre la bêta ↗</a></div></section>
+    <section class="final-cta container" id="support" aria-labelledby="download-title"><h2 id="download-title">Votre médiathèque.<br>Appuyez sur lecture.</h2><a class="button button--primary" href="https://apps.apple.com/app/reelfin/id6762079357"><span>Télécharger sur l’App Store</span><span class="arrow" aria-hidden="true">↗</span></a><p>Sur l’App Store. Connectez votre propre serveur Jellyfin.</p><div class="final-cta__support"><a href="../support.html">Assistance ↗</a><a href="https://testflight.apple.com/join/TkVVXmU2">Rejoindre la bêta ↗</a></div></section>
   </main>
   <footer class="site-footer" id="privacy"><div><a class="brand brand--footer" href="#top"><span class="brand__mark" aria-hidden="true"><img src="../assets/media/NEW/reelfin-mark.png" alt="" width="400" height="240"></span><span>ReelFin</span></a><p>Un client indépendant pour votre médiathèque Jellyfin. Sans affiliation avec Jellyfin.</p></div><nav class="site-footer__links" aria-label="Pied de page"><a href="../support.html">Assistance</a><a href="../privacy.html">Confidentialité</a><a href="../terms.html">Conditions</a></nav></footer>
 </body>

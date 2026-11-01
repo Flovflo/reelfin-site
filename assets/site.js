@@ -37,6 +37,8 @@ let revealObserver;
 
 const reveal = (element, { delay = 0, showcase = false } = {}) => {
   if (!element || playedReveals.has(element) || reducedMotion.matches || !element.animate) return;
+  // Apple product artwork stays still, including its containing surfaces.
+  if (element.matches(".device-artwork") || element.querySelector(".device-artwork")) return;
   playedReveals.add(element);
   const animation = element.animate(
     [
@@ -93,3 +95,94 @@ reducedMotion.addEventListener("change", () => {
   }
 });
 startReveals();
+
+// A brief silver trace follows our own emblem's pixels. The original PNG is
+// always present underneath: no loader, hidden brand, or dependency on canvas.
+const emblem = document.querySelector(".hero-emblem");
+const emblemImage = emblem?.querySelector("img");
+const emblemCanvas = emblem?.querySelector("canvas");
+let emblemFrame = 0;
+let emblemPlayed = false;
+
+const stopEmblem = () => {
+  cancelAnimationFrame(emblemFrame);
+  emblemFrame = 0;
+  const context = emblemCanvas?.getContext("2d");
+  context?.clearRect(0, 0, emblemCanvas.width, emblemCanvas.height);
+  emblemImage?.style.removeProperty("opacity");
+};
+
+const playEmblem = () => {
+  if (emblemPlayed || reducedMotion.matches || document.hidden || !emblemCanvas || !emblemImage?.naturalWidth) return;
+  const context = emblemCanvas.getContext("2d");
+  if (!context) return;
+  emblemPlayed = true;
+  const bounds = emblem.getBoundingClientRect();
+  if (bounds.bottom < 0 || bounds.top > window.innerHeight) return;
+  const imageBounds = emblemImage.getBoundingClientRect();
+  const ratio = Math.min(window.devicePixelRatio || 1, 2);
+  emblemCanvas.width = Math.round(bounds.width * ratio);
+  emblemCanvas.height = Math.round(bounds.height * ratio);
+  context.scale(ratio, ratio);
+
+  const sampler = document.createElement("canvas");
+  sampler.width = emblemImage.naturalWidth;
+  sampler.height = emblemImage.naturalHeight;
+  const sampleContext = sampler.getContext("2d", { willReadFrequently: true });
+  if (!sampleContext) return;
+  let pixels;
+  try {
+    sampleContext.drawImage(emblemImage, 0, 0);
+    pixels = sampleContext.getImageData(0, 0, sampler.width, sampler.height).data;
+  } catch {
+    return;
+  }
+  const scale = imageBounds.width / sampler.width;
+  const points = [];
+  const step = window.innerWidth > 760 ? 2 : 3;
+  for (let y = 0; y < sampler.height; y += step) {
+    for (let x = 0; x < sampler.width; x += step) {
+      const index = (y * sampler.width + x) * 4;
+      const light = (pixels[index] + pixels[index + 1] + pixels[index + 2]) / 765;
+      if (light < .3) continue;
+      const px = (x - sampler.width / 2) * scale;
+      const py = (y - sampler.height / 2) * scale;
+      const phase = Math.atan2(py, px);
+      points.push({ x: px, y: py, light, phase, depth: Math.sin(x * .17 + y * .11) });
+    }
+  }
+  let started;
+  const draw = (time) => {
+    if (reducedMotion.matches || document.hidden) return stopEmblem();
+    started ??= time;
+    const progress = Math.min((time - started) / 3000, 1);
+    const settle = Math.pow(1 - progress, 2);
+    const fade = Math.min(progress * 7, 1) * Math.min((1 - progress) * 5, 1);
+    context.clearRect(0, 0, bounds.width, bounds.height);
+    const resolve = Math.max(0, Math.min((progress - .4) / .5, 1));
+    emblemImage.style.opacity = String(.24 + .76 * resolve * resolve * (3 - 2 * resolve));
+    for (const point of points) {
+      const turn = settle * 1.1 * point.depth;
+      const drift = settle * (12 + 22 * point.light);
+      const x = point.x * Math.cos(turn) - point.y * Math.sin(turn) + Math.cos(point.phase) * drift;
+      const y = point.x * Math.sin(turn) + point.y * Math.cos(turn) + Math.sin(point.phase) * drift * .65;
+      const sweep = Math.max(0, 1 - Math.abs((point.x + point.y * .45) / 130 - (progress * 2.8 - 1.4)) * 3);
+      const alpha = fade * (.6 + sweep * .4) * point.light;
+      context.fillStyle = `rgba(224,233,241,${alpha})`;
+      context.fillRect(bounds.width / 2 + x, bounds.height / 2 + y, 1 + settle * .7, 1 + settle * .7);
+    }
+    if (progress < 1) emblemFrame = requestAnimationFrame(draw);
+    else stopEmblem();
+  };
+  emblemFrame = requestAnimationFrame(draw);
+};
+
+if (emblemImage?.complete) playEmblem();
+else emblemImage?.addEventListener("load", playEmblem, { once: true });
+reducedMotion.addEventListener("change", () => {
+  if (reducedMotion.matches) stopEmblem();
+});
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) stopEmblem();
+});
+window.addEventListener("resize", stopEmblem, { passive: true });
