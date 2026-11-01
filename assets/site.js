@@ -104,96 +104,289 @@ reducedMotion.addEventListener("change", () => {
 });
 startReveals();
 
-// A brief silver trace follows our own emblem's pixels. The original PNG is
-// always present underneath: no loader, hidden brand, or dependency on canvas.
-const emblem = document.querySelector(".hero-emblem");
-const emblemImage = emblem?.querySelector("img");
-const emblemCanvas = emblem?.querySelector("canvas");
-let emblemFrame = 0;
-let emblemPlayed = false;
+// The emblem is made of dust. On arrival its grains drift in and settle into
+// the rings, scrolling scatters them, and they gather again above the closing
+// call to action. Hovering the picture breaks it into no-signal static.
+// The original PNGs are always present: without JS, canvas or motion they are
+// simply the emblem, and the dust only ever covers what it has hidden.
+const dustStages = [...document.querySelectorAll(".hero-emblem, .cta-emblem")];
+const dustImages = dustStages.map((stage) => stage.querySelector("img"));
+const clampUnit = (value) => Math.min(1, Math.max(0, value));
+const ease = (value) => { const t = clampUnit(value); return t * t * (3 - 2 * t); };
+let pointerX = -1e4;
+let pointerY = -1e4;
 
-const stopEmblem = () => {
-  cancelAnimationFrame(emblemFrame);
-  emblemFrame = 0;
-  const context = emblemCanvas?.getContext("2d");
-  context?.clearRect(0, 0, emblemCanvas.width, emblemCanvas.height);
-  emblemImage?.style.removeProperty("opacity");
-};
-
-const playEmblem = () => {
-  if (emblemPlayed || reducedMotion.matches || document.hidden || !emblemCanvas || !emblemImage?.naturalWidth) return;
-  const context = emblemCanvas.getContext("2d");
+const startDust = () => {
+  const source = dustImages[0];
+  const canvas = document.createElement("canvas");
+  const context = canvas.getContext("2d");
   if (!context) return;
-  emblemPlayed = true;
-  const bounds = emblem.getBoundingClientRect();
-  if (bounds.bottom < 0 || bounds.top > window.innerHeight) return;
-  const imageBounds = emblemImage.getBoundingClientRect();
-  const ratio = Math.min(window.devicePixelRatio || 1, 2);
-  emblemCanvas.width = Math.round(bounds.width * ratio);
-  emblemCanvas.height = Math.round(bounds.height * ratio);
-  context.scale(ratio, ratio);
-
   const sampler = document.createElement("canvas");
-  sampler.width = emblemImage.naturalWidth;
-  sampler.height = emblemImage.naturalHeight;
+  const columns = window.innerWidth < 700 ? 110 : 150;
+  const rows = Math.round(columns * source.naturalHeight / source.naturalWidth);
+  sampler.width = columns;
+  sampler.height = rows;
   const sampleContext = sampler.getContext("2d", { willReadFrequently: true });
-  if (!sampleContext) return;
   let pixels;
   try {
-    sampleContext.drawImage(emblemImage, 0, 0);
-    pixels = sampleContext.getImageData(0, 0, sampler.width, sampler.height).data;
+    sampleContext.drawImage(source, 0, 0, columns, rows);
+    pixels = sampleContext.getImageData(0, 0, columns, rows).data;
   } catch {
     return;
   }
-  const scale = imageBounds.width / sampler.width;
-  const points = [];
-  const step = window.innerWidth > 760 ? 2 : 3;
-  for (let y = 0; y < sampler.height; y += step) {
-    for (let x = 0; x < sampler.width; x += step) {
-      const index = (y * sampler.width + x) * 4;
+  const grains = [];
+  for (let y = 0; y < rows; y++) {
+    for (let x = 0; x < columns; x++) {
+      const index = (y * columns + x) * 4;
       const light = (pixels[index] + pixels[index + 1] + pixels[index + 2]) / 765;
-      if (light < .3) continue;
-      const px = (x - sampler.width / 2) * scale;
-      const py = (y - sampler.height / 2) * scale;
-      const phase = Math.atan2(py, px);
-      points.push({ x: px, y: py, light, phase, depth: Math.sin(x * .17 + y * .11) });
+      if (light < .2) continue;
+      const angle = Math.random() * Math.PI * 2;
+      const distance = .5 + Math.random() * .9;
+      grains.push({
+        u: (x + .5) / columns - .5, v: (y + .5) / rows - .5, alpha: Math.min(1, light * 1.7), solid: light > .42,
+        sx: Math.cos(angle) * distance, sy: Math.sin(angle) * distance * .7 - .25,
+        x: 0, y: 0, vx: 0, vy: 0, noise: Math.random(), seed: Math.random() * 100, spin: Math.random() - .5,
+      });
     }
   }
-  let started;
-  const draw = (time) => {
-    if (reducedMotion.matches || document.hidden) return stopEmblem();
-    started ??= time;
-    const progress = Math.min((time - started) / 3000, 1);
-    const settle = Math.pow(1 - progress, 2);
-    const fade = Math.min(progress * 7, 1) * Math.min((1 - progress) * 5, 1);
-    context.clearRect(0, 0, bounds.width, bounds.height);
-    const resolve = Math.max(0, Math.min((progress - .4) / .5, 1));
-    emblemImage.style.opacity = String(.24 + .76 * resolve * resolve * (3 - 2 * resolve));
-    for (const point of points) {
-      const turn = settle * 1.1 * point.depth;
-      const drift = settle * (12 + 22 * point.light);
-      const x = point.x * Math.cos(turn) - point.y * Math.sin(turn) + Math.cos(point.phase) * drift;
-      const y = point.x * Math.sin(turn) + point.y * Math.cos(turn) + Math.sin(point.phase) * drift * .65;
-      const sweep = Math.max(0, 1 - Math.abs((point.x + point.y * .45) / 130 - (progress * 2.8 - 1.4)) * 3);
-      const alpha = fade * (.6 + sweep * .4) * point.light;
-      context.fillStyle = `rgba(224,233,241,${alpha})`;
-      context.fillRect(bounds.width / 2 + x, bounds.height / 2 + y, 1 + settle * .7, 1 + settle * .7);
-    }
-    if (progress < 1) emblemFrame = requestAnimationFrame(draw);
-    else stopEmblem();
+
+  canvas.className = "dust";
+  canvas.setAttribute("aria-hidden", "true");
+  document.body.append(canvas);
+  const light = document.createElement("div");
+  light.className = "cursor-light";
+  light.setAttribute("aria-hidden", "true");
+  document.body.append(light);
+  document.documentElement.classList.add("has-dust");
+  const brandMark = document.querySelector(".site-header .brand__mark");
+
+  let width = 0;
+  let height = 0;
+  let ratio = 1;
+  let frame = 0;
+  let started = 0;
+  let smoothScroll = window.scrollY;
+  let activeStage = -1;
+  let lastLeft = 0;
+  let lastTop = 0;
+  let arrival = 0;
+  let hover = 0;
+  let hoverTarget = 0;
+  let lightX = window.innerWidth / 2;
+  let lightY = window.innerHeight / 2;
+  let noiseOffset = 0;
+  let docked = null;
+  let idle = false;
+
+  const resize = () => {
+    width = document.documentElement.clientWidth;
+    height = window.innerHeight;
+    ratio = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.round(width * ratio);
+    canvas.height = Math.round(height * ratio);
+    context.setTransform(ratio, 0, 0, ratio, 0, 0);
   };
-  emblemFrame = requestAnimationFrame(draw);
+  const scatterAround = (bounds) => {
+    const spread = bounds.width * 1.3 + width * .3;
+    for (const grain of grains) {
+      grain.x = bounds.left + bounds.width / 2 + grain.u * bounds.width + grain.sx * spread;
+      grain.y = bounds.top + bounds.height / 2 + grain.v * bounds.height + grain.sy * spread;
+      grain.vx = 0;
+      grain.vy = 0;
+    }
+  };
+  const stop = () => {
+    cancelAnimationFrame(frame);
+    frame = 0;
+    canvas.remove();
+    light.remove();
+    document.documentElement.classList.remove("has-dust");
+    brandMark?.classList.remove("is-docked");
+    dustImages.forEach((image) => image.style.removeProperty("opacity"));
+    dustStages.forEach((stage) => stage.classList.remove("is-live"));
+  };
+
+  dustStages.forEach((stage) => {
+    stage.addEventListener("pointerenter", (event) => { if (event.pointerType === "mouse") hoverTarget = 1; });
+    stage.addEventListener("pointerleave", () => { hoverTarget = 0; });
+  });
+
+  const draw = (time) => {
+    frame = requestAnimationFrame(draw);
+    started ||= time;
+    const seconds = (time - started) / 1000;
+    const intro = ease((seconds - .15) / 1.9);
+    smoothScroll += (window.scrollY - smoothScroll) * .12;
+    const lag = window.scrollY - smoothScroll;
+    lightX += (pointerX - lightX) * .08;
+    lightY += (pointerY - lightY) * .08;
+    light.style.transform = `translate(${lightX}px, ${lightY}px)`;
+
+    // Each stage has a presence: the hero fades over the first scroll, the
+    // closing emblem gathers as it rises into view.
+    const first = dustImages[0].getBoundingClientRect();
+    const last = dustImages[1]?.getBoundingClientRect();
+    const firstCentre = first.top + first.height / 2 + lag;
+    const lastCentre = last ? last.top + last.height / 2 + lag : Infinity;
+    const firstPresence = 1 - Math.pow(clampUnit(window.scrollY / 320), 1.15);
+    const lastPresence = last ? ease((height * 1.2 - lastCentre) / (height * .42)) : 0;
+    const useFirst = firstCentre > -first.height * .5 && firstPresence > .001 && (firstPresence >= lastPresence || lastCentre > height);
+    const stage = useFirst ? 0 : 1;
+    const bounds = useFirst ? first : last;
+
+    if (stage === activeStage) {
+      // Grains travel with the page while it scrolls.
+      const dx = bounds.left - lastLeft;
+      const dy = bounds.top - lastTop;
+      if (dx || dy) for (const grain of grains) { grain.x += dx; grain.y += dy; }
+    } else {
+      if (activeStage !== -1) arrival = 0;
+      activeStage = stage;
+      scatterAround(bounds);
+    }
+    lastLeft = bounds.left;
+    lastTop = bounds.top;
+    arrival = Math.min(1, arrival + .03);
+
+    const presence = (useFirst ? firstPresence : lastPresence) * intro;
+    const settled = ease(presence);
+    const picture = ease((presence - .86) / .14);
+    const dust = 1 - picture;
+    hover += (hoverTarget - hover) * .07;
+    const snow = ease(hover);
+    dustImages.forEach((image, index) => { image.style.opacity = String(index === stage ? picture : 0); });
+    dustStages.forEach((element, index) => element.classList.toggle("is-live", index === stage && picture > .9));
+    const dock = !useFirst || firstPresence < .35;
+    if (dock !== docked) { docked = dock; brandMark?.classList.toggle("is-docked", dock); }
+
+    // Nothing to draw once the picture is whole and nobody touches it.
+    const quiet = dust < .01 && snow < .01;
+    if (quiet && idle) return;
+    idle = quiet;
+    context.clearRect(0, 0, width, height);
+    if (quiet) return;
+
+    for (let i = noiseOffset; i < grains.length; i += 3) grains[i].noise = Math.random();
+    noiseOffset = (noiseOffset + 1) % 3;
+    const size = Math.max(1.6, bounds.width / columns * 1.05);
+    const loose = Math.pow(clampUnit((.97 - settled) / .97), 1.3);
+    const spread = bounds.width * .5 + width * .22;
+    const centreX = bounds.left + bounds.width / 2;
+    const centreY = bounds.top + bounds.height / 2;
+    const reach = Math.max(bounds.height * .62, 60);
+    for (const grain of grains) {
+      const homeX = centreX + grain.u * bounds.width;
+      const homeY = centreY + grain.v * bounds.height;
+      const wobble = Math.sin(seconds * .8 + grain.seed) * 6 * loose;
+      const targetX = homeX * (1 - loose) + (homeX + grain.sx * spread + wobble) * loose;
+      const targetY = homeY * (1 - loose) + (homeY + grain.sy * spread + seconds * grain.spin * 10 + wobble) * loose;
+      const pull = .05 + .06 * settled;
+      grain.vx = (grain.vx + (targetX - grain.x) * pull) * .76;
+      grain.vy = (grain.vy + (targetY - grain.y) * pull) * .76;
+      // Loose dust parts around the pointer.
+      const awayX = grain.x - pointerX;
+      const awayY = grain.y - pointerY;
+      const away = awayX * awayX + awayY * awayY;
+      if (snow < .01 && away < 14400 && settled < .98) {
+        const distance = Math.sqrt(away) || 1;
+        const force = (1 - distance / 120) * 2.6 * (1 - settled * .6);
+        grain.vx += awayX / distance * force;
+        grain.vy += awayY / distance * force;
+      }
+      grain.x += grain.vx;
+      grain.y += grain.vy;
+
+      if (snow > .01 && picture > .5) {
+        // A soft patch of no-signal static follows the pointer over the rings.
+        if (!grain.solid || away > reach * reach) continue;
+        const near = 1 - Math.sqrt(away) / reach;
+        const grey = Math.floor(grain.noise * grain.noise * 190 + 20);
+        context.fillStyle = `rgb(${grey} ${grey} ${grey})`;
+        context.globalAlpha = near * near * snow * .95;
+        context.fillRect(grain.x - size / 2, grain.y - size / 2, size, size);
+        continue;
+      }
+      if (dust < .02 || grain.y < -20 || grain.y > height + 20 || grain.x < -20 || grain.x > width + 20) continue;
+      context.fillStyle = "#fff";
+      context.globalAlpha = (grain.alpha + (grain.solid ? .16 : 0) * loose) * dust * (.55 + .45 * settled) * (.3 + .7 * intro) * (.85 + .15 * grain.noise) * ease(arrival);
+      const grainSize = size * (.75 + .25 * settled);
+      context.fillRect(grain.x - grainSize / 2, grain.y - grainSize / 2, grainSize, grainSize);
+    }
+    context.globalAlpha = 1;
+  };
+
+  resize();
+  window.addEventListener("resize", resize, { passive: true });
+  reducedMotion.addEventListener("change", () => { if (reducedMotion.matches) stop(); });
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) { cancelAnimationFrame(frame); frame = 0; }
+    else if (!frame && canvas.isConnected) frame = requestAnimationFrame(draw);
+  });
+  frame = requestAnimationFrame(draw);
+
+  // The heading under the rings arrives once they have settled.
+  if (!reducedMotion.matches) {
+    document.querySelectorAll(".mosaic__brand-copy h1, .mosaic__brand-copy > p:first-of-type").forEach((element, index) => {
+      element.animate?.([{ opacity: 0, filter: "blur(10px)", transform: "translateY(10px)" }, { opacity: 1, filter: "blur(0)", transform: "none" }],
+        { duration: 1100, delay: 1300 + index * 140, easing: "cubic-bezier(.16, 1, .3, 1)", fill: "backwards" });
+    });
+  }
 };
 
-if (emblemImage?.complete) playEmblem();
-else emblemImage?.addEventListener("load", playEmblem, { once: true });
-reducedMotion.addEventListener("change", () => {
-  if (reducedMotion.matches) stopEmblem();
-});
-document.addEventListener("visibilitychange", () => {
-  if (document.hidden) stopEmblem();
-});
-window.addEventListener("resize", stopEmblem, { passive: true });
+window.addEventListener("pointermove", (event) => {
+  if (event.pointerType !== "mouse") return;
+  pointerX = event.clientX;
+  pointerY = event.clientY;
+  document.documentElement.classList.add("has-pointer");
+}, { passive: true });
+document.documentElement.addEventListener("pointerleave", () => { pointerX = pointerY = -1e4; });
+
+if (dustImages[0] && !reducedMotion.matches) {
+  // Both stages show the same file, so the hero's copy is enough to sample.
+  if (dustImages[0].complete && dustImages[0].naturalWidth) startDust();
+  else dustImages[0].addEventListener("load", startDust, { once: true });
+}
+
+// Section titles decode through screen glyphs as they arrive, left to right.
+// Only text nodes change, so inline markup and the final text stay intact.
+const GLYPHS = "▓▒░█▌▐│┃0123456789ABCDEFXK#%&*+";
+const decode = (heading) => {
+  const walker = document.createTreeWalker(heading, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  while (walker.nextNode()) nodes.push({ node: walker.currentNode, text: walker.currentNode.nodeValue });
+  const total = nodes.reduce((sum, item) => sum + item.text.length, 0);
+  if (!total) return;
+  heading.setAttribute("aria-label", heading.textContent);
+  const begin = performance.now();
+  const tick = (now) => {
+    const progress = Math.min(1, (now - begin) / 800);
+    let settled = Math.floor(progress * total);
+    for (const item of nodes) {
+      let out = "";
+      for (const char of item.text) {
+        out += settled > 0 || /\s/.test(char) ? char : GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
+        settled -= 1;
+      }
+      item.node.nodeValue = out;
+    }
+    if (progress < 1) requestAnimationFrame(tick);
+    else {
+      nodes.forEach((item) => { item.node.nodeValue = item.text; });
+      heading.removeAttribute("aria-label");
+    }
+  };
+  requestAnimationFrame(tick);
+};
+if (!reducedMotion.matches && "IntersectionObserver" in window) {
+  const decodeObserver = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      decodeObserver.unobserve(entry.target);
+      decode(entry.target);
+    }
+  }, { threshold: .4 });
+  document.querySelectorAll(".section-heading h2, .download-band h2, .compatibility h2, .faq h2, .final-cta h2").forEach((heading) => decodeObserver.observe(heading));
+}
 
 // Native scrolling selects UI states inside stationary Apple product artwork.
 // Without JS, on mobile, and with reduced motion the three HTML chapters remain

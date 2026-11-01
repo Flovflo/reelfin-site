@@ -203,8 +203,8 @@ def render(lang, c):
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="{p}assets/media/NEW/reelfin-mark.png">
-  <link rel="stylesheet" href="{p}assets/site.css?v=cinema-16">
-  <script defer src="{p}assets/site.js?v=cinema-16"></script>
+  <link rel="stylesheet" href="{p}assets/site.css?v=cinema-19">
+  <script defer src="{p}assets/site.js?v=cinema-19"></script>
   <script type="application/ld+json">{json.dumps({'@context':'https://schema.org','@type':'MobileApplication','name':'ReelFin','operatingSystem':'iOS 26+, iPadOS 26+, tvOS 26+','applicationCategory':'EntertainmentApplication','description':c['description'],'url':BASE,'downloadUrl':STORE,'author':{'@type':'Person','name':'Florian Taffin'}},ensure_ascii=False)}</script>
 </head>
 <body>
@@ -231,7 +231,7 @@ def render(lang, c):
           <div class="native-mac-preview">{mac_preview(p,lang)}</div>
         </figure>
         <div class="mosaic__tile mosaic__brand">
-          <div class="hero-emblem" aria-hidden="true"><img src="{p}assets/media/NEW/reelfin-mark.png" alt="" width="400" height="240"><canvas></canvas></div>
+          <div class="hero-emblem" aria-hidden="true"><img src="{p}assets/media/NEW/reelfin-mark.png" alt="" width="400" height="240"></div>
           <div class="mosaic__brand-copy"><h1 id="hero-title">ReelFin</h1><p>{c['mosaictag']}</p><p class="hero__platforms">iPhone · iPad · Apple TV</p></div>
         </div>
         <div class="mosaic__tile mosaic__duo">
@@ -280,7 +280,7 @@ def render(lang, c):
       <div class="platform platform--future"><svg viewBox="0 0 42 42" fill="none" stroke="currentColor" aria-hidden="true">{ICONS['mac']}</svg><h3>Mac</h3><p>{c['future']}</p></div>
     </section>
     <section class="section container faq" id="faq" aria-labelledby="faq-title"><h2 id="faq-title">{c['faqtitle']}</h2><div>{questions}</div></section>
-    <section class="final-cta container" id="support" aria-labelledby="download-title"><h2 id="download-title">{c['closing']}</h2>{cta}<p>{c['closingbody']}</p><div class="final-cta__support"><a href="{p}support.html">{c['support']} ↗</a><a href="https://testflight.apple.com/join/TkVVXmU2">{c['beta']} ↗</a></div></section>
+    <section class="final-cta container" id="support" aria-labelledby="download-title"><div class="cta-emblem" aria-hidden="true"><img src="{p}assets/media/NEW/reelfin-mark.png" alt="" width="400" height="240"></div><h2 id="download-title">{c['closing']}</h2>{cta}<p>{c['closingbody']}</p><div class="final-cta__support"><a href="{p}support.html">{c['support']} ↗</a><a href="https://testflight.apple.com/join/TkVVXmU2">{c['beta']} ↗</a></div></section>
   </main>
   <footer class="site-footer" id="privacy"><div><a class="brand brand--footer" href="#top">{brand}</a><p>{c['footer']}</p><p class="site-footer__credit">{c['applecredit']}</p></div><nav class="site-footer__links" aria-label="{'Footer' if lang=='en' else 'Pied de page'}"><a href="{p}support.html">{c['support']}</a><a href="{p}privacy.html">{c['privacy']}</a><a href="{p}terms.html">{c['terms']}</a></nav></footer>
 </body>
