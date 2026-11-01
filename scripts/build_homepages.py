@@ -133,8 +133,8 @@ def render(lang, c):
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="{p}assets/media/NEW/reelfin-mark.png">
-  <link rel="stylesheet" href="{p}assets/site.css?v=cinema-4">
-  <script defer src="{p}assets/site.js?v=cinema-4"></script>
+  <link rel="stylesheet" href="{p}assets/site.css?v=cinema-5">
+  <script defer src="{p}assets/site.js?v=cinema-5"></script>
   <script type="application/ld+json">{json.dumps({'@context':'https://schema.org','@type':'MobileApplication','name':'ReelFin','operatingSystem':'iOS 26+, iPadOS 26+, tvOS 26+','applicationCategory':'EntertainmentApplication','description':c['description'],'url':BASE,'downloadUrl':STORE,'author':{'@type':'Person','name':'Florian Taffin'}},ensure_ascii=False)}</script>
 </head>
 <body>

@@ -72,6 +72,14 @@ const startReveals = () => {
     for (const entry of entries) {
       if (!entry.isIntersecting) continue;
       const element = entry.target;
+      const { top, bottom } = element.getBoundingClientRect();
+      // A first callback can follow restored scroll, an anchor, or a fast jump.
+      // Never fade content that has already reached the visible viewport.
+      if (top < window.innerHeight && bottom > 0) {
+        playedReveals.add(element);
+        revealObserver.unobserve(element);
+        continue;
+      }
       const group = element.parentElement;
       const isRow = group?.matches(".duo-stage, .feature-grid, .tv-benefits");
       const index = isRow ? [...group.children].indexOf(element) : 0;
@@ -79,7 +87,7 @@ const startReveals = () => {
       reveal(element, { delay });
       revealObserver.unobserve(element);
     }
-  }, { threshold: 0.12, rootMargin: "0px 0px -5% 0px" });
+  }, { threshold: 0, rootMargin: "64px 0px 64px 0px" });
   document.querySelectorAll(".section-heading, .duo-stage > figure, .feature, .tv-benefits > article, .tvos > .app-capture, .compatibility, .faq > h2, .faq details, .final-cta").forEach((element) => {
     if (!playedReveals.has(element)) revealObserver.observe(element);
   });
