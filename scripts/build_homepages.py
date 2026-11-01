@@ -51,11 +51,26 @@ COPY = {
  ],
  'closing':'Press play on<br>your library.', 'closingbody':'On the App Store. Connect your own Jellyfin server.',
  'support':'Support', 'beta':'Join the beta', 'privacy':'Privacy', 'terms':'Terms',
+ 'applecredit':'Apple, Apple TV, iPhone, iPad, Mac, App Store and TestFlight are trademarks of Apple Inc., registered in the U.S. and other countries.',
  'footer':'An independent client for your own Jellyfin library. Not affiliated with Jellyfin.',
  'tvalt':'ReelFin Apple TV home screen, using a fictional demonstration library.',
  'phonealt':'ReelFin on iPhone, with Continue Watching and films from a fictional demonstration library.',
  'tvdetailalt':'ReelFin Apple TV movie detail page, using a fictional demonstration library.',
  'detailalt':'ReelFin on iPhone shows a fictional series, episode progress and the Resume action.',
+ 'mosaicphone':'Your server.<br>Your library.', 'mosaiccentral':'Mac · In development',
+ 'mosaictag':'A native client for your Jellyfin.', 'mosaicduo':'Made for iPhone Duo',
+ 'mosaicdirect':'Native playback.<br>Your original file.', 'mosaicdirectbody':'Direct Play when the file and device support it.',
+ 'mosaicserver':'Your media.<br>Your Jellyfin.', 'mosaicserverbody':'Connect your own server. No catalogue included.',
+ 'storytitle':'One library.<br>Across your screens.',
+ 'storybody':'Your library, one screen at a time. Scroll through ReelFin.',
+ 'storynav':'Explore the app',
+ 'storytvalt':'ReelFin on Apple TV, using a fictional demonstration library.',
+ 'storyphonealt':'ReelFin on iPhone, using a fictional demonstration library.',
+ 'storychapters':[
+  ('library','Library','Your server.<br>Your cinema.','Find your library rows and Continue Watching on Apple TV. Your own Jellyfin server supplies the collection.'),
+  ('series','Series','Find<br>your series.','Its episodes and your progress, in a detail page made for the big screen.'),
+  ('resume','Resume','The next episode.<br>On iPhone.','Find the episode you were watching and pick up where you left off.')
+ ],
  'platformlabel':'Supported platforms'
 },
 'fr': {
@@ -96,18 +111,73 @@ COPY = {
  ],
  'closing':'Votre médiathèque.<br>Appuyez sur lecture.', 'closingbody':'Sur l’App Store. Connectez votre propre serveur Jellyfin.',
  'support':'Assistance', 'beta':'Rejoindre la bêta', 'privacy':'Confidentialité', 'terms':'Conditions',
+ 'applecredit':'Apple, Apple TV, iPhone, iPad, Mac, App Store et TestFlight sont des marques d’Apple Inc., déposées aux États-Unis et dans d’autres pays.',
  'footer':'Un client indépendant pour votre médiathèque Jellyfin. Sans affiliation avec Jellyfin.',
  'tvalt':'Accueil ReelFin sur Apple TV, avec une bibliothèque fictive de démonstration.',
  'phonealt':'ReelFin sur iPhone, avec la reprise de lecture et une bibliothèque de démonstration fictive.',
  'tvdetailalt':'Fiche d’un film fictif de démonstration dans ReelFin sur Apple TV.',
  'detailalt':'Fiche native ReelFin sur iPhone avec une série fictive, sa progression et l’action Reprendre.',
+ 'mosaicphone':'Votre serveur.<br>Votre bibliothèque.', 'mosaiccentral':'Mac · En préparation',
+ 'mosaictag':'Votre client Jellyfin natif.', 'mosaicduo':'Optimisé pour iPhone Duo',
+ 'mosaicdirect':'Lecture native.<br>Fichier original.', 'mosaicdirectbody':'Direct Play si le média et l’appareil le permettent.',
+ 'mosaicserver':'Vos médias.<br>Votre Jellyfin.', 'mosaicserverbody':'Connectez votre serveur. Aucun catalogue inclus.',
+ 'storytitle':'Une médiathèque.<br>D’un écran à l’autre.',
+ 'storybody':'Votre médiathèque, d’un écran à l’autre. Parcourez ReelFin en faisant défiler la page.',
+ 'storynav':'Parcourir l’app',
+ 'storytvalt':'ReelFin sur Apple TV, avec une bibliothèque fictive de démonstration.',
+ 'storyphonealt':'ReelFin sur iPhone, avec une bibliothèque fictive de démonstration.',
+ 'storychapters':[
+  ('library','Médiathèque','Votre serveur.<br>Votre cinéma.','Retrouvez vos rangées et votre reprise de lecture sur Apple TV. Votre serveur Jellyfin fournit la collection.'),
+  ('series','Séries','Retrouvez<br>votre série.','Ses épisodes et votre progression, dans une fiche pensée pour le grand écran.'),
+  ('resume','Reprise','La suite,<br>sur iPhone.','Retrouvez l’épisode en cours et reprenez là où vous l’aviez laissé.')
+ ],
  'platformlabel':'Plateformes compatibles'
 }}
+
+
+MEDIA_SIZES = {
+ 'tv': '(max-width: 760px) 100vw, (max-width: 1100px) 78vw, 930px',
+ 'iphone': '(max-width: 760px) 190px, 240px',
+ 'duo-open': '(max-width: 760px) 100vw, 750px',
+ 'duo-closed': '(max-width: 760px) 51vw, 382px',
+ 'story-tv': '(min-width: 1100px) 52vw, 100vw',
+ 'story-phone': '(min-width: 1100px) 15vw, 190px',
+}
+
+def mockup(prefix, name, alt, kind, eager=False):
+ data=json.loads((ROOT/'assets/media/devices/provenance.json').read_text())
+ item=next(m for m in data['mockups'] if m['file']==name+'.webp')
+ variants=item.get('responsive',[])+[item]
+ srcset=', '.join(f"{prefix}assets/media/devices/{v['file']} {v['width']}w" for v in variants)
+ first=variants[0]['file']
+ loading='fetchpriority="high"' if eager else 'loading="lazy"'
+ return f'<img src="{prefix}assets/media/devices/{first}" srcset="{srcset}" sizes="{MEDIA_SIZES[kind]}" alt="{alt}" width="{item["width"]}" height="{item["height"]}" {loading} decoding="async">'
+
+
+def mac_preview(prefix, lang):
+ meta=json.loads((ROOT/'assets/media/devices/mac-preview.json').read_text())
+ variants=meta['variants']
+ srcset=', '.join(f"{prefix}assets/media/devices/{v['file']} {v['width']}w" for v in variants)
+ alt='Native ReelFin Home preview on Mac, in development, with a fictional demonstration library.' if lang=='en' else 'Aperçu natif de l’accueil ReelFin sur Mac, en préparation, avec une bibliothèque fictive de démonstration.'
+ return f'<img src="{prefix}assets/media/devices/{variants[0]["file"]}" srcset="{srcset}" sizes="(max-width: 599px) 320px, (max-width: 1099px) 55vw, 600px" alt="{alt}" width="1600" height="1150" fetchpriority="high" decoding="async">'
+
+def screen_overlay(prefix, name, kind, css):
+ data=json.loads((ROOT/'assets/media/devices/provenance.json').read_text())
+ item=next(m for m in data['mockups'] if m['file']==name+'.webp')
+ overlay=item['uiOnlyOverlay']
+ variants=overlay.get('responsive',[])+[dict(overlay,width=item['width'])]
+ srcset=', '.join(f"{prefix}assets/media/devices/{v['file']} {v['width']}w" for v in variants)
+ return f'<img class="story__screen {css}" data-story-src="{prefix}assets/media/devices/{variants[0]["file"]}" data-story-srcset="{srcset}" sizes="{MEDIA_SIZES[kind]}" width="{item["width"]}" height="{item["height"]}" alt="" aria-hidden="true" hidden>'
 
 def render(lang, c):
  p=c['prefix']
  brand=f'<span class="brand__mark" aria-hidden="true"><img src="{p}assets/media/NEW/reelfin-mark.png" alt="" width="400" height="240"></span><span>ReelFin</span>'
  cta=f'<a class="button button--primary" href="{STORE}"><span>{c["download"]}</span><span class="arrow" aria-hidden="true">↗</span></a>'
+ story_nav=''.join(f'<a href="#story-{key}" data-story-link="{i}"><span>0{i+1}</span>{label}</a>' for i,(key,label,heading,body) in enumerate(c['storychapters']))
+ story_chapters=''
+ for i,(key,label,heading,body) in enumerate(c['storychapters']):
+  name,kind,alt=('tv-home','tv',c['tvalt']) if i==0 else ('tv-series','tv',c['storytvalt']) if i==1 else ('iphone-series','iphone',c['detailalt'])
+  story_chapters+=f'<article class="story__chapter" id="story-{key}"><div class="story__chapter-copy"><span class="story__number">0{i+1}</span><h3>{heading}</h3><p>{body}</p></div><figure class="story__chapter-visual story__chapter-visual--{kind} device-artwork">{mockup(p,name,alt,kind)}</figure></article>'
  questions='\n'.join(f'<details><summary>{q}</summary><p>{a.format(prefix=p)}</p></details>' for q,a in c['questions'])
  page=f'''<!doctype html>
 <html lang="{lang}">
@@ -133,8 +203,8 @@ def render(lang, c):
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="{p}assets/media/NEW/reelfin-mark.png">
-  <link rel="stylesheet" href="{p}assets/site.css?v=cinema-5">
-  <script defer src="{p}assets/site.js?v=cinema-5"></script>
+  <link rel="stylesheet" href="{p}assets/site.css?v=cinema-16">
+  <script defer src="{p}assets/site.js?v=cinema-16"></script>
   <script type="application/ld+json">{json.dumps({'@context':'https://schema.org','@type':'MobileApplication','name':'ReelFin','operatingSystem':'iOS 26+, iPadOS 26+, tvOS 26+','applicationCategory':'EntertainmentApplication','description':c['description'],'url':BASE,'downloadUrl':STORE,'author':{'@type':'Person','name':'Florian Taffin'}},ensure_ascii=False)}</script>
 </head>
 <body>
@@ -142,48 +212,65 @@ def render(lang, c):
   <header class="site-header site-header--marketing">
     <div class="site-header__inner">
       <a class="brand" href="#top" aria-label="ReelFin">{brand}</a>
-      <nav class="site-nav" aria-label="{c['nav']}"><a href="#overview">{c['app']}</a><a href="#duo">iPhone Duo</a><a href="#tvos">Apple TV</a><a href="#faq">{c['faq']}</a></nav>
+      <nav class="site-nav" aria-label="{c['nav']}"><a href="#story">{c['app']}</a><a href="#duo">iPhone Duo</a><a href="#tvos">Apple TV</a><a href="#faq">{c['faq']}</a></nav>
       <nav class="language-switch" aria-label="{'Language' if lang=='en' else 'Langue'}"><a href="{p}index.html" lang="en" hreflang="en" {'aria-current="page"' if lang=='en' else ''}>EN</a><span aria-hidden="true">/</span><a href="{p}fr/index.html" lang="fr" hreflang="fr" {'aria-current="page"' if lang=='fr' else ''}>FR</a></nav>
       <a class="button button--primary site-header__cta" href="{STORE}">App Store <span class="arrow" aria-hidden="true">↗</span></a>
       <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="{c['menu']}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button>
     </div>
-    <nav class="mobile-menu" id="mobile-menu" aria-label="{c['nav']}" hidden><a href="#overview">{c['app']}</a><a href="#duo">iPhone Duo</a><a href="#tvos">Apple TV</a><a href="#faq">{c['faq']}</a><a href="{STORE}">{c['download']} ↗</a></nav>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="{c['nav']}" hidden><a href="#story">{c['app']}</a><a href="#duo">iPhone Duo</a><a href="#tvos">Apple TV</a><a href="#faq">{c['faq']}</a><a href="{STORE}">{c['download']} ↗</a></nav>
   </header>
   <main id="main-content">
     <section class="hero container" id="top" aria-labelledby="hero-title">
-      <div class="hero__identity">
-        <div class="hero-emblem" aria-hidden="true"><img src="{p}assets/media/NEW/reelfin-mark.png" alt="" width="400" height="240"><canvas></canvas></div>
-        <h1 id="hero-title"><span class="hero__title-line">{c['h1']}</span><span class="hero__title-line hero__title-line--muted">{c['h1b']}</span></h1>
-      </div>
-      <p class="hero__lede">{c['intro']}</p>
-      {cta}
-      <p class="hero__platforms">iPhone · iPhone Duo · iPad · Apple TV</p><a class="hero__duo-link" href="#duo">{c['duolink']} <span aria-hidden="true">↓</span></a>
-      <div class="hero__stage">
-        <figure class="app-capture"><img src="{p}assets/media/cinema/tv4k-home.webp" alt="{c['tvalt']}" width="2200" height="1238" fetchpriority="high"></figure>
-        <figure class="hero__phone app-capture"><img src="{p}assets/media/cinema/iphone-home.webp" alt="{c['phonealt']}" width="840" height="1825" fetchpriority="high"></figure>
+      <div class="hero__mosaic">
+        <div class="mosaic__tile mosaic__phone">
+          <p class="mosaic__statement">{c['mosaicphone']}</p>
+          <figure class="device-artwork">{mockup(p,'iphone-home',c['phonealt'],'iphone',eager=True)}</figure>
+        </div>
+        <figure class="mosaic__tile mosaic__screen">
+          <figcaption>{c['mosaiccentral']}</figcaption>
+          <div class="native-mac-preview">{mac_preview(p,lang)}</div>
+        </figure>
+        <div class="mosaic__tile mosaic__brand">
+          <div class="hero-emblem" aria-hidden="true"><img src="{p}assets/media/NEW/reelfin-mark.png" alt="" width="400" height="240"><canvas></canvas></div>
+          <div class="mosaic__brand-copy"><h1 id="hero-title">ReelFin</h1><p>{c['mosaictag']}</p><p class="hero__platforms">iPhone · iPad · Apple TV</p></div>
+        </div>
+        <div class="mosaic__tile mosaic__duo">
+          <figure class="device-artwork">{mockup(p,'duo-closed-series',c['duoseriesalt'],'duo-closed',eager=True)}</figure>
+          <a href="#duo">{c['mosaicduo']} <span aria-hidden="true">↓</span></a>
+        </div>
+        <article class="mosaic__tile mosaic__direct"><h2>{c['mosaicdirect']}</h2><p>{c['mosaicdirectbody']}</p></article>
+        <article class="mosaic__tile mosaic__server"><h2>{c['mosaicserver']}</h2><p>{c['mosaicserverbody']}</p></article>
       </div>
       <p class="image-credit">{c['credit']}</p>
+    </section>
+    <section class="section container product-story" id="story" aria-labelledby="story-title">
+      <div class="section-heading"><h2 id="story-title">{c['storytitle']}</h2><p>{c['storybody']}</p></div>
+      <nav class="story__nav" aria-label="{c['storynav']}">{story_nav}</nav>
+      <div class="story__layout">
+        <div class="story__stage">
+          <div class="story__devices">
+            <figure class="story__tv device-artwork">{mockup(p,'tv-home',c['storytvalt'],'story-tv')}{screen_overlay(p,'tv-series','story-tv','story__screen--tv')}</figure>
+            <figure class="story__phone device-artwork">{mockup(p,'iphone-home',c['storyphonealt'],'story-phone')}{screen_overlay(p,'iphone-series','story-phone','story__screen--phone')}</figure>
+          </div>
+          <div class="story__position" aria-hidden="true"><span class="story__position-line"></span><span class="story__counter">01 / 03</span></div>
+          <p class="image-credit">{c['credit']}</p>
+        </div>
+        <div class="story__chapters">{story_chapters}</div>
+      </div>
     </section>
     <section class="section container duo" id="duo" aria-labelledby="duo-title">
       <div class="section-heading"><h2 id="duo-title">{c['duotitle']}</h2><p>{c['duobody']}</p></div>
       <div class="duo-stage">
-        <figure class="duo-stage__open"><div class="app-capture"><img src="{p}assets/media/cinema/duo-inner-home.webp" alt="{c['duoalt']}" width="1800" height="1266" loading="lazy"></div><figcaption>{c['duohomelabel']}</figcaption></figure>
-        <figure class="duo-stage__closed"><div class="app-capture"><img src="{p}assets/media/cinema/duo-outer-series.webp" alt="{c['duoseriesalt']}" width="840" height="1222" loading="lazy"></div><figcaption>{c['duoserieslabel']}</figcaption></figure>
+        <figure class="duo-stage__open"><div class="device-artwork">{mockup(p,'duo-open-home',c['duoalt'],'duo-open',eager=False)}</div><figcaption>{c['duohomelabel']}</figcaption></figure>
+        <figure class="duo-stage__closed"><div class="device-artwork">{mockup(p,'duo-closed-series',c['duoseriesalt'],'duo-closed',eager=False)}</div><figcaption>{c['duoserieslabel']}</figcaption></figure>
       </div>
       <p class="image-credit">{c['duocaption']}</p>
       <div class="tv-benefits"><article><h3>{c['duo1']}</h3><p>{c['duo1body']}</p></article><article><h3>{c['duo2']}</h3><p>{c['duo2body']}</p></article><article><h3>{c['duo3']}</h3><p>{c['duo3body']}</p></article></div>
     </section>
-    <section class="section container" id="overview" aria-labelledby="benefits-title">
-      <div class="section-heading"><h2 id="benefits-title">{c['benefit']}<br><span class="muted">{c['benefitb']}</span></h2><p>{c['benefitintro']}</p></div>
-      <div class="feature-grid" id="screens">
-        <article class="feature feature--resume"><h3>{c['resume']}</h3><p>{c['resumebody']}</p><figure class="app-capture"><img src="{p}assets/media/cinema/iphone-series.webp" alt="{c['detailalt']}" width="840" height="1825" loading="lazy"></figure></article>
-        <article class="feature feature--library"><h3>{c['library']}</h3><p>{c['librarybody']}</p></article>
-        <article class="feature feature--downloads"><div><h3>{c['downloads']}</h3><p>{c['downloadsbody']}</p></div><div class="download-visual">{DOWNLOAD}<div><strong>{c['downloadlabel']}</strong><span>{c['downloadsmall']}</span></div></div></article>
-      </div>
-    </section>
+    <section class="download-band container" id="overview" aria-labelledby="downloads-title"><h2 id="downloads-title">{c['downloads']}</h2><div><p>{c['downloadsbody']}</p><p class="download-band__note">{c['downloadsmall']}</p></div></section>
     <section class="section container tvos" id="tvos" aria-labelledby="tv-title">
       <div class="section-heading"><h2 id="tv-title">{c['tvtitle']}</h2><p>{c['tvbody']}</p></div>
-      <figure class="app-capture"><img src="{p}assets/media/cinema/tv4k-detail.webp" alt="{c['tvdetailalt']}" width="2200" height="1238" loading="lazy"></figure>
+      <figure class="device-artwork">{mockup(p,'tv-detail',c['tvdetailalt'],'tv',eager=False)}</figure>
       <div class="tv-benefits"><article><h3>{c['tv1']}</h3><p>{c['tv1body']}</p></article><article><h3>{c['tv2']}</h3><p>{c['tv2body']}</p></article><article><h3>{c['tv3']}</h3><p>{c['tv3body']}</p></article></div>
     </section>
     <section class="compatibility container" aria-label="{c['platformlabel']}">
@@ -195,7 +282,7 @@ def render(lang, c):
     <section class="section container faq" id="faq" aria-labelledby="faq-title"><h2 id="faq-title">{c['faqtitle']}</h2><div>{questions}</div></section>
     <section class="final-cta container" id="support" aria-labelledby="download-title"><h2 id="download-title">{c['closing']}</h2>{cta}<p>{c['closingbody']}</p><div class="final-cta__support"><a href="{p}support.html">{c['support']} ↗</a><a href="https://testflight.apple.com/join/TkVVXmU2">{c['beta']} ↗</a></div></section>
   </main>
-  <footer class="site-footer" id="privacy"><div><a class="brand brand--footer" href="#top">{brand}</a><p>{c['footer']}</p></div><nav class="site-footer__links" aria-label="{'Footer' if lang=='en' else 'Pied de page'}"><a href="{p}support.html">{c['support']}</a><a href="{p}privacy.html">{c['privacy']}</a><a href="{p}terms.html">{c['terms']}</a></nav></footer>
+  <footer class="site-footer" id="privacy"><div><a class="brand brand--footer" href="#top">{brand}</a><p>{c['footer']}</p><p class="site-footer__credit">{c['applecredit']}</p></div><nav class="site-footer__links" aria-label="{'Footer' if lang=='en' else 'Pied de page'}"><a href="{p}support.html">{c['support']}</a><a href="{p}privacy.html">{c['privacy']}</a><a href="{p}terms.html">{c['terms']}</a></nav></footer>
 </body>
 </html>
 '''

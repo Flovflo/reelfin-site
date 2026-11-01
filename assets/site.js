@@ -194,3 +194,65 @@ document.addEventListener("visibilitychange", () => {
   if (document.hidden) stopEmblem();
 });
 window.addEventListener("resize", stopEmblem, { passive: true });
+
+// Native scrolling selects UI states inside stationary Apple product artwork.
+// Without JS, on mobile, and with reduced motion the three HTML chapters remain
+// an ordinary page, each with its own complete static product image.
+const story = document.querySelector(".product-story");
+if (story) {
+  const wideStory = window.matchMedia("(min-width: 1100px)");
+  const chapters = [...story.querySelectorAll(".story__chapter")];
+  const links = [...story.querySelectorAll("[data-story-link]")];
+  const tvScreen = story.querySelector(".story__screen--tv");
+  const phoneScreen = story.querySelector(".story__screen--phone");
+  let storyFrame = 0;
+  const clamp = (value) => Math.min(1, Math.max(0, value));
+  const smooth = (value) => { const t = clamp(value); return t * t * (3 - 2 * t); };
+  const requestScreen = (image) => {
+    if (!image || image.dataset.requested) return;
+    image.dataset.requested = "true";
+    image.srcset = image.dataset.storySrcset;
+    image.src = image.dataset.storySrc;
+    image.decode().then(() => {
+      image.dataset.ready = "true";
+      image.hidden = false;
+      scheduleStory();
+    }).catch(() => {});
+  };
+  const updateStory = () => {
+    storyFrame = 0;
+    const enhanced = wideStory.matches && !reducedMotion.matches;
+    story.classList.toggle("has-scroll-story", enhanced);
+    if (!enhanced) return;
+    const first = chapters[0].getBoundingClientRect();
+    const last = chapters[chapters.length - 1].getBoundingClientRect();
+    const anchorLine = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 110;
+    const progress = clamp((anchorLine - first.top) / (last.top - first.top));
+    const storyBounds = story.getBoundingClientRect();
+    const nearStory = storyBounds.top < window.innerHeight + 400 && storyBounds.bottom > 0;
+    if (nearStory && first.top < window.innerHeight) requestScreen(tvScreen);
+    if (nearStory && progress > .32) requestScreen(phoneScreen);
+    story.style.setProperty("--story-progress", progress);
+    story.style.setProperty("--tv-ui", tvScreen?.dataset.ready ? smooth((progress - .16) / .28) : 0);
+    story.style.setProperty("--phone-ui", phoneScreen?.dataset.ready ? smooth((progress - .56) / .3) : 0);
+    const active = Math.round(progress * (chapters.length - 1));
+    links.forEach((link, index) => {
+      if (index === active) link.setAttribute("aria-current", "step");
+      else link.removeAttribute("aria-current");
+    });
+    chapters.forEach((chapter, index) => {
+      const emphasis = 1 - Math.min(1, Math.abs(progress * 2 - index));
+      const shade = Math.round(166 + emphasis * 81);
+      chapter.style.setProperty("--chapter-color", `rgb(${shade} ${shade} ${shade})`);
+    });
+    story.querySelector(".story__counter").textContent = `0${active + 1} / 03`;
+  };
+  const scheduleStory = () => {
+    if (!storyFrame) storyFrame = requestAnimationFrame(updateStory);
+  };
+  window.addEventListener("scroll", scheduleStory, { passive: true });
+  window.addEventListener("resize", scheduleStory, { passive: true });
+  wideStory.addEventListener("change", scheduleStory);
+  reducedMotion.addEventListener("change", scheduleStory);
+  updateStory();
+}
