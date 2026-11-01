@@ -1,19 +1,34 @@
 {
   "status": "partial",
   "missing": [
+    "ipad/detail",
+    "ipad/series",
     "duo-inner/home",
     "duo-inner/detail",
-    "duo-outer/home",
-    "duo-outer/detail"
+    "duo-inner/series"
   ],
   "unavailablePlatforms": [
     {
       "platform": "mac",
-      "reason": "Native window capture pending owner desktop unlock; no app launch or fabricated view."
+      "reason": "Native Mac capture pending coordinated authentication and presentation window; no fabricated view."
     },
     {
-      "platform": "duo",
-      "reason": "Verified pose and native capture pending DeviceHub access; display count alone is not proof."
+      "platform": "duo-inner",
+      "reason": "Open pose and interior captures remain unverified; Closed exterior captures are separately certified."
+    }
+  ],
+  "rejectedCaptures": [
+    {
+      "source": "presentation-captures/ipad/detail.png",
+      "sourceSha256": "3caf25330440d9340101dd9613fe38db3c7f7d2cf6acddd966a5c7cc30fc3f6e",
+      "status": "visually_rejected_by_owner",
+      "reason": "Owner rejected the two narrow floating iPad detail sheets. Wide replacement details are being redesigned; these screenshots are not approved marketing sources."
+    },
+    {
+      "source": "presentation-captures/ipad/series.png",
+      "sourceSha256": "7ed79f140458b823a888a9e4717042746ce8b8f29a4f3da381154ae0793d971d",
+      "status": "visually_rejected_by_owner",
+      "reason": "Owner rejected the two narrow floating iPad detail sheets. Wide replacement details are being redesigned; these screenshots are not approved marketing sources."
     }
   ],
   "captures": [
@@ -54,15 +69,6 @@
       "uiRetouched": false
     },
     {
-      "file": "ipad-detail.webp",
-      "source": "presentation-captures/ipad/detail.png",
-      "sourceSha256": "3caf25330440d9340101dd9613fe38db3c7f7d2cf6acddd966a5c7cc30fc3f6e",
-      "width": 1800,
-      "height": 1350,
-      "presentationOnly": true,
-      "uiRetouched": false
-    },
-    {
       "file": "tv4k-home.webp",
       "source": "presentation-captures/tv4k/home.png",
       "sourceSha256": "3f6c80359907c6176374bbadcbc26cce11089d738f305cb902118a934c82ad89",
@@ -88,6 +94,42 @@
       "height": 1238,
       "presentationOnly": true,
       "uiRetouched": false
+    },
+    {
+      "file": "duo-outer-home.webp",
+      "source": "presentation-captures/duo-outer/home.png",
+      "sourceSha256": "76ee458f182e699082df67e7858ed398fb7a38aac4f8dac984693bda249dbbe5",
+      "width": 840,
+      "height": 1222,
+      "presentationOnly": true,
+      "uiRetouched": false,
+      "verifiedPose": "closed",
+      "poseEvidenceSource": "UIKit.UIHingeInteraction",
+      "poseEvidenceSha256": "758a0fea330513668f15dc3907266f58f4e24cf4b77ad7c4d9b2ddfcf74745bd"
+    },
+    {
+      "file": "duo-outer-detail.webp",
+      "source": "presentation-captures/duo-outer/detail.png",
+      "sourceSha256": "2e5d9ba55dd0fa3b2d937d811e7061a1a08dd75dfc3a93c848d284206a46b291",
+      "width": 840,
+      "height": 1222,
+      "presentationOnly": true,
+      "uiRetouched": false,
+      "verifiedPose": "closed",
+      "poseEvidenceSource": "UIKit.UIHingeInteraction",
+      "poseEvidenceSha256": "758a0fea330513668f15dc3907266f58f4e24cf4b77ad7c4d9b2ddfcf74745bd"
+    },
+    {
+      "file": "duo-outer-series.webp",
+      "source": "presentation-captures/duo-outer/series.png",
+      "sourceSha256": "03170109cc4d2328ac0cdc33636dd97582fd2b6d36f4adf89b529b70b2d088c6",
+      "width": 840,
+      "height": 1222,
+      "presentationOnly": true,
+      "uiRetouched": false,
+      "verifiedPose": "closed",
+      "poseEvidenceSource": "UIKit.UIHingeInteraction",
+      "poseEvidenceSha256": "758a0fea330513668f15dc3907266f58f4e24cf4b77ad7c4d9b2ddfcf74745bd"
     }
   ]
 }

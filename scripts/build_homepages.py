@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """Render the two static marketing pages; no build service or dependencies needed."""
-from html import escape
 from pathlib import Path
 import json
 
@@ -24,7 +23,7 @@ COPY = {
  'download':'Download on the App Store', 'credit':'Demonstration library · Fictional artwork · Movies and shows not included',
  'benefit':'Less browsing.', 'benefitb':'More watching.', 'benefitintro':'From one more episode to a new favourite. Everything you came to watch, one tap away.',
  'resume':'Pick up the story.', 'resumebody':'Your Continue Watching, synced with Jellyfin. Get back to the film or episode you left behind.',
- 'library':'A library worth exploring.', 'librarybody':'Movies, shows, collections. Rediscover your favourites and find your next watch.',
+ 'library':'Your collection, within reach.', 'librarybody':'Your films, your shows, your collections. Find them on your own Jellyfin server.',
  'downloads':'Take the next episode.', 'downloadsbody':'Download compatible films and shows on iPhone and iPad. Your library travels with you.',
  'downloadlabel':'Ready for the journey', 'downloadsmall':'Compatible media · iPhone & iPad',
  'tvtitle':'Made for the<br>big screen.', 'tvbody':'A home for your library.<br>Built for the remote.',
@@ -32,14 +31,16 @@ COPY = {
  'tv2':'Your audio. Your subtitles.', 'tv2body':'Choose from the tracks available for your title, right where you watch.',
  'tv3':'Direct Play when compatible', 'tv3body':'Play your original media when the file and device support it. Jellyfin can help when needed.',
  'everywhere':'At home.<br>On the move.', 'future':'In development',
- 'duotitle':'Made for<br><span class="muted">iPhone Duo.</span>', 'duobody':'More screen. More cinema.<br>A considered layout, open or closed.',
+ 'duotitle':'Made for<br><span class="muted">iPhone Duo.</span>', 'duobody':'Your Jellyfin library,<br>within reach on the outer screen.',
  'duolink':'Explore the iPhone Duo experience', 'duoplatform':'Made for iPhone Duo',
- 'duo1':'More room to explore.', 'duo1body':'The open inner screen gives artwork and library rows the space they deserve.',
+ 'duo1':'Your library, close at hand.', 'duo1body':'Find your Home, library rows and Continue Watching on the compact outer screen.',
  'duo2':'Navigation within reach.', 'duo2body':'Main sections and back controls stay accessible, with layouts that respect the screen’s usable space.',
- 'duo3':'A layout that adapts.', 'duo3body':'From the compact outer screen to the larger inner display, your library stays in focus.',
- 'duoalt':'Native ReelFin demonstration Home on the fully open iPhone Duo inner screen.',
+ 'duo3':'Back to your episode.', 'duo3body':'Open a series and find the episode you were watching, with your progress ready to resume.',
+ 'duoalt':'Native ReelFin demonstration Home on the iPhone Duo outer screen, with the device closed.',
  'duoouteralt':'Native ReelFin demonstration movie detail on the compact iPhone Duo outer screen.',
- 'duocaption':'Open inner screen and compact outer screen · Demonstration library · Content not included',
+ 'duoseriesalt':'Native ReelFin demonstration series detail and Resume action on the iPhone Duo outer screen, with the device closed.',
+ 'duocaption':'ReelFin on the iPhone Duo outer screen · Demonstration library · Content not included',
+ 'duohomelabel':'Home', 'duodetaillabel':'Film details', 'duoserieslabel':'Resume a series',
  'faqtitle':'A few things<br>to know.',
  'questions':[
   ('Do I need a Jellyfin server?', 'Yes. ReelFin is a client for your own Jellyfin server, or a server you are authorised to use. Enter the server address and sign in to your Jellyfin account.'),
@@ -55,8 +56,8 @@ COPY = {
  'tvalt':'ReelFin Apple TV home screen, using a fictional demonstration library.',
  'phonealt':'ReelFin on iPhone, with Continue Watching and films from a fictional demonstration library.',
  'tvdetailalt':'ReelFin Apple TV movie detail page, using a fictional demonstration library.',
- 'detailalt':'The ReelFin iPhone detail page for a fictional demonstration film.',
- 'posters':'Fictional demonstration posters', 'platformlabel':'Supported platforms'
+ 'detailalt':'ReelFin on iPhone shows a fictional series, episode progress and the Resume action.',
+ 'platformlabel':'Supported platforms'
 },
 'fr': {
  'path':'fr/index.html', 'prefix':'../', 'title':'ReelFin — Votre cinéma. À vous.',
@@ -67,7 +68,7 @@ COPY = {
  'download':'Télécharger sur l’App Store', 'credit':'Bibliothèque de démonstration · Affiches fictives · Films et séries non inclus',
  'benefit':'Moins chercher.', 'benefitb':'Plus regarder.', 'benefitintro':'Un épisode de plus ou un nouveau coup de cœur. Tout ce que vous aimez regarder, à portée de main.',
  'resume':'Retrouvez le fil.', 'resumebody':'Votre reprise de lecture, synchronisée avec Jellyfin. Reprenez le film ou l’épisode que vous aviez laissé.',
- 'library':'Une collection à explorer.', 'librarybody':'Films, séries, collections. Retrouvez vos favoris et votre prochaine envie de cinéma.',
+ 'library':'Votre collection, à portée de main.', 'librarybody':'Vos films, vos séries, vos collections. Retrouvez-les depuis votre serveur Jellyfin.',
  'downloads':'La suite vous accompagne.', 'downloadsbody':'Téléchargez les films et séries compatibles sur iPhone et iPad. Votre médiathèque voyage avec vous.',
  'downloadlabel':'Prêt pour le voyage', 'downloadsmall':'Médias compatibles · iPhone et iPad',
  'tvtitle':'Pensé pour<br>le grand écran.', 'tvbody':'Votre médiathèque prend ses aises.<br>La télécommande aussi.',
@@ -75,14 +76,16 @@ COPY = {
  'tv2':'Votre son. Vos sous-titres.', 'tv2body':'Choisissez parmi les pistes disponibles pour votre film ou votre épisode, pendant la lecture.',
  'tv3':'Direct Play si compatible', 'tv3body':'Lisez le fichier original lorsque le média et l’appareil le permettent. Jellyfin prend le relais si nécessaire.',
  'everywhere':'Chez vous.<br>Et partout.', 'future':'En préparation',
- 'duotitle':'Optimisé pour<br><span class="muted">iPhone Duo.</span>', 'duobody':'Plus d’écran. Plus de cinéma.<br>Une interface qui trouve sa place, ouvert comme fermé.',
+ 'duotitle':'Optimisé pour<br><span class="muted">iPhone Duo.</span>', 'duobody':'Votre médiathèque Jellyfin,<br>à portée de main sur l’écran extérieur.',
  'duolink':'Découvrir l’expérience iPhone Duo', 'duoplatform':'Optimisé pour iPhone Duo',
- 'duo1':'Plus d’espace pour explorer.', 'duo1body':'L’écran intérieur ouvert laisse respirer les visuels et les rangées de votre médiathèque.',
+ 'duo1':'Votre bibliothèque vous suit.', 'duo1body':'Retrouvez votre accueil, vos rangées et votre reprise de lecture sur l’écran extérieur compact.',
  'duo2':'Les commandes à portée de main.', 'duo2body':'Navigation et retour restent accessibles, dans une interface qui respecte l’espace utile de l’écran.',
- 'duo3':'Une mise en page qui s’adapte.', 'duo3body':'De l’écran extérieur compact au grand écran intérieur, votre médiathèque reste au premier plan.',
- 'duoalt':'Accueil natif ReelFin en démonstration sur l’écran intérieur entièrement ouvert de l’iPhone Duo.',
+ 'duo3':'Retrouvez votre épisode.', 'duo3body':'Ouvrez une série et retrouvez l’épisode en cours, avec votre progression pour reprendre la suite.',
+ 'duoalt':'Accueil natif ReelFin en démonstration sur l’écran extérieur de l’iPhone Duo fermé.',
  'duoouteralt':'Fiche native ReelFin en démonstration sur l’écran extérieur compact de l’iPhone Duo.',
- 'duocaption':'Écran intérieur ouvert et écran extérieur compact · Bibliothèque de démonstration · Contenus non inclus',
+ 'duoseriesalt':'Fiche de série native ReelFin en démonstration avec l’action Reprendre sur l’écran extérieur de l’iPhone Duo fermé.',
+ 'duocaption':'ReelFin sur l’écran extérieur de l’iPhone Duo · Bibliothèque de démonstration · Contenus non inclus',
+ 'duohomelabel':'Accueil', 'duodetaillabel':'Fiche d’un film', 'duoserieslabel':'Reprendre une série',
  'faqtitle':'Avant<br>de lancer.',
  'questions':[
   ('Faut-il un serveur Jellyfin ?', 'Oui. ReelFin se connecte à votre propre serveur Jellyfin ou à un serveur que vous êtes autorisé à utiliser. Saisissez son adresse puis connectez-vous à votre compte Jellyfin.'),
@@ -98,8 +101,8 @@ COPY = {
  'tvalt':'Accueil ReelFin sur Apple TV, avec une bibliothèque fictive de démonstration.',
  'phonealt':'ReelFin sur iPhone, avec la reprise de lecture et une bibliothèque de démonstration fictive.',
  'tvdetailalt':'Fiche d’un film fictif de démonstration dans ReelFin sur Apple TV.',
- 'detailalt':'Fiche ReelFin sur iPhone d’un film fictif de démonstration.',
- 'posters':'Affiches fictives de démonstration', 'platformlabel':'Plateformes compatibles'
+ 'detailalt':'Fiche native ReelFin sur iPhone avec une série fictive, sa progression et l’action Reprendre.',
+ 'platformlabel':'Plateformes compatibles'
 }}
 
 def render(lang, c):
@@ -107,13 +110,6 @@ def render(lang, c):
  brand=f'<span class="brand__mark" aria-hidden="true"><img src="{p}assets/media/NEW/reelfin-mark.png" alt="" width="400" height="240"></span><span>ReelFin</span>'
  cta=f'<a class="button button--primary" href="{STORE}">{APPLE}<span>{c["download"]}</span><span class="arrow" aria-hidden="true">↗</span></a>'
  questions='\n'.join(f'<details><summary>{q}</summary><p>{a.format(prefix=p)}</p></details>' for q,a in c['questions'])
- # The optional campaign manifest is written when the complete poster set is ready.
- manifest=ROOT/'assets/media/cinema/posters.json'
- posters=json.loads(manifest.read_text()) if manifest.exists() else []
- poster_preview=''.join(f'<img src="{p}assets/media/cinema/{x["file"]}" alt="" width="240" height="360" loading="lazy">' for x in posters[:6])
- poster_rail=''.join(f'<figure><img src="{p}assets/media/cinema/{x["file"]}" alt="{escape(x["title"])}" width="240" height="360" loading="lazy"><figcaption>{escape(x["title"])}</figcaption></figure>' for x in posters)
- if not poster_preview:
-  poster_preview=f'<img src="{p}assets/media/cinema/iphone-series.webp" alt="" width="240" height="360" loading="lazy">'
  page=f'''<!doctype html>
 <html lang="{lang}">
 <head>
@@ -138,8 +134,8 @@ def render(lang, c):
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="{p}assets/media/NEW/reelfin-mark.png">
-  <link rel="stylesheet" href="{p}assets/site.css?v=cinema-1">
-  <script defer src="{p}assets/site.js?v=cinema-1"></script>
+  <link rel="stylesheet" href="{p}assets/site.css?v=cinema-3">
+  <script defer src="{p}assets/site.js?v=cinema-3"></script>
   <script type="application/ld+json">{json.dumps({'@context':'https://schema.org','@type':'MobileApplication','name':'ReelFin','operatingSystem':'iOS 26+, iPadOS 26+, tvOS 26+','applicationCategory':'EntertainmentApplication','description':c['description'],'url':BASE,'downloadUrl':STORE,'author':{'@type':'Person','name':'Florian Taffin'}},ensure_ascii=False)}</script>
 </head>
 <body>
@@ -156,34 +152,37 @@ def render(lang, c):
   </header>
   <main id="main-content">
     <section class="hero container" id="top" aria-labelledby="hero-title">
-      <h1 id="hero-title">{c['h1']}<span>{c['h1b']}</span></h1>
+      <h1 id="hero-title"><span class="hero__title-line">{c['h1']}</span><span class="hero__title-line hero__title-line--muted">{c['h1b']}</span></h1>
       <p class="hero__lede">{c['intro']}</p>
       {cta}
       <p class="hero__platforms">iPhone · iPhone Duo · iPad · Apple TV</p><a class="hero__duo-link" href="#duo">{c['duolink']} <span aria-hidden="true">↓</span></a>
       <div class="hero__stage">
-        <figure class="tv-screen"><img src="{p}assets/media/cinema/tv4k-home.webp" alt="{c['tvalt']}" width="2200" height="1238" fetchpriority="high"></figure>
-        <figure class="hero__phone phone-screen"><img src="{p}assets/media/cinema/iphone-home.webp" alt="{c['phonealt']}" width="840" height="1825" fetchpriority="high"></figure>
+        <figure class="app-capture"><img src="{p}assets/media/cinema/tv4k-home.webp" alt="{c['tvalt']}" width="2200" height="1238" fetchpriority="high"></figure>
+        <figure class="hero__phone app-capture"><img src="{p}assets/media/cinema/iphone-home.webp" alt="{c['phonealt']}" width="840" height="1825" fetchpriority="high"></figure>
       </div>
       <p class="image-credit">{c['credit']}</p>
     </section>
     <section class="section container duo" id="duo" aria-labelledby="duo-title">
       <div class="section-heading"><h2 id="duo-title">{c['duotitle']}</h2><p>{c['duobody']}</p></div>
-      <div class="duo-stage"><figure class="duo-inner"><img src="{p}assets/media/cinema/duo-inner-home.webp" alt="{c['duoalt']}" width="1800" height="1266" loading="lazy"></figure><figure class="duo-outer"><img src="{p}assets/media/cinema/duo-outer-detail.webp" alt="{c['duoouteralt']}" width="840" height="1222" loading="lazy"></figure></div>
+      <div class="duo-stage">
+        <figure><div class="app-capture"><img src="{p}assets/media/cinema/duo-outer-home.webp" alt="{c['duoalt']}" width="840" height="1222" loading="lazy"></div><figcaption>{c['duohomelabel']}</figcaption></figure>
+        <figure><div class="app-capture"><img src="{p}assets/media/cinema/duo-outer-detail.webp" alt="{c['duoouteralt']}" width="840" height="1222" loading="lazy"></div><figcaption>{c['duodetaillabel']}</figcaption></figure>
+        <figure><div class="app-capture"><img src="{p}assets/media/cinema/duo-outer-series.webp" alt="{c['duoseriesalt']}" width="840" height="1222" loading="lazy"></div><figcaption>{c['duoserieslabel']}</figcaption></figure>
+      </div>
       <p class="image-credit">{c['duocaption']}</p>
       <div class="tv-benefits"><article><h3>{c['duo1']}</h3><p>{c['duo1body']}</p></article><article><h3>{c['duo2']}</h3><p>{c['duo2body']}</p></article><article><h3>{c['duo3']}</h3><p>{c['duo3body']}</p></article></div>
     </section>
     <section class="section container" id="overview" aria-labelledby="benefits-title">
       <div class="section-heading"><h2 id="benefits-title">{c['benefit']}<br><span class="muted">{c['benefitb']}</span></h2><p>{c['benefitintro']}</p></div>
       <div class="feature-grid" id="screens">
-        <article class="feature feature--resume"><h3>{c['resume']}</h3><p>{c['resumebody']}</p><figure class="phone-screen"><img src="{p}assets/media/cinema/iphone-detail.webp" alt="{c['detailalt']}" width="840" height="1825" loading="lazy"></figure></article>
-        <article class="feature feature--library"><h3>{c['library']}</h3><p>{c['librarybody']}</p><div class="poster-preview" aria-hidden="true">{poster_preview}</div></article>
-        <article class="feature feature--downloads"><div><h3>{c['downloads']}</h3><p>{c['downloadsbody']}</p></div><div class="download-visual">{DOWNLOAD}<div><strong>{c['downloadlabel']}</strong><span>{c['downloadsmall']}</span><div class="download-line" aria-hidden="true"></div></div></div></article>
+        <article class="feature feature--resume"><h3>{c['resume']}</h3><p>{c['resumebody']}</p><figure class="app-capture"><img src="{p}assets/media/cinema/iphone-series.webp" alt="{c['detailalt']}" width="840" height="1825" loading="lazy"></figure></article>
+        <article class="feature feature--library"><h3>{c['library']}</h3><p>{c['librarybody']}</p></article>
+        <article class="feature feature--downloads"><div><h3>{c['downloads']}</h3><p>{c['downloadsbody']}</p></div><div class="download-visual">{DOWNLOAD}<div><strong>{c['downloadlabel']}</strong><span>{c['downloadsmall']}</span></div></div></article>
       </div>
-      <div class="poster-section" {'hidden' if not posters else ''}><div class="poster-rail" role="region" aria-label="{c['posters']}" tabindex="0">{poster_rail}</div><p>{c['credit']}</p></div>
     </section>
     <section class="section container tvos" id="tvos" aria-labelledby="tv-title">
       <div class="section-heading"><h2 id="tv-title">{c['tvtitle']}</h2><p>{c['tvbody']}</p></div>
-      <figure class="tv-screen"><img src="{p}assets/media/cinema/tv4k-detail.webp" alt="{c['tvdetailalt']}" width="2200" height="1238" loading="lazy"></figure>
+      <figure class="app-capture"><img src="{p}assets/media/cinema/tv4k-detail.webp" alt="{c['tvdetailalt']}" width="2200" height="1238" loading="lazy"></figure>
       <div class="tv-benefits"><article><h3>{c['tv1']}</h3><p>{c['tv1body']}</p></article><article><h3>{c['tv2']}</h3><p>{c['tv2body']}</p></article><article><h3>{c['tv3']}</h3><p>{c['tv3body']}</p></article></div>
     </section>
     <section class="compatibility container" aria-label="{c['platformlabel']}">
