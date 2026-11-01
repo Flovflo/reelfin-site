@@ -1,20 +1,10 @@
 {
   "status": "partial",
-  "missing": [
-    "ipad/detail",
-    "ipad/series",
-    "duo-inner/home",
-    "duo-inner/detail",
-    "duo-inner/series"
-  ],
+  "missing": [],
   "unavailablePlatforms": [
     {
       "platform": "mac",
       "reason": "Native Mac capture pending coordinated authentication and presentation window; no fabricated view."
-    },
-    {
-      "platform": "duo-inner",
-      "reason": "Open pose and interior captures remain unverified; Closed exterior captures are separately certified."
     }
   ],
   "rejectedCaptures": [
@@ -69,6 +59,24 @@
       "uiRetouched": false
     },
     {
+      "file": "ipad-detail.webp",
+      "source": "presentation-captures/ipad/detail.png",
+      "sourceSha256": "1b0b76bf6fc4c1a2e1753292c7fc5a2e7d6793715221d9a772988ffd48235227",
+      "width": 1800,
+      "height": 1350,
+      "presentationOnly": true,
+      "uiRetouched": false
+    },
+    {
+      "file": "ipad-series.webp",
+      "source": "presentation-captures/ipad/series.png",
+      "sourceSha256": "e7351e266d94843c886df626f484824a49c4b8af10a4f543bab13d3d1bdfd301",
+      "width": 1800,
+      "height": 1350,
+      "presentationOnly": true,
+      "uiRetouched": false
+    },
+    {
       "file": "tv4k-home.webp",
       "source": "presentation-captures/tv4k/home.png",
       "sourceSha256": "3f6c80359907c6176374bbadcbc26cce11089d738f305cb902118a934c82ad89",
@@ -94,6 +102,69 @@
       "height": 1238,
       "presentationOnly": true,
       "uiRetouched": false
+    },
+    {
+      "file": "duo-inner-home.webp",
+      "source": "presentation-captures/duo-inner/home.png",
+      "sourceSha256": "66ad72975d222b2567b7c12e30fda314760d57d6de0a47a785e79aba86f19c11",
+      "width": 1800,
+      "height": 1266,
+      "presentationOnly": true,
+      "uiRetouched": false,
+      "verifiedPose": "open",
+      "poseEvidenceSource": "UIKit.UIHingeInteraction",
+      "poseEvidenceSha256": "8a42fb8d736a61a0ce49238941c25d2d5964f23ad531763cc433602e8a86ce5f",
+      "sourceWidth": 2852,
+      "sourceHeight": 2006,
+      "nativeScreenPixels": [
+        2007,
+        2853
+      ],
+      "dimensionRoundingTolerancePixels": 1,
+      "rawResampled": false,
+      "orientationNormalization": "Exact EXIF rotation; original and normalized pixel SHA/equality recorded in capture-normalization.json."
+    },
+    {
+      "file": "duo-inner-detail.webp",
+      "source": "presentation-captures/duo-inner/detail.png",
+      "sourceSha256": "88d204162e8bb56fa640e95e53f8fe4415c04b8d4d559305caee609e3cdaeb36",
+      "width": 1800,
+      "height": 1266,
+      "presentationOnly": true,
+      "uiRetouched": false,
+      "verifiedPose": "open",
+      "poseEvidenceSource": "UIKit.UIHingeInteraction",
+      "poseEvidenceSha256": "8a42fb8d736a61a0ce49238941c25d2d5964f23ad531763cc433602e8a86ce5f",
+      "sourceWidth": 2852,
+      "sourceHeight": 2006,
+      "nativeScreenPixels": [
+        2007,
+        2853
+      ],
+      "dimensionRoundingTolerancePixels": 1,
+      "rawResampled": false,
+      "orientationNormalization": "Exact EXIF rotation; original and normalized pixel SHA/equality recorded in capture-normalization.json."
+    },
+    {
+      "file": "duo-inner-series.webp",
+      "source": "presentation-captures/duo-inner/series.png",
+      "sourceSha256": "1713a16a19c633c7b9c2a831248a0a98608b5df37669923103bc316ac346dc62",
+      "width": 1800,
+      "height": 1266,
+      "presentationOnly": true,
+      "uiRetouched": false,
+      "verifiedPose": "open",
+      "poseEvidenceSource": "UIKit.UIHingeInteraction",
+      "poseEvidenceSha256": "8a42fb8d736a61a0ce49238941c25d2d5964f23ad531763cc433602e8a86ce5f",
+      "sourceWidth": 2852,
+      "sourceHeight": 2006,
+      "nativeScreenPixels": [
+        2007,
+        2853
+      ],
+      "dimensionRoundingTolerancePixels": 1,
+      "rawResampled": false,
+      "orientationNormalization": "Exact EXIF rotation; original and normalized pixel SHA/equality recorded in capture-normalization.json."
     },
     {
       "file": "duo-outer-home.webp",
