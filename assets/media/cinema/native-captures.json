@@ -1,12 +1,7 @@
 {
   "status": "partial",
   "missing": [],
-  "unavailablePlatforms": [
-    {
-      "platform": "mac",
-      "reason": "Native Mac capture pending coordinated authentication and presentation window; no fabricated view."
-    }
-  ],
+  "unavailablePlatforms": [],
   "rejectedCaptures": [
     {
       "source": "presentation-captures/ipad/detail.png",
@@ -201,6 +196,17 @@
       "verifiedPose": "closed",
       "poseEvidenceSource": "UIKit.UIHingeInteraction",
       "poseEvidenceSha256": "758a0fea330513668f15dc3907266f58f4e24cf4b77ad7c4d9b2ddfcf74745bd"
+    },
+    {
+      "platform": "mac",
+      "file": "../devices/mac-home.webp",
+      "width": 1600,
+      "height": 1150,
+      "source": "presentation-captures/mac/home.png",
+      "sourceSha256": "883256a24f31d4f7e3fc43a32b5121afcae76099863a18e47110ea68d49566ca",
+      "presentationOnly": true,
+      "uiRetouched": false,
+      "releaseStatus": "in_development"
     }
   ]
 }

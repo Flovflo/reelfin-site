@@ -1,0 +1,47 @@
+{
+  "platform": "Mac",
+  "releaseStatus": "in_development",
+  "presentationOnly": true,
+  "uiRetouched": false,
+  "additionalCrop": false,
+  "sourceSize": [
+    2048,
+    1472
+  ],
+  "sourceSha256": "883256a24f31d4f7e3fc43a32b5121afcae76099863a18e47110ea68d49566ca",
+  "evidenceSha256": "703dc92cab20d9208d3604209dbbabec47e8646573129025fa95eeb0b4fcaaa1",
+  "originalAscSha256": "22380c8d218aadfeda2d1fc29e44dc1afe13125d5aec733a30675b7d16ebc4c1",
+  "approvedSourceCrop": [
+    46,
+    96,
+    2094,
+    1568
+  ],
+  "sourcePixelEqualityVerifiedByCaptureAgent": true,
+  "variants": [
+    {
+      "file": "mac-home-480.webp",
+      "width": 480,
+      "height": 345,
+      "sha256": "8881577949e2ff04a9442a8f49ba1830f365c422bc7d3609476a06cda2e79ad1"
+    },
+    {
+      "file": "mac-home-640.webp",
+      "width": 640,
+      "height": 460,
+      "sha256": "5e89ed93eedf58be16819c5798f55c21016a683031da86e22bad39a5884ed3c1"
+    },
+    {
+      "file": "mac-home-960.webp",
+      "width": 960,
+      "height": 690,
+      "sha256": "6afc166164726f0d2501338bd3e8018f0dda0950313a24e8576a9c12da4754e4"
+    },
+    {
+      "file": "mac-home.webp",
+      "width": 1600,
+      "height": 1150,
+      "sha256": "c2edf9a5d10173f7aa6a4c9d319ddae5f4fdd567d47b011edea6c7ffd58617cc"
+    }
+  ]
+}

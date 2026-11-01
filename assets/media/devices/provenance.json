@@ -1,0 +1,440 @@
+{
+  "sourcePage": "https://developer.apple.com/design/resources/",
+  "guidelines": "https://developer.apple.com/app-store/marketing/guidelines/",
+  "ownerLicenceAcceptanceDate": "2026-11-01",
+  "resourceUse": "ReelFin native UI depictions only. Apple artwork may not be extracted or reused independently.",
+  "bezelTreatment": {
+    "productHardwareCropped": false,
+    "rotation": 0,
+    "addedShadow": false,
+    "animation": false
+  },
+  "mockups": [
+    {
+      "file": "iphone-home.webp",
+      "sha256": "03da7ba05f9a417c04a6f43d6622c29da243cbf82c00e7958d900a98cfd51988",
+      "width": 900,
+      "height": 1837,
+      "sourceArtworkSize": [
+        1470,
+        3000
+      ],
+      "selectedProductBounds": [
+        0,
+        0,
+        1470,
+        3000
+      ],
+      "selectedProductSize": [
+        1470,
+        3000
+      ],
+      "uniformWebExportScale": 0.6122448979591837,
+      "appleFile": "PNG/iPhone 18 Pro Max/iPhone 18 Pro Max - Black - Portrait.png",
+      "applePngSha256": "13fc8a8f0bc612f50c00d073b12aefa87bce1e4618fbdd3aa882438ae171e2be",
+      "nativeCapture": "iphone/home.png",
+      "nativeCaptureSha256": "7d002e634228a82b366dbdc8e2dd8f0621d4db2f82b1cdc2397eb0c60813dc4d",
+      "nativeSize": [
+        1320,
+        2868
+      ],
+      "screenAperture": [
+        75,
+        66,
+        1395,
+        2934
+      ],
+      "screenOutputSize": [
+        1320,
+        2868
+      ],
+      "screenResampled": false,
+      "opaqueHardwarePixelsUnchangedBeforeUniformWebExport": true,
+      "responsive": [
+        {
+          "file": "iphone-home-450.webp",
+          "width": 450,
+          "height": 918,
+          "sha256": "0401db5516507ef9f110c58e4e6ad023ccc0ccc52c4fe6d01ce073c5b45c0516"
+        }
+      ],
+      "fullSelectedProductBoundsPreserved": true
+    },
+    {
+      "file": "iphone-series.webp",
+      "sha256": "164b64cdabb6ffc9b562f86dc12b5aaeff7cb96aa98b01475a0f69610490ecc4",
+      "width": 900,
+      "height": 1837,
+      "sourceArtworkSize": [
+        1470,
+        3000
+      ],
+      "selectedProductBounds": [
+        0,
+        0,
+        1470,
+        3000
+      ],
+      "selectedProductSize": [
+        1470,
+        3000
+      ],
+      "uniformWebExportScale": 0.6122448979591837,
+      "appleFile": "PNG/iPhone 18 Pro Max/iPhone 18 Pro Max - Black - Portrait.png",
+      "applePngSha256": "13fc8a8f0bc612f50c00d073b12aefa87bce1e4618fbdd3aa882438ae171e2be",
+      "nativeCapture": "iphone/series.png",
+      "nativeCaptureSha256": "73805533b66e6cf8e1c6718093002618314790a416553727dded316d62f2197f",
+      "nativeSize": [
+        1320,
+        2868
+      ],
+      "screenAperture": [
+        75,
+        66,
+        1395,
+        2934
+      ],
+      "screenOutputSize": [
+        1320,
+        2868
+      ],
+      "screenResampled": false,
+      "opaqueHardwarePixelsUnchangedBeforeUniformWebExport": true,
+      "responsive": [
+        {
+          "file": "iphone-series-450.webp",
+          "width": 450,
+          "height": 918,
+          "sha256": "117af5351c3e5151ef49c747e7746862072a5551be7e724b27503ab2e4a83ba8"
+        }
+      ],
+      "uiOnlyOverlay": {
+        "file": "iphone-series-screen.webp",
+        "sha256": "b76f23b4b5dc8d80de693a24763aa523de7c07736bbe6876acc624ea896e2df6",
+        "excludesEveryNontransparentHardwarePixel": true,
+        "responsive": [
+          {
+            "file": "iphone-series-screen-450.webp",
+            "width": 450,
+            "height": 918,
+            "sha256": "bcf85da6b0e8edb3f6f7bd095ef7bac76324cfe0a58ea2c332056648c2db9451"
+          }
+        ]
+      },
+      "fullSelectedProductBoundsPreserved": true
+    },
+    {
+      "file": "tv-home.webp",
+      "sha256": "06d218487009ac6055334807e9b3be83384298ce94e4c71b638bc73d4a6c517d",
+      "width": 2200,
+      "height": 1256,
+      "sourceArtworkSize": [
+        4300,
+        2780
+      ],
+      "selectedProductBounds": [
+        76,
+        87,
+        3970,
+        2311
+      ],
+      "selectedProductSize": [
+        3894,
+        2224
+      ],
+      "uniformWebExportScale": 0.5649717514124294,
+      "appleFile": "PNG/Apple TV - 4K.png",
+      "applePngSha256": "0c2797508febf471e8ea30bc894885795955369ca88784d7a509eefa59eab169",
+      "nativeCapture": "tv4k/home.png",
+      "nativeCaptureSha256": "3f6c80359907c6176374bbadcbc26cce11089d738f305cb902118a934c82ad89",
+      "nativeSize": [
+        3840,
+        2160
+      ],
+      "screenAperture": [
+        27,
+        32,
+        3867,
+        2192
+      ],
+      "screenOutputSize": [
+        3840,
+        2160
+      ],
+      "screenResampled": false,
+      "opaqueHardwarePixelsUnchangedBeforeUniformWebExport": true,
+      "responsive": [
+        {
+          "file": "tv-home-640.webp",
+          "width": 640,
+          "height": 366,
+          "sha256": "97c80d4f52e10db967121c3deacc4521af673578b15c3d2d04dfe6eb0e2c54e4"
+        },
+        {
+          "file": "tv-home-1100.webp",
+          "width": 1100,
+          "height": 628,
+          "sha256": "22aab283883c5c13eb96fbacf38e9994c90718d5c46a6f27aa2b14dc4fc13d56"
+        }
+      ],
+      "fullSelectedProductBoundsPreserved": true
+    },
+    {
+      "file": "tv-series.webp",
+      "sha256": "74e048b460a880913a30bcb48a1684de171c9766f07fdd78b87cc0c52a23b2e2",
+      "width": 2200,
+      "height": 1256,
+      "sourceArtworkSize": [
+        4300,
+        2780
+      ],
+      "selectedProductBounds": [
+        76,
+        87,
+        3970,
+        2311
+      ],
+      "selectedProductSize": [
+        3894,
+        2224
+      ],
+      "uniformWebExportScale": 0.5649717514124294,
+      "appleFile": "PNG/Apple TV - 4K.png",
+      "applePngSha256": "0c2797508febf471e8ea30bc894885795955369ca88784d7a509eefa59eab169",
+      "nativeCapture": "tv4k/series.png",
+      "nativeCaptureSha256": "4743cc50d8aa76ae41168c30b6dfcb6449b680845a388510c6fa5ae9f78d9d22",
+      "nativeSize": [
+        3840,
+        2160
+      ],
+      "screenAperture": [
+        27,
+        32,
+        3867,
+        2192
+      ],
+      "screenOutputSize": [
+        3840,
+        2160
+      ],
+      "screenResampled": false,
+      "opaqueHardwarePixelsUnchangedBeforeUniformWebExport": true,
+      "responsive": [
+        {
+          "file": "tv-series-640.webp",
+          "width": 640,
+          "height": 366,
+          "sha256": "613f65c520a1d72a852f03915010a3e693e92a55076ed4bdea5d67a980b518dd"
+        },
+        {
+          "file": "tv-series-1100.webp",
+          "width": 1100,
+          "height": 628,
+          "sha256": "9372e347b7dfcf6700117fe6ad3309a13a8a2149050d50fb3aa940836d7210cc"
+        }
+      ],
+      "uiOnlyOverlay": {
+        "file": "tv-series-screen.webp",
+        "sha256": "d4773ba5ae85c82d17d1cbc86e3840fdaafbcf4003694cb122d6c2894ba96285",
+        "excludesEveryNontransparentHardwarePixel": true,
+        "responsive": [
+          {
+            "file": "tv-series-screen-640.webp",
+            "width": 640,
+            "height": 366,
+            "sha256": "f22fdb569aec47e325d21c0964b76f5db6f36feedc72819c1bed7e894a07a002"
+          },
+          {
+            "file": "tv-series-screen-1100.webp",
+            "width": 1100,
+            "height": 628,
+            "sha256": "6798e594e0c83a35f413d7c549f00ca0087efd902059d3a8ed9cd1b4aa54cc94"
+          }
+        ]
+      },
+      "fullSelectedProductBoundsPreserved": true
+    },
+    {
+      "file": "tv-detail.webp",
+      "sha256": "2a0adbe2ad41de0838a13185cfd6ac488d18f62b1efc24a188c4d2c5e7b516f7",
+      "width": 2200,
+      "height": 1256,
+      "sourceArtworkSize": [
+        4300,
+        2780
+      ],
+      "selectedProductBounds": [
+        76,
+        87,
+        3970,
+        2311
+      ],
+      "selectedProductSize": [
+        3894,
+        2224
+      ],
+      "uniformWebExportScale": 0.5649717514124294,
+      "appleFile": "PNG/Apple TV - 4K.png",
+      "applePngSha256": "0c2797508febf471e8ea30bc894885795955369ca88784d7a509eefa59eab169",
+      "nativeCapture": "tv4k/detail.png",
+      "nativeCaptureSha256": "bfe53790405d20dfb21662d489ca7d879e560e781a3afca507f9f3b8fc6aefdc",
+      "nativeSize": [
+        3840,
+        2160
+      ],
+      "screenAperture": [
+        27,
+        32,
+        3867,
+        2192
+      ],
+      "screenOutputSize": [
+        3840,
+        2160
+      ],
+      "screenResampled": false,
+      "opaqueHardwarePixelsUnchangedBeforeUniformWebExport": true,
+      "responsive": [
+        {
+          "file": "tv-detail-640.webp",
+          "width": 640,
+          "height": 366,
+          "sha256": "bb8f1d8a028a9f4d59eb91f1457c5e90c3c794a582da4755585752a60f80e162"
+        },
+        {
+          "file": "tv-detail-1100.webp",
+          "width": 1100,
+          "height": 628,
+          "sha256": "4a2a17b9facc6fb4db058b7f9a5827b9c8d0a55875569365596af9e21e0e1658"
+        }
+      ],
+      "fullSelectedProductBoundsPreserved": true
+    },
+    {
+      "file": "duo-open-home.webp",
+      "sha256": "a4691af4a43d98ce4289ce6b0afb19818de01a364314e36312893a553e73814b",
+      "width": 1800,
+      "height": 1308,
+      "sourceArtworkSize": [
+        3093,
+        2247
+      ],
+      "selectedProductBounds": [
+        0,
+        0,
+        3093,
+        2247
+      ],
+      "selectedProductSize": [
+        3093,
+        2247
+      ],
+      "uniformWebExportScale": 0.5819592628516004,
+      "appleFile": "PNG/iPhone Duo - Night Sky - Inner Open Landscape.png",
+      "applePngSha256": "bd684d4cd2b68756ca008c158b9c0cbfeeb134bf3b5e481b3d0dd02d783211f1",
+      "nativeCapture": "duo-inner/home.png",
+      "nativeCaptureSha256": "66ad72975d222b2567b7c12e30fda314760d57d6de0a47a785e79aba86f19c11",
+      "nativeSize": [
+        2852,
+        2006
+      ],
+      "screenAperture": [
+        120,
+        120,
+        2973,
+        2127
+      ],
+      "screenOutputSize": [
+        2853,
+        2007
+      ],
+      "screenResampled": true,
+      "opaqueHardwarePixelsUnchangedBeforeUniformWebExport": true,
+      "responsive": [
+        {
+          "file": "duo-open-home-640.webp",
+          "width": 640,
+          "height": 465,
+          "sha256": "32b27956950b4c4de8bb2ec77cb0417c8fe221abbb1c9c14003aae1f258fa731"
+        },
+        {
+          "file": "duo-open-home-900.webp",
+          "width": 900,
+          "height": 654,
+          "sha256": "ce38fc708e1d007b4064fe071e317068cb267fc925a0476256677e33e9872c80"
+        }
+      ],
+      "fullSelectedProductBoundsPreserved": true
+    },
+    {
+      "file": "duo-closed-series.webp",
+      "sha256": "695b0151c951d5194cc2a10f5c927af87880b0e182457c41501dd7e8af2abeb5",
+      "width": 900,
+      "height": 1255,
+      "sourceArtworkSize": [
+        1574,
+        2194
+      ],
+      "selectedProductBounds": [
+        0,
+        0,
+        1574,
+        2194
+      ],
+      "selectedProductSize": [
+        1574,
+        2194
+      ],
+      "uniformWebExportScale": 0.5717916137229987,
+      "appleFile": "PNG/iPhone Duo - Night Sky - Outer Closed Portrait.png",
+      "applePngSha256": "f972a6062a0ca2bef2186d61366beaf746a7725a34a4bfa1dabc4410d7c0dbdf",
+      "nativeCapture": "duo-outer/series.png",
+      "nativeCaptureSha256": "03170109cc4d2328ac0cdc33636dd97582fd2b6d36f4adf89b529b70b2d088c6",
+      "nativeSize": [
+        1398,
+        2034
+      ],
+      "screenAperture": [
+        88,
+        80,
+        1486,
+        2114
+      ],
+      "screenOutputSize": [
+        1398,
+        2034
+      ],
+      "screenResampled": false,
+      "opaqueHardwarePixelsUnchangedBeforeUniformWebExport": true,
+      "responsive": [
+        {
+          "file": "duo-closed-series-450.webp",
+          "width": 450,
+          "height": 627,
+          "sha256": "c7a8c793368afa27c18c3102ff3e2f540ca9378e7ca9b0ff8da0fc89285d33a8"
+        }
+      ],
+      "fullSelectedProductBoundsPreserved": true
+    }
+  ],
+  "archives": [
+    {
+      "file": "ReelFin-Bezel-iPhone-Duo.dmg",
+      "bytes": 452785429,
+      "sha256": "6d623163830ea86c9298f37f1f32d4fe29810be05c9155b7dcd3ca3805d76cc2",
+      "download": "https://devimages-cdn.apple.com/design/resources/download/Bezel-iPhone-Duo.dmg"
+    },
+    {
+      "file": "ReelFin-Bezel-iPhone-18.dmg",
+      "bytes": 144149642,
+      "sha256": "b27e827d156c9646048c2462cbba1c55c4267917083d8d43141086ea285d1792",
+      "download": "https://devimages-cdn.apple.com/design/resources/download/Bezel-iPhone-18.dmg"
+    },
+    {
+      "file": "ReelFin-Bezel-Apple-TV.dmg",
+      "bytes": 30886385,
+      "sha256": "82328be26bf812f259fc92a73204578579e7b33620afbc4a419e1e8be86803e0",
+      "download": "https://devimages-cdn.apple.com/design/resources/download/Bezel-Apple-TV.dmg"
+    }
+  ]
+}
